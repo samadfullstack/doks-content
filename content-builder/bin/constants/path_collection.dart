@@ -1,15 +1,19 @@
 import 'package:path/path.dart' as pathpkg;
 
 class PathCollection {
-  static final String _doksContentDataDir = pathpkg.joinAll(
+  static final String _dataDir = pathpkg.joinAll(
     ["D:", "doks-content", "data"],
   );
 
-  static String remoteDataListJson = pathpkg.joinAll(
-    [_doksContentDataDir, "remoteData", "remote_data_list.json"],
+  static String remoteDataList = pathpkg.joinAll(
+    [_dataDir, "remote_data_list.json"],
   );
 
-  static String reactjsJson = pathpkg.joinAll(
-    [_doksContentDataDir, "reactjs", "reactjs.json"],
+  static String reactJs = pathpkg.joinAll(
+    [_dataDir, "reactjs.json"],
+  );
+
+  static String tailwindCss = pathpkg.joinAll(
+    [_dataDir, "tailwindcss.json"],
   );
 }

@@ -4,11 +4,11 @@ import 'constants/path_collection.dart';
 
 void main(List<String> args) async {
   contentWriter(
-    path: PathCollection.remoteDataListJson,
+    path: PathCollection.remoteDataList,
     data: ContentCollection.remoteData,
   );
   contentWriter(
-    path: PathCollection.reactjsJson,
+    path: PathCollection.reactJs,
     data: ContentCollection.reactjsData,
   );
 
