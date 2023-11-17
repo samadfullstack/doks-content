@@ -1,15 +1,18 @@
-import 'constants/data_collection.dart';
-import 'utils/content_writer.dart';
-import 'constants/path_collection.dart';
+import 'constants/content_collection.dart';
+import 'utils/utils.dart';
 
 void main(List<String> args) async {
   contentWriter(
-    path: PathCollection.remoteDataList,
-    data: ContentCollection.remoteData,
+    path: buildPathInData("remote_data_list.json"),
+    data: ContentCollection.remoteDatalist,
   );
   contentWriter(
-    path: PathCollection.reactJs,
-    data: ContentCollection.reactjsData,
+    path: buildPathInData("reactjs.json"),
+    data: ContentCollection.reactjs,
+  );
+  contentWriter(
+    path: buildPathInData("file.json"),
+    data: ContentCollection.remoteDatalist,
   );
 
   print("Completed content writing");

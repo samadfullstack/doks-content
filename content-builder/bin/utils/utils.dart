@@ -1,5 +1,10 @@
 import 'dart:io';
+import 'package:path/path.dart' as pathpkg;
 
+buildPathInData(String fileName) =>
+    pathpkg.joinAll(["D:", "doks-content", "data", fileName]);
+
+// * >----------------------------
 contentWriter({required String path, data}) async {
   // create file on this dir
   File file = File(path);
