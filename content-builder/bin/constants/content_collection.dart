@@ -1,5 +1,4 @@
-import '../content/reactjs_content.dart';
-import '../content/remote_data_list.dart';
+import '../content/all_exports.dart';
 
 class ContentCollection {
   static String get reactjs => reactjsContent.toJson().toString();
