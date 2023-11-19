@@ -11,7 +11,7 @@ void main(List<String> args) async {
     data: ContentCollection.reactjs,
   );
   contentWriter(
-    path: buildPathInData("tailwindCss.json"),
+    path: buildPathInData("tailwindcss.json"),
     data: ContentCollection.tailwindcss,
   );
 
