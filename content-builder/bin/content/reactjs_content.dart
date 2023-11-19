@@ -3,6 +3,7 @@ import '../models/tech_ids.dart';
 
 TechModel reactjsContent = TechModel(
   techTitle: TechIds.reactjs,
+  id: TechIds.reactjs,
   description: "Front-end javascript library",
   version: "18.2.0",
   downloadSize: "987 kb",
