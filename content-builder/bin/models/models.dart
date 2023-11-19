@@ -294,3 +294,45 @@ class RemoteDataModel {
         downloaded.hashCode;
   }
 }
+
+class RemoteDataList {
+  List<RemoteDataModel> data;
+  RemoteDataList({
+    required this.data,
+  });
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'data': data.map((x) => x.toMap()).toList(),
+    };
+  }
+
+  factory RemoteDataList.fromMap(Map<String, dynamic> map) {
+    return RemoteDataList(
+      data: List<RemoteDataModel>.from(
+        (map['data'] as List<int>).map<RemoteDataModel>(
+          (x) => RemoteDataModel.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory RemoteDataList.fromJson(String source) =>
+      RemoteDataList.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  RemoteDataList copyWith({
+    List<RemoteDataModel>? data,
+  }) {
+    return RemoteDataList(
+      data: data ?? this.data,
+    );
+  }
+
+  @override
+  String toString() => 'RemoteDataList(data: $data)';
+
+  @override
+  int get hashCode => data.hashCode;
+}

@@ -1,10 +1,1 @@
-{
-  "data": [
-    {
-      "id": "reactjs",
-      "version": 0,
-      "objUrl": "https://raw.githubusercontent.com/samadfullstack/doks-content/master/data/reactjs.json",
-      "downloaded": false
-    }
-  ]
-}
+{"data":[{"id":"reactjs","version":0,"objUrl":"https://raw.githubusercontent.com/samadfullstack/doks-content/master/data/reactjs.json","downloaded":false}]}

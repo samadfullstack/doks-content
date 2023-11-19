@@ -6,9 +6,13 @@ void main(List<String> args) async {
     path: buildPathInData("remote_data_list.json"),
     data: ContentCollection.remoteDatalist,
   );
-  contentWriter(  
+  contentWriter(
     path: buildPathInData("reactjs.json"),
     data: ContentCollection.reactjs,
+  );
+  contentWriter(
+    path: buildPathInData("tailwindCss.json"),
+    data: ContentCollection.tailwindcss,
   );
 
   print("Completed content writing");

@@ -1,7 +1,7 @@
 import '../models/models.dart';
 import '../models/tech_ids.dart';
 
-List<RemoteDataModel> remoteDataList = [reactjsRemoteData];
+RemoteDataList remoteDataList = RemoteDataList(data: [reactjsRemoteData]);
 
 var reactjsRemoteData = RemoteDataModel(
   id: TechIds.reactjs,
