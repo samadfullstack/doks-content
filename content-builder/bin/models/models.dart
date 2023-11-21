@@ -1,10 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+import 'package:collection/collection.dart';
 
 // * >---------------------------------------> Tech model
-
 class TechModel {
   String id;
-
   String techTitle;
   String description;
   String version;
@@ -56,7 +56,7 @@ class TechModel {
       version: map['version'] as String,
       downloadSize: map['downloadSize'] as String,
       sectionsList: List<SectionModel>.from(
-        (map['sectionsList'] as List<int>).map<SectionModel>(
+        (map['sectionsList'] as List<dynamic>).map<SectionModel>(
           (x) => SectionModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
@@ -71,6 +71,18 @@ class TechModel {
   @override
   String toString() {
     return 'TechModel(id: $id, techTitle: $techTitle, description: $description, version: $version, downloadSize: $downloadSize, sectionsList: $sectionsList)';
+  }
+
+  @override
+  bool operator ==(covariant TechModel other) {
+    if (identical(this, other)) return true;
+
+    return other.id == id &&
+        other.techTitle == techTitle &&
+        other.description == description &&
+        other.version == version &&
+        other.downloadSize == downloadSize &&
+        ListEquality().equals(other.sectionsList, sectionsList);
   }
 
   @override
@@ -115,7 +127,7 @@ class SectionModel {
     return SectionModel(
       sectionTitle: map['sectionTitle'] as String,
       docList: List<DocModel>.from(
-        (map['docList'] as List<int>).map<DocModel>(
+        (map['docList'] as List<dynamic>).map<DocModel>(
           (x) => DocModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
@@ -130,6 +142,14 @@ class SectionModel {
   @override
   String toString() =>
       'SectionModel(sectionTitle: $sectionTitle, docList: $docList)';
+
+  @override
+  bool operator ==(covariant SectionModel other) {
+    if (identical(this, other)) return true;
+
+    return other.sectionTitle == sectionTitle &&
+        ListEquality().equals(other.docList, docList);
+  }
 
   @override
   int get hashCode => sectionTitle.hashCode ^ docList.hashCode;
@@ -192,6 +212,16 @@ class DocModel {
   }
 
   @override
+  bool operator ==(covariant DocModel other) {
+    if (identical(this, other)) return true;
+
+    return other.docTitle == docTitle &&
+        other.url == url &&
+        other.markdown == markdown &&
+        ListEquality().equals(other.keywords, keywords);
+  }
+
+  @override
   int get hashCode {
     return docTitle.hashCode ^
         url.hashCode ^
@@ -202,7 +232,6 @@ class DocModel {
 
 class RemoteDataModel {
   String id;
-
   int version;
   String objUrl;
   bool downloaded;
@@ -212,7 +241,7 @@ class RemoteDataModel {
     required this.version,
     required this.objUrl,
     required this.downloaded,
-  }) {}
+  });
 
   RemoteDataModel copyWith({
     String? id,
@@ -298,7 +327,7 @@ class RemoteDataList {
   factory RemoteDataList.fromMap(Map<String, dynamic> map) {
     return RemoteDataList(
       list: List<RemoteDataModel>.from(
-        (map['list'] as List<int>).map<RemoteDataModel>(
+        (map['list'] as List<dynamic>).map<RemoteDataModel>(
           (x) => RemoteDataModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
@@ -312,6 +341,13 @@ class RemoteDataList {
 
   @override
   String toString() => 'RemoteDataList(list: $list)';
+
+  @override
+  bool operator ==(covariant RemoteDataList other) {
+    if (identical(this, other)) return true;
+
+    return ListEquality().equals(other.list, list);
+  }
 
   @override
   int get hashCode => list.hashCode;
