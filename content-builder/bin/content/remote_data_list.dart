@@ -1,7 +1,7 @@
 import '../models/models.dart';
 import '../models/tech_ids.dart';
 
-RemoteDataList remoteDataList = RemoteDataList(data: [
+RemoteDataList remoteDataList = RemoteDataList(list: [
   reactjsRemoteData,
   tailwindCssData,
 ]);
