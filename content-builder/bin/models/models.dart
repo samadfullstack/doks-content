@@ -258,26 +258,25 @@ class RemoteDataModel {
   String id;
   int version;
   String objUrl;
-  bool downloaded;
-
+  bool pendingDownload;
   RemoteDataModel({
     required this.id,
     required this.version,
     required this.objUrl,
-    required this.downloaded,
+    this.pendingDownload = true,
   });
 
   RemoteDataModel copyWith({
     String? id,
     int? version,
     String? objUrl,
-    bool? downloaded,
+    bool? pendingDownload,
   }) {
     return RemoteDataModel(
       id: id ?? this.id,
       version: version ?? this.version,
       objUrl: objUrl ?? this.objUrl,
-      downloaded: downloaded ?? this.downloaded,
+      pendingDownload: pendingDownload ?? this.pendingDownload,
     );
   }
 
@@ -286,7 +285,7 @@ class RemoteDataModel {
       'id': id,
       'version': version,
       'objUrl': objUrl,
-      'downloaded': downloaded,
+      'pendingDownload': pendingDownload,
     };
   }
 
@@ -295,7 +294,7 @@ class RemoteDataModel {
       id: map['id'] as String,
       version: map['version'] as int,
       objUrl: map['objUrl'] as String,
-      downloaded: map['downloaded'] as bool,
+      pendingDownload: map['pendingDownload'] as bool,
     );
   }
 
@@ -306,7 +305,7 @@ class RemoteDataModel {
 
   @override
   String toString() {
-    return 'RemoteDataModel(id: $id, version: $version, objUrl: $objUrl, downloaded: $downloaded)';
+    return 'RemoteDataModel(id: $id, version: $version, objUrl: $objUrl, pendingDownload: $pendingDownload)';
   }
 
   @override
@@ -316,7 +315,7 @@ class RemoteDataModel {
     return other.id == id &&
         other.version == version &&
         other.objUrl == objUrl &&
-        other.downloaded == downloaded;
+        other.pendingDownload == pendingDownload;
   }
 
   @override
@@ -324,7 +323,7 @@ class RemoteDataModel {
     return id.hashCode ^
         version.hashCode ^
         objUrl.hashCode ^
-        downloaded.hashCode;
+        pendingDownload.hashCode;
   }
 }
 
