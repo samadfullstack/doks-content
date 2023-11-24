@@ -7,6 +7,7 @@ TechModel reactjsContent = TechModel(
   description: "Front-end javascript library",
   version: "18.2.0",
   downloadSize: "987 kb",
+  related: [],
   sectionsList: [
     SectionModel(
       sectionTitle: "Hooks",

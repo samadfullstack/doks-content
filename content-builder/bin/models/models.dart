@@ -1,65 +1,77 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 import 'package:collection/collection.dart';
 
 // * >---------------------------------------> Tech model
 class TechModel {
   String id;
+
+  bool isSubTech;
   String techTitle;
   String description;
   String version;
   String downloadSize;
   List<SectionModel> sectionsList;
+  List<String> related;
   TechModel({
+    this.isSubTech = false,
     required this.id,
     required this.techTitle,
     required this.description,
     required this.version,
     required this.downloadSize,
     required this.sectionsList,
+    required this.related,
   });
 
   TechModel copyWith({
     String? id,
+    bool? isSubTech,
     String? techTitle,
     String? description,
     String? version,
     String? downloadSize,
     List<SectionModel>? sectionsList,
+    List<String>? related,
   }) {
     return TechModel(
       id: id ?? this.id,
+      isSubTech: isSubTech ?? this.isSubTech,
       techTitle: techTitle ?? this.techTitle,
       description: description ?? this.description,
       version: version ?? this.version,
       downloadSize: downloadSize ?? this.downloadSize,
       sectionsList: sectionsList ?? this.sectionsList,
+      related: related ?? this.related,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
+      'isSubTech': isSubTech,
       'techTitle': techTitle,
       'description': description,
       'version': version,
       'downloadSize': downloadSize,
       'sectionsList': sectionsList.map((x) => x.toMap()).toList(),
+      'related': related,
     };
   }
 
   factory TechModel.fromMap(Map<String, dynamic> map) {
     return TechModel(
       id: map['id'] as String,
+      isSubTech: map['isSubTech'] as bool,
       techTitle: map['techTitle'] as String,
       description: map['description'] as String,
       version: map['version'] as String,
       downloadSize: map['downloadSize'] as String,
       sectionsList: List<SectionModel>.from(
-        (map['sectionsList'] as List<dynamic>).map<SectionModel>(
+        (map['sectionsList'] as List<int>).map<SectionModel>(
           (x) => SectionModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
+      related: List<String>.from((map['related'] as List<String>)),
     );
   }
 
@@ -70,7 +82,7 @@ class TechModel {
 
   @override
   String toString() {
-    return 'TechModel(id: $id, techTitle: $techTitle, description: $description, version: $version, downloadSize: $downloadSize, sectionsList: $sectionsList)';
+    return 'TechModel(id: $id, isSubTech: $isSubTech, techTitle: $techTitle, description: $description, version: $version, downloadSize: $downloadSize, sectionsList: $sectionsList, related: $related)';
   }
 
   @override
@@ -78,21 +90,25 @@ class TechModel {
     if (identical(this, other)) return true;
 
     return other.id == id &&
+        other.isSubTech == isSubTech &&
         other.techTitle == techTitle &&
         other.description == description &&
         other.version == version &&
         other.downloadSize == downloadSize &&
-        ListEquality().equals(other.sectionsList, sectionsList);
+        ListEquality().equals(other.sectionsList, sectionsList) &&
+        ListEquality().equals(other.related, related);
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
+        isSubTech.hashCode ^
         techTitle.hashCode ^
         description.hashCode ^
         version.hashCode ^
         downloadSize.hashCode ^
-        sectionsList.hashCode;
+        sectionsList.hashCode ^
+        related.hashCode;
   }
 }
 
