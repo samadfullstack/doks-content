@@ -10,15 +10,17 @@ class TechModel {
   String description;
   String version;
   String downloadSize;
+  bool savedOffline;
   List<SectionModel> sectionsList;
   List<String> related;
   TechModel({
-    this.isSubTech = false,
     required this.id,
+    this.isSubTech = false,
     required this.techTitle,
     required this.description,
     required this.version,
     required this.downloadSize,
+    this.savedOffline = false,
     required this.sectionsList,
     required this.related,
   });
@@ -30,6 +32,7 @@ class TechModel {
     String? description,
     String? version,
     String? downloadSize,
+    bool? savedOffline,
     List<SectionModel>? sectionsList,
     List<String>? related,
   }) {
@@ -40,6 +43,7 @@ class TechModel {
       description: description ?? this.description,
       version: version ?? this.version,
       downloadSize: downloadSize ?? this.downloadSize,
+      savedOffline: savedOffline ?? this.savedOffline,
       sectionsList: sectionsList ?? this.sectionsList,
       related: related ?? this.related,
     );
@@ -53,6 +57,7 @@ class TechModel {
       'description': description,
       'version': version,
       'downloadSize': downloadSize,
+      'savedOffline': savedOffline,
       'sectionsList': sectionsList.map((x) => x.toMap()).toList(),
       'related': related,
     };
@@ -66,12 +71,13 @@ class TechModel {
       description: map['description'] as String,
       version: map['version'] as String,
       downloadSize: map['downloadSize'] as String,
+      savedOffline: map['savedOffline'] as bool,
       sectionsList: List<SectionModel>.from(
-        (map['sectionsList'] as List<int>).map<SectionModel>(
+        (map['sectionsList'] as List<dynamic>).map<SectionModel>(
           (x) => SectionModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
-      related: List<String>.from((map['related'] as List<String>)),
+      related: List<String>.from((map['related'] as List)),
     );
   }
 
@@ -82,7 +88,7 @@ class TechModel {
 
   @override
   String toString() {
-    return 'TechModel(id: $id, isSubTech: $isSubTech, techTitle: $techTitle, description: $description, version: $version, downloadSize: $downloadSize, sectionsList: $sectionsList, related: $related)';
+    return 'TechModel(id: $id, isSubTech: $isSubTech, techTitle: $techTitle, description: $description, version: $version, downloadSize: $downloadSize, savedOffline: $savedOffline, sectionsList: $sectionsList, related: $related)';
   }
 
   @override
@@ -95,6 +101,7 @@ class TechModel {
         other.description == description &&
         other.version == version &&
         other.downloadSize == downloadSize &&
+        other.savedOffline == savedOffline &&
         ListEquality().equals(other.sectionsList, sectionsList) &&
         ListEquality().equals(other.related, related);
   }
@@ -107,6 +114,7 @@ class TechModel {
         description.hashCode ^
         version.hashCode ^
         downloadSize.hashCode ^
+        savedOffline.hashCode ^
         sectionsList.hashCode ^
         related.hashCode;
   }
