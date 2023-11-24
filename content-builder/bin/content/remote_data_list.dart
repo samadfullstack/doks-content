@@ -11,7 +11,7 @@ var reactjsRemoteData = RemoteDataModel(
   version: 0,
   objUrl:
       "https://raw.githubusercontent.com/samadfullstack/doks-content/master/data/reactjs.json",
-  pendingDownload: false,
+  pendingDownload: true,
 );
 
 var tailwindCssData = RemoteDataModel(
@@ -19,5 +19,5 @@ var tailwindCssData = RemoteDataModel(
   version: 0,
   objUrl:
       "https://raw.githubusercontent.com/samadfullstack/doks-content/master/data/tailwindcss.json",
-  pendingDownload: false,
+  pendingDownload: true,
 );
