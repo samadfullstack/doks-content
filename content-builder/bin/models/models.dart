@@ -125,18 +125,22 @@ class TechModel {
 class SectionModel {
   String sectionTitle;
   List<DocModel> docList;
+  List<SectionModel> subSections;
   SectionModel({
     this.sectionTitle = "",
-    this.docList = const <DocModel>[],
+    this.docList = const [],
+    this.subSections = const [],
   });
 
   SectionModel copyWith({
     String? sectionTitle,
     List<DocModel>? docList,
+    List<SectionModel>? subSections,
   }) {
     return SectionModel(
       sectionTitle: sectionTitle ?? this.sectionTitle,
       docList: docList ?? this.docList,
+      subSections: subSections ?? this.subSections,
     );
   }
 
@@ -144,6 +148,7 @@ class SectionModel {
     return <String, dynamic>{
       'sectionTitle': sectionTitle,
       'docList': docList.map((x) => x.toMap()).toList(),
+      'subSections': subSections.map((x) => x.toMap()).toList(),
     };
   }
 
@@ -153,6 +158,11 @@ class SectionModel {
       docList: List<DocModel>.from(
         (map['docList'] as List<dynamic>).map<DocModel>(
           (x) => DocModel.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
+      subSections: List<SectionModel>.from(
+        (map['subSections'] as List<dynamic>).map<SectionModel>(
+          (x) => SectionModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
     );
@@ -165,18 +175,20 @@ class SectionModel {
 
   @override
   String toString() =>
-      'SectionModel(sectionTitle: $sectionTitle, docList: $docList)';
+      'SectionModel(sectionTitle: $sectionTitle, docList: $docList, subSections: $subSections)';
 
   @override
   bool operator ==(covariant SectionModel other) {
     if (identical(this, other)) return true;
 
     return other.sectionTitle == sectionTitle &&
-        ListEquality().equals(other.docList, docList);
+        ListEquality().equals(other.docList, docList) &&
+        ListEquality().equals(other.subSections, subSections);
   }
 
   @override
-  int get hashCode => sectionTitle.hashCode ^ docList.hashCode;
+  int get hashCode =>
+      sectionTitle.hashCode ^ docList.hashCode ^ subSections.hashCode;
 }
 
 // * >--------------------------> doc model

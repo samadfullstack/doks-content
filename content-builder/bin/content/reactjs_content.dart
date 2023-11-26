@@ -10,6 +10,19 @@ TechModel reactjsContent = TechModel(
   related: [TechIds.tailwindcss, TechIds.reactjs],
   sectionsList: [
     SectionModel(
+      sectionTitle: "Parent section",
+      docList: [DocModel(docTitle: "parent doc")],
+      subSections: [
+        SectionModel(
+          sectionTitle: "child section",
+          docList: [
+            DocModel(docTitle: "child doc"),
+            DocModel(docTitle: "child doc"),
+          ],
+        ),
+      ],
+    ),
+    SectionModel(
       sectionTitle: "Hooks",
       docList: [
         DocModel(
