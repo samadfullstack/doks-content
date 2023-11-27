@@ -1,18 +1,23 @@
 import 'constants/content_collection.dart';
+import 'models/tech_ids.dart';
 import 'utils/utils.dart';
 
 void main(List<String> args) async {
   contentWriter(
-    path: buildPathInData("remote_data_list.json"),
+    path: buildPathInData("${TechIds.remotedatalist}.json"),
     data: ContentCollection.remoteDatalist,
   );
   contentWriter(
-    path: buildPathInData("reactjs.json"),
+    path: buildPathInData("${TechIds.reactjs}.json"),
     data: ContentCollection.reactjs,
   );
   contentWriter(
-    path: buildPathInData("tailwindcss.json"),
+    path: buildPathInData("${TechIds.tailwindcss}.json"),
     data: ContentCollection.tailwindcss,
+  );
+  contentWriter(
+    path: buildPathInData("${TechIds.test}.json"),
+    data: ContentCollection.test,
   );
 
   print("Completed content writing");
