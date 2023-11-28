@@ -1,6 +1,5 @@
 import '../models/models.dart';
 import '../models/tech_ids.dart';
-import 'all_exports.dart';
 
 TechModel reactjsContent = TechModel(
   techTitle: TechIds.reactjs,
@@ -10,8 +9,6 @@ TechModel reactjsContent = TechModel(
   downloadSize: "987 kb",
   related: [TechIds.tailwindcss, TechIds.reactjs],
   sectionsList: [
-    // todo comment this when done
-    ...testContent.sectionsList,
     SectionModel(
       sectionTitle: "Hooks",
       docList: [
