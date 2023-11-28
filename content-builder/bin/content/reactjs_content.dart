@@ -144,9 +144,16 @@ TechModel reactjsContent = TechModel(
       sectionTitle: "Components",
       docList: [
         DocModel(
+          docTitle: "Component",
+          url:
+              "https://raw.githubusercontent.com/samadfullstack/doks-content/master/react/Component.md",
+          markdown: "",
+          keywords: [],
+        ),
+        DocModel(
           docTitle: "components",
           url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/master/react/Components.md",
+              "https://raw.githubusercontent.com/samadfullstack/doks-content/master/react/components.md",
           markdown: "",
           keywords: [],
         ),
