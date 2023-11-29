@@ -4,19 +4,19 @@ import 'utils/utils.dart';
 
 void main(List<String> args) async {
   contentWriter(
-    path: buildPathInData("${TechIds.remotedatalist}.json"),
+    path: await buildPathMetaData(TechIds.remotedatalist),
     data: ContentCollection.remoteDatalist,
   );
   contentWriter(
-    path: buildPathInData("${TechIds.reactjs}.json"),
+    path: await buildPathInData(TechIds.reactjs),
     data: ContentCollection.reactjs,
   );
   contentWriter(
-    path: buildPathInData("${TechIds.tailwindcss}.json"),
+    path: await buildPathInData(TechIds.tailwindcss),
     data: ContentCollection.tailwindcss,
   );
   contentWriter(
-    path: buildPathInData("${TechIds.test}.json"),
+    path: await buildPathInData(TechIds.test),
     data: ContentCollection.test,
   );
 
