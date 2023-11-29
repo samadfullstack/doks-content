@@ -11,7 +11,7 @@ Future<String> buildPathInData(String fileName) async {
   return pathpkg.joinAll([dirPath, "$fileName.json"]);
 }
 
-Future<String> buildPathMetaData(String fileName) async {
+Future<String> buildPathInMetaData(String fileName) async {
   String dirPath = pathpkg.joinAll(["D:", "doks-content", "docs", "meta-data"]);
 
   // create tech folder if it doesn't exist

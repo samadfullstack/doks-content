@@ -4,7 +4,7 @@ import 'utils/utils.dart';
 
 void main(List<String> args) async {
   contentWriter(
-    path: await buildPathMetaData(TechIds.remotedatalist),
+    path: await buildPathInMetaData(TechIds.remotedatalist),
     data: ContentCollection.remoteDatalist,
   );
   contentWriter(

@@ -1,6 +1,9 @@
 import '../models/models.dart';
 import '../models/tech_ids.dart';
 
+String _baseUrl =
+    "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content";
+
 TechModel reactjsContent = TechModel(
   techTitle: TechIds.reactjs,
   id: TechIds.reactjs,
@@ -14,127 +17,109 @@ TechModel reactjsContent = TechModel(
       docList: [
         DocModel(
           docTitle: "hooks",
-          url:
-              "https://github.com/samadfullstack/doks-content/raw/version2/docs/reactjs/content/hooks.md",
+          url: "$_baseUrl/hooks.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "use",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/use.md",
+          url: "$_baseUrl/use.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useCallback",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useCallback.md",
+          url: "$_baseUrl/useCallback.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useContext",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useContext.md",
+          url: "$_baseUrl/useContext.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useDebugValue",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useDebugValue.md",
+          url: "$_baseUrl/useDebugValue.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useDeferredValue",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useDeferredValue.md",
+          url: "$_baseUrl/useDeferredValue.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useEffect",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useEffect.md",
+          url: "$_baseUrl/useEffect.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useId",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useId.md",
+          url: "$_baseUrl/useId.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useImperativeHandle",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useImperativeHandle.md",
+          url: "$_baseUrl/useImperativeHandle.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useInsertionEffect",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useInsertionEffect.md",
+          url: "$_baseUrl/useInsertionEffect.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useLayoutEffect",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useLayoutEffect.md",
+          url: "$_baseUrl/useLayoutEffect.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useMemo",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useMemo.md",
+          url: "$_baseUrl/useMemo.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useOptimistic",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useOptimistic.md",
+          url: "$_baseUrl/useOptimistic.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useReducer",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useReducer.md",
+          url: "$_baseUrl/useReducer.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useRef",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useRef.md",
+          url: "$_baseUrl/useRef.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useState",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useState.md",
+          url: "$_baseUrl/useState.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useSyncExternalStore",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useSyncExternalStore.md",
+          url: "$_baseUrl/useSyncExternalStore.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "useTransition",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/useTransition.md",
+          url: "$_baseUrl/useTransition.md",
           markdown: "",
           keywords: [],
         ),
@@ -145,43 +130,37 @@ TechModel reactjsContent = TechModel(
       docList: [
         DocModel(
           docTitle: "Component",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/Component.md",
+          url: "$_baseUrl/Component.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "components",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/components.md",
+          url: "$_baseUrl/components.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "Fragment",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/Fragment.md",
+          url: "$_baseUrl/Fragment.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "Profiler",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/Profiler.md",
+          url: "$_baseUrl/Profiler.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "StrictMode",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/StrictMode.md",
+          url: "$_baseUrl/StrictMode.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "Suspense",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/Suspense.md",
+          url: "$_baseUrl/Suspense.md",
           markdown: "",
           keywords: [],
         ),
@@ -192,64 +171,55 @@ TechModel reactjsContent = TechModel(
       docList: [
         DocModel(
           docTitle: "apis",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/apis.md",
+          url: "$_baseUrl/apis.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "cache",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/cache.md",
+          url: "$_baseUrl/cache.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "createContext",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/createContext.md",
+          url: "$_baseUrl/createContext.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "forwardRef",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/forwardRef.md",
+          url: "$_baseUrl/forwardRef.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "lazy",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/lazy.md",
+          url: "$_baseUrl/lazy.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "memo",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/memo.md",
+          url: "$_baseUrl/memo.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "startTransition",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/startTransition.md",
+          url: "$_baseUrl/startTransition.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "experimental_taintObjectReference",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/experimental_taintObjectReference.md",
+          url: "$_baseUrl/experimental_taintObjectReference.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "experimental_taintUniqueValue",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/experimental_taintUniqueValue.md",
+          url: "$_baseUrl/experimental_taintUniqueValue.md",
           markdown: "",
           keywords: [],
         ),
@@ -260,15 +230,13 @@ TechModel reactjsContent = TechModel(
       docList: [
         DocModel(
           docTitle: "directives",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/directives.md",
+          url: "$_baseUrl/directives.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "use-client",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/use-client.md",
+          url: "$_baseUrl/use-client.md",
           markdown: "",
           keywords: [],
         ),
