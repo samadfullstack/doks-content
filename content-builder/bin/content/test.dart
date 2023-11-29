@@ -1,13 +1,13 @@
 import '../models/models.dart';
-import '../models/tech_ids.dart';
+import '../constants/tech_ids.dart';
 
 TechModel testContent = TechModel(
-  techTitle: TechIds.test,
-  id: TechIds.test,
+  techTitle: TechIds.test.name,
+  id: TechIds.test.name,
   description: "Front-end javascript library",
   version: "18.2.0",
   downloadSize: "987 kb",
-  related: [TechIds.tailwindcss, TechIds.reactjs],
+  related: [TechIds.tailwindCss.name, TechIds.reactJs.name],
   sectionsList: [
     SectionModel(
       sectionTitle: "Level 1 Section",

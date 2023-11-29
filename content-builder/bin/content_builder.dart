@@ -1,22 +1,22 @@
 import 'constants/content_collection.dart';
-import 'models/tech_ids.dart';
+import 'constants/tech_ids.dart';
 import 'utils/utils.dart';
 
 void main(List<String> args) async {
   contentWriter(
-    path: await buildPathInMetaData(TechIds.remotedatalist),
+    path: await buildPathInMetaData(TechIds.remoteDataList.name),
     data: ContentCollection.remoteDatalist,
   );
   contentWriter(
-    path: await buildPathInDocs(TechIds.reactjs),
+    path: await buildPathInDocs(TechIds.reactJs.name),
     data: ContentCollection.reactjs,
   );
   contentWriter(
-    path: await buildPathInDocs(TechIds.tailwindcss),
+    path: await buildPathInDocs(TechIds.tailwindCss.name),
     data: ContentCollection.tailwindcss,
   );
   contentWriter(
-    path: await buildPathInDocs(TechIds.test),
+    path: await buildPathInDocs(TechIds.test.name),
     data: ContentCollection.test,
   );
 

@@ -1,16 +1,16 @@
 import '../models/models.dart';
-import '../models/tech_ids.dart';
+import '../constants/tech_ids.dart';
 
 String _baseUrl =
     "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content";
 
 TechModel reactjsContent = TechModel(
-  techTitle: TechIds.reactjs,
-  id: TechIds.reactjs,
+  techTitle: TechIds.reactJs.name,
+  id: TechIds.reactJs.name,
   description: "Front-end javascript library",
   version: "18.2.0",
   downloadSize: "987 kb",
-  related: [TechIds.tailwindcss, TechIds.reactjs],
+  related: [TechIds.tailwindCss.name, TechIds.reactJs.name],
   sectionsList: [
     SectionModel(
       sectionTitle: "Hooks",

@@ -1,12 +1,12 @@
 import '../models/models.dart';
-import '../models/tech_ids.dart';
+import '../constants/tech_ids.dart';
 
 TechModel tailwindCssContent = TechModel(
-  id: TechIds.tailwindcss,
-  techTitle: TechIds.tailwindcss,
+  id: TechIds.tailwindCss.name,
+  techTitle: TechIds.tailwindCss.name,
   description: "Front-end javascript library",
   version: "18.2.0",
   downloadSize: "987 kb",
   sectionsList: [],
-  related: [TechIds.tailwindcss, TechIds.reactjs],
+  related: [TechIds.tailwindCss.name, TechIds.reactJs.name],
 );
