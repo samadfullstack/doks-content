@@ -9,7 +9,7 @@ RemoteDataList remoteDataList = RemoteDataList(list: [
 
 var reactjsRemoteData = RemoteDataModel(
   id: TechIds.reactjs,
-  version: 0,
+  version: 1,
   objUrl:
       "https://raw.githubusercontent.com/samadfullstack/doks-content/master/data/reactjs.json",
   pendingDownload: true,
