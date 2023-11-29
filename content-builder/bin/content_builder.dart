@@ -8,15 +8,15 @@ void main(List<String> args) async {
     data: ContentCollection.remoteDatalist,
   );
   contentWriter(
-    path: await buildPathInData(TechIds.reactjs),
+    path: await buildPathInDocs(TechIds.reactjs),
     data: ContentCollection.reactjs,
   );
   contentWriter(
-    path: await buildPathInData(TechIds.tailwindcss),
+    path: await buildPathInDocs(TechIds.tailwindcss),
     data: ContentCollection.tailwindcss,
   );
   contentWriter(
-    path: await buildPathInData(TechIds.test),
+    path: await buildPathInDocs(TechIds.test),
     data: ContentCollection.test,
   );
 

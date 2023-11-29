@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:path/path.dart' as pathpkg;
 
-Future<String> buildPathInData(String fileName) async {
+Future<String> buildPathInDocs(String fileName) async {
   String dirPath = pathpkg.joinAll(["D:", "doks-content", "docs", fileName]);
 
   // create tech folder if it doesn't exist

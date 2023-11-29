@@ -7,26 +7,26 @@ RemoteDataList remoteDataList = RemoteDataList(list: [
   testData,
 ]);
 
+String _baseUrl =
+    "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/";
+
 var reactjsRemoteData = RemoteDataModel(
   id: TechIds.reactjs,
   version: 2,
-  objUrl:
-      "https://raw.githubusercontent.com/samadfullstack/doks-content/master/data/reactjs.json",
+  objUrl: "${TechIds.reactjs}/${TechIds.reactjs}.json",
   pendingDownload: true,
 );
 
 var tailwindCssData = RemoteDataModel(
   id: TechIds.tailwindcss,
   version: 2,
-  objUrl:
-      "https://raw.githubusercontent.com/samadfullstack/doks-content/master/data/tailwindcss.json",
+  objUrl: "${TechIds.tailwindcss}/${TechIds.tailwindcss}.json",
   pendingDownload: true,
 );
 
 var testData = RemoteDataModel(
   id: TechIds.test,
   version: 2,
-  objUrl:
-      "https://raw.githubusercontent.com/samadfullstack/doks-content/master/data/test.json",
+  objUrl: "${TechIds.test}/${TechIds.test}.json",
   pendingDownload: true,
 );
