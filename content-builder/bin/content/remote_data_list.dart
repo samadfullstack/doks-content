@@ -13,20 +13,20 @@ String _baseUrl =
 var reactjsRemoteData = RemoteDataModel(
   id: TechIds.reactjs,
   version: 2,
-  objUrl: "${TechIds.reactjs}/${TechIds.reactjs}.json",
+  objUrl: "$_baseUrl${TechIds.reactjs}/data.json",
   pendingDownload: true,
 );
 
 var tailwindCssData = RemoteDataModel(
   id: TechIds.tailwindcss,
   version: 2,
-  objUrl: "${TechIds.tailwindcss}/${TechIds.tailwindcss}.json",
+  objUrl: "$_baseUrl${TechIds.tailwindcss}/data.json",
   pendingDownload: true,
 );
 
 var testData = RemoteDataModel(
   id: TechIds.test,
   version: 2,
-  objUrl: "${TechIds.test}/${TechIds.test}.json",
+  objUrl: "$_baseUrl${TechIds.test}/data.json",
   pendingDownload: true,
 );

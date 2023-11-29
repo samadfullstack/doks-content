@@ -8,7 +8,7 @@ Future<String> buildPathInDocs(String fileName) async {
   var techDir = Directory(dirPath);
   if (!await techDir.exists()) techDir.create();
 
-  return pathpkg.joinAll([dirPath, "$fileName.json"]);
+  return pathpkg.joinAll([dirPath, "data.json"]);
 }
 
 Future<String> buildPathInMetaData(String fileName) async {

@@ -1,1 +1,22 @@
-{"list":[{"id":"reactjs","version":2,"objUrl":"reactjs/reactjs.json","pendingDownload":true},{"id":"tailwindcss","version":2,"objUrl":"tailwindcss/tailwindcss.json","pendingDownload":true},{"id":"test","version":2,"objUrl":"test/test.json","pendingDownload":true}]}
+{
+  "list": [
+    {
+      "id": "reactjs",
+      "version": 2,
+      "objUrl": "reactjs/reactjs.json",
+      "pendingDownload": true
+    },
+    {
+      "id": "tailwindcss",
+      "version": 2,
+      "objUrl": "tailwindcss/tailwindcss.json",
+      "pendingDownload": true
+    },
+    {
+      "id": "test",
+      "version": 2,
+      "objUrl": "test/test.json",
+      "pendingDownload": true
+    }
+  ]
+}
