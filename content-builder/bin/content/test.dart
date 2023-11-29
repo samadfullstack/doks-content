@@ -1,6 +1,9 @@
 import '../models/models.dart';
 import '../constants/tech_ids.dart';
 
+String _baseUrl =
+    "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/${TechIds.reactJs.name}/content";
+
 TechModel testContent = TechModel(
   techTitle: TechIds.test.name,
   id: TechIds.test.name,
@@ -14,43 +17,37 @@ TechModel testContent = TechModel(
       docList: [
         DocModel(
           docTitle: "Level 1 doc1",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+          url: "$_baseUrl/hooks.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "Level 1 doc2",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+          url: "$_baseUrl/hooks.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "Level 1 doc3",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+          url: "$_baseUrl/hooks.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "Level 1 doc4",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+          url: "$_baseUrl/hooks.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "Level 1 doc5",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+          url: "$_baseUrl/hooks.md",
           markdown: "",
           keywords: [],
         ),
         DocModel(
           docTitle: "Level 1 doc6",
-          url:
-              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+          url: "$_baseUrl/hooks.md",
           markdown: "",
           keywords: [],
         ),
@@ -61,43 +58,37 @@ TechModel testContent = TechModel(
           docList: [
             DocModel(
               docTitle: "Level 2 doc1",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc2",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc3",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc4",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc5",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc6",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
@@ -108,43 +99,37 @@ TechModel testContent = TechModel(
           docList: [
             DocModel(
               docTitle: "Level 2 doc1",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc2",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc3",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc4",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc5",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc6",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
@@ -155,43 +140,37 @@ TechModel testContent = TechModel(
           docList: [
             DocModel(
               docTitle: "Level 2 doc1",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc2",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc3",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc4",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc5",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc6",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
@@ -202,43 +181,37 @@ TechModel testContent = TechModel(
           docList: [
             DocModel(
               docTitle: "Level 2 doc1",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc2",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc3",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc4",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc5",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
             DocModel(
               docTitle: "Level 2 doc6",
-              url:
-                  "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+              url: "$_baseUrl/hooks.md",
               markdown: "",
               keywords: [],
             ),
@@ -249,43 +222,37 @@ TechModel testContent = TechModel(
               docList: [
                 DocModel(
                   docTitle: "Level 3 doc1",
-                  url:
-                      "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                  url: "$_baseUrl/hooks.md",
                   markdown: "",
                   keywords: [],
                 ),
                 DocModel(
                   docTitle: "Level 3 doc2",
-                  url:
-                      "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                  url: "$_baseUrl/hooks.md",
                   markdown: "",
                   keywords: [],
                 ),
                 DocModel(
                   docTitle: "Level 3 doc3",
-                  url:
-                      "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                  url: "$_baseUrl/hooks.md",
                   markdown: "",
                   keywords: [],
                 ),
                 DocModel(
                   docTitle: "Level 3 doc4",
-                  url:
-                      "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                  url: "$_baseUrl/hooks.md",
                   markdown: "",
                   keywords: [],
                 ),
                 DocModel(
                   docTitle: "Level 3 doc5",
-                  url:
-                      "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                  url: "$_baseUrl/hooks.md",
                   markdown: "",
                   keywords: [],
                 ),
                 DocModel(
                   docTitle: "Level 3 doc6",
-                  url:
-                      "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                  url: "$_baseUrl/hooks.md",
                   markdown: "",
                   keywords: [],
                 ),
@@ -296,43 +263,37 @@ TechModel testContent = TechModel(
                   docList: [
                     DocModel(
                       docTitle: "Level 4 doc1",
-                      url:
-                          "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                      url: "$_baseUrl/hooks.md",
                       markdown: "",
                       keywords: [],
                     ),
                     DocModel(
                       docTitle: "Level 4 doc2",
-                      url:
-                          "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                      url: "$_baseUrl/hooks.md",
                       markdown: "",
                       keywords: [],
                     ),
                     DocModel(
                       docTitle: "Level 4 doc3",
-                      url:
-                          "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                      url: "$_baseUrl/hooks.md",
                       markdown: "",
                       keywords: [],
                     ),
                     DocModel(
                       docTitle: "Level 4 doc4",
-                      url:
-                          "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                      url: "$_baseUrl/hooks.md",
                       markdown: "",
                       keywords: [],
                     ),
                     DocModel(
                       docTitle: "Level 4 doc5",
-                      url:
-                          "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                      url: "$_baseUrl/hooks.md",
                       markdown: "",
                       keywords: [],
                     ),
                     DocModel(
                       docTitle: "Level 4 doc6",
-                      url:
-                          "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                      url: "$_baseUrl/hooks.md",
                       markdown: "",
                       keywords: [],
                     ),
@@ -343,43 +304,37 @@ TechModel testContent = TechModel(
                       docList: [
                         DocModel(
                           docTitle: "Level 5 doc1",
-                          url:
-                              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                          url: "$_baseUrl/hooks.md",
                           markdown: "",
                           keywords: [],
                         ),
                         DocModel(
                           docTitle: "Level 5 doc2",
-                          url:
-                              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                          url: "$_baseUrl/hooks.md",
                           markdown: "",
                           keywords: [],
                         ),
                         DocModel(
                           docTitle: "Level 5 doc3",
-                          url:
-                              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                          url: "$_baseUrl/hooks.md",
                           markdown: "",
                           keywords: [],
                         ),
                         DocModel(
                           docTitle: "Level 5 doc4",
-                          url:
-                              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                          url: "$_baseUrl/hooks.md",
                           markdown: "",
                           keywords: [],
                         ),
                         DocModel(
                           docTitle: "Level 5 doc5",
-                          url:
-                              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                          url: "$_baseUrl/hooks.md",
                           markdown: "",
                           keywords: [],
                         ),
                         DocModel(
                           docTitle: "Level 5 doc6",
-                          url:
-                              "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content/hooks.md",
+                          url: "$_baseUrl/hooks.md",
                           markdown: "",
                           keywords: [],
                         ),

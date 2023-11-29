@@ -2,7 +2,7 @@ import '../models/models.dart';
 import '../constants/tech_ids.dart';
 
 String _baseUrl =
-    "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactjs/content";
+    "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/${TechIds.reactJs.name}/content";
 
 TechModel reactjsContent = TechModel(
   techTitle: TechIds.reactJs.name,

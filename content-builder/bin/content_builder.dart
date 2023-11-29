@@ -20,5 +20,7 @@ void main(List<String> args) async {
     data: ContentCollection.test,
   );
 
+  // TechIds.values.forEach((element) => print(element.name));
+
   print("Completed content writing");
 }
