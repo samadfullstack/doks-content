@@ -8,5 +8,6 @@ TechModel tailwindCssContent = TechModel(
   version: "18.2.0",
   downloadSize: "987 kb",
   sectionsList: [],
+  isSubTech: true,
   related: [TechIds.tailwindCss.name, TechIds.reactJs.name],
 );
