@@ -1,5 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+
 import 'package:collection/collection.dart';
+import 'package:uuid/uuid.dart';
 
 // * >---------------------------------------> Tech model
 class TechModel {
@@ -194,24 +197,30 @@ class SectionModel {
 // * >--------------------------> doc model
 
 class DocModel {
+  String? id = Uuid().v1();
   String docTitle;
   String url;
   String markdown;
   List<String> keywords;
   DocModel({
+    this.id,
     this.docTitle = "Doc title",
     this.url = "doc url",
     this.markdown = "# markdown",
     this.keywords = const <String>[],
-  });
+  }) {
+    id = Uuid().v1();
+  }
 
   DocModel copyWith({
+    String? id,
     String? docTitle,
     String? url,
     String? markdown,
     List<String>? keywords,
   }) {
     return DocModel(
+      id: id ?? this.id,
       docTitle: docTitle ?? this.docTitle,
       url: url ?? this.url,
       markdown: markdown ?? this.markdown,
@@ -221,6 +230,7 @@ class DocModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'id': id,
       'docTitle': docTitle,
       'url': url,
       'markdown': markdown,
@@ -230,10 +240,11 @@ class DocModel {
 
   factory DocModel.fromMap(Map<String, dynamic> map) {
     return DocModel(
+      id: map['id'] as String,
       docTitle: map['docTitle'] as String,
       url: map['url'] as String,
       markdown: map['markdown'] as String,
-      keywords: List<String>.from((map['keywords'] as List<String>)),
+      keywords: List<String>.from((map['keywords'] as List)),
     );
   }
 
@@ -244,22 +255,25 @@ class DocModel {
 
   @override
   String toString() {
-    return 'DocModel(docTitle: $docTitle, url: $url, markdown: $markdown, keywords: $keywords)';
+    return 'DocModel(id: $id, docTitle: $docTitle, url: $url, markdown: $markdown, keywords: $keywords)';
   }
 
   @override
   bool operator ==(covariant DocModel other) {
     if (identical(this, other)) return true;
+    final listEquals = const DeepCollectionEquality().equals;
 
-    return other.docTitle == docTitle &&
+    return other.id == id &&
+        other.docTitle == docTitle &&
         other.url == url &&
         other.markdown == markdown &&
-        ListEquality().equals(other.keywords, keywords);
+        listEquals(other.keywords, keywords);
   }
 
   @override
   int get hashCode {
-    return docTitle.hashCode ^
+    return id.hashCode ^
+        docTitle.hashCode ^
         url.hashCode ^
         markdown.hashCode ^
         keywords.hashCode;

@@ -2,7 +2,6 @@ name: content_builder
 description: A sample command-line application.
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
-
 environment:
   sdk: ^3.1.5
 
@@ -11,6 +10,7 @@ dependencies:
   collection: ^1.18.0
   http: ^1.1.0
   path: ^1.8.3
+  uuid: ^4.2.1
 
 dev_dependencies:
   lints: ^2.0.0
