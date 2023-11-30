@@ -204,10 +204,10 @@ class DocModel {
   List<String> keywords;
   DocModel({
     this.id,
-    this.docTitle = "Doc title",
-    this.url = "doc url",
-    this.markdown = "# markdown",
-    this.keywords = const <String>[],
+    this.docTitle = "",
+    this.url = "",
+    this.markdown = "",
+    this.keywords = const[],
   }) {
     id = Uuid().v1();
   }
