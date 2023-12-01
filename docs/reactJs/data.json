@@ -1,1 +1,298 @@
-{"id":"reactJs","isSubTech":false,"techTitle":"reactJs","description":"Front-end javascript library","version":"18.2.0","downloadSize":"987 kb","savedOffline":false,"sectionsList":[{"sectionTitle":"Hooks","docList":[{"id":"601491f0-a137-1dce-bd52-b9c569c39aa5","docTitle":"hooks","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/hooks.md","markdown":"","keywords":[]},{"id":"601491f2-a137-1dce-bd52-b9c569c39aa5","docTitle":"use","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/use.md","markdown":"","keywords":[]},{"id":"601491f4-a137-1dce-bd52-b9c569c39aa5","docTitle":"useCallback","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useCallback.md","markdown":"","keywords":[]},{"id":"601491f6-a137-1dce-bd52-b9c569c39aa5","docTitle":"useContext","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useContext.md","markdown":"","keywords":[]},{"id":"601491f8-a137-1dce-bd52-b9c569c39aa5","docTitle":"useDebugValue","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useDebugValue.md","markdown":"","keywords":[]},{"id":"601491fa-a137-1dce-bd52-b9c569c39aa5","docTitle":"useDeferredValue","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useDeferredValue.md","markdown":"","keywords":[]},{"id":"601491fc-a137-1dce-bd52-b9c569c39aa5","docTitle":"useEffect","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useEffect.md","markdown":"","keywords":[]},{"id":"601491fe-a137-1dce-bd52-b9c569c39aa5","docTitle":"useId","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useId.md","markdown":"","keywords":[]},{"id":"60b25891-a137-1dce-bd52-b9c569c39aa5","docTitle":"useImperativeHandle","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useImperativeHandle.md","markdown":"","keywords":[]},{"id":"60b25893-a137-1dce-bd52-b9c569c39aa5","docTitle":"useInsertionEffect","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useInsertionEffect.md","markdown":"","keywords":[]},{"id":"60b25895-a137-1dce-bd52-b9c569c39aa5","docTitle":"useLayoutEffect","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useLayoutEffect.md","markdown":"","keywords":[]},{"id":"60b25897-a137-1dce-bd52-b9c569c39aa5","docTitle":"useMemo","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useMemo.md","markdown":"","keywords":[]},{"id":"60b25899-a137-1dce-bd52-b9c569c39aa5","docTitle":"useOptimistic","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useOptimistic.md","markdown":"","keywords":[]},{"id":"60b2589b-a137-1dce-bd52-b9c569c39aa5","docTitle":"useReducer","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useReducer.md","markdown":"","keywords":[]},{"id":"61498f80-a137-1dce-bd52-b9c569c39aa5","docTitle":"useRef","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useRef.md","markdown":"","keywords":[]},{"id":"61498f82-a137-1dce-bd52-b9c569c39aa5","docTitle":"useState","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useState.md","markdown":"","keywords":[]},{"id":"61498f84-a137-1dce-bd52-b9c569c39aa5","docTitle":"useSyncExternalStore","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useSyncExternalStore.md","markdown":"","keywords":[]},{"id":"61498f86-a137-1dce-bd52-b9c569c39aa5","docTitle":"useTransition","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useTransition.md","markdown":"","keywords":[]}],"subSections":[]},{"sectionTitle":"Components","docList":[{"id":"61dd4401-a137-1dce-bd52-b9c569c39aa5","docTitle":"component","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/component.md","markdown":"","keywords":[]},{"id":"61dd4403-a137-1dce-bd52-b9c569c39aa5","docTitle":"components","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/components.md","markdown":"","keywords":[]},{"id":"61dd4405-a137-1dce-bd52-b9c569c39aa5","docTitle":"fragment","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/fragment.md","markdown":"","keywords":[]},{"id":"61dd4407-a137-1dce-bd52-b9c569c39aa5","docTitle":"profiler","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/profiler.md","markdown":"","keywords":[]},{"id":"61dd4409-a137-1dce-bd52-b9c569c39aa5","docTitle":"strictMode","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/strictMode.md","markdown":"","keywords":[]},{"id":"61dd440b-a137-1dce-bd52-b9c569c39aa5","docTitle":"suspense","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/suspense.md","markdown":"","keywords":[]}],"subSections":[]},{"sectionTitle":"Apis","docList":[{"id":"625707e1-a137-1dce-bd52-b9c569c39aa5","docTitle":"apis","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/apis.md","markdown":"","keywords":[]},{"id":"62756551-a137-1dce-bd52-b9c569c39aa5","docTitle":"cache","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/cache.md","markdown":"","keywords":[]},{"id":"62756553-a137-1dce-bd52-b9c569c39aa5","docTitle":"createContext","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/createContext.md","markdown":"","keywords":[]},{"id":"62756555-a137-1dce-bd52-b9c569c39aa5","docTitle":"forwardRef","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/forwardRef.md","markdown":"","keywords":[]},{"id":"628766b0-a137-1dce-bd52-b9c569c39aa5","docTitle":"lazy","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/lazy.md","markdown":"","keywords":[]},{"id":"628766b2-a137-1dce-bd52-b9c569c39aa5","docTitle":"memo","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/memo.md","markdown":"","keywords":[]},{"id":"628766b4-a137-1dce-bd52-b9c569c39aa5","docTitle":"startTransition","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/startTransition.md","markdown":"","keywords":[]},{"id":"628766b6-a137-1dce-bd52-b9c569c39aa5","docTitle":"experimentalTaintObjectReference","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/experimentalTaintObjectReference.md","markdown":"","keywords":[]},{"id":"628766b8-a137-1dce-bd52-b9c569c39aa5","docTitle":"experimentalTaintUniqueValue","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/experimentalTaintUniqueValue.md","markdown":"","keywords":[]},{"id":"628766ba-a137-1dce-bd52-b9c569c39aa5","docTitle":"experimentalUseEffectEvent","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/experimentalUseEffectEvent.md","markdown":"","keywords":[]}],"subSections":[]},{"sectionTitle":"Directives","docList":[{"id":"628766bc-a137-1dce-bd52-b9c569c39aa5","docTitle":"directives","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/directives.md","markdown":"","keywords":[]},{"id":"628766be-a137-1dce-bd52-b9c569c39aa5","docTitle":"useClient","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useClient.md","markdown":"","keywords":[]},{"id":"628766c0-a137-1dce-bd52-b9c569c39aa5","docTitle":"useServer","url":"https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useServer.md","markdown":"","keywords":[]}],"subSections":[]}],"related":["tailwindCss","reactJs"]}
+{
+  "id": "reactJs",
+  "isSubTech": false,
+  "techTitle": "reactJs",
+  "description": "Front-end javascript library",
+  "version": "18.2.0",
+  "downloadSize": "987 kb",
+  "savedOffline": false,
+  "sectionsList": [
+    {
+      "sectionTitle": "Hooks",
+      "docList": [
+        {
+          "id": "d91476d0-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "hooks",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/hooks.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e080-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "use",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/use.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e081-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useCallback",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useCallback.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e082-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useContext",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useContext.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e083-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useDebugValue",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useDebugValue.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e084-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useDeferredValue",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useDeferredValue.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e085-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useEffect",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useEffect.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e086-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useId",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useId.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e087-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useImperativeHandle",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useImperativeHandle.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e088-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useInsertionEffect",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useInsertionEffect.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e089-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useLayoutEffect",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useLayoutEffect.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e08a-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useMemo",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useMemo.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e08b-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useOptimistic",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useOptimistic.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e08c-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useReducer",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useReducer.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e08d-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useRef",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useRef.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e08e-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useState",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useState.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e08f-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useSyncExternalStore",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useSyncExternalStore.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "da44e090-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useTransition",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useTransition.md",
+          "markdown": "",
+          "keywords": []
+        }
+      ],
+      "subSections": []
+    },
+    {
+      "sectionTitle": "Components",
+      "docList": [
+        {
+          "id": "dadd4ff0-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "component",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/component.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "dadd4ff1-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "components",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/components.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "dadd4ff2-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "fragment",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/fragment.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "dadd4ff3-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "profiler",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/profiler.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "dadd4ff4-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "strictMode",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/strictMode.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "dadd4ff5-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "suspense",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/suspense.md",
+          "markdown": "",
+          "keywords": []
+        }
+      ],
+      "subSections": []
+    },
+    {
+      "sectionTitle": "Apis",
+      "docList": [
+        {
+          "id": "dadd4ff6-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "apis",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/apis.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "dadd4ff7-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "cache",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/cache.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "db210fb0-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "createContext",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/createContext.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "db210fb1-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "forwardRef",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/forwardRef.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "db210fb2-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "lazy",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/lazy.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "db210fb3-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "memo",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/memo.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "db210fb4-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "startTransition",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/startTransition.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "db210fb5-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "experimentalTaintObjectReference",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/experimentalTaintObjectReference.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "db210fb6-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "experimentalTaintUniqueValue",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/experimentalTaintUniqueValue.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "db210fb7-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "experimentalUseEffectEvent",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/experimentalUseEffectEvent.md",
+          "markdown": "",
+          "keywords": []
+        }
+      ],
+      "subSections": []
+    },
+    {
+      "sectionTitle": "Directives",
+      "docList": [
+        {
+          "id": "db210fb8-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "directives",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/directives.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "db210fb9-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useClient",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useClient.md",
+          "markdown": "",
+          "keywords": []
+        },
+        {
+          "id": "db210fba-cfc2-1dd1-8b14-0f0c0f09ed1b",
+          "docTitle": "useServer",
+          "url": "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/reactJs/content/useServer.md",
+          "markdown": "",
+          "keywords": []
+        }
+      ],
+      "subSections": []
+    }
+  ],
+  "related": [
+    "tailwindCss",
+    "reactJs"
+  ]
+}
