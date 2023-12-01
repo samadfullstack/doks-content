@@ -1,4 +1,5 @@
 import 'constants/content_collection.dart';
+import 'constants/docs_collection.dart';
 import 'constants/tech_ids.dart';
 import 'utils/content_writer.dart';
 import 'utils/path_maker.dart';
@@ -22,7 +23,7 @@ void main(List<String> args) async {
   );
   ContentWriter.write(
     path: await MkPath.inDocsCollection("docsCollection"),
-    data: '["one":1]',
+    data: docsCollection.toJson().toString(),
   );
 
   // TechIds.values.forEach((element) => print(element.name));

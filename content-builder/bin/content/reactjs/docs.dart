@@ -10,7 +10,7 @@ List<DocModel> reactjsDocs = [
   ...Hooks.values.map((item) {
     return DocModel(
       docTitle: item.name,
-      // id: item.prefix(),
+      id: item.prefix(),
       url: "$_baseUrl/${item.name}.md",
     );
   }),
@@ -19,6 +19,7 @@ List<DocModel> reactjsDocs = [
   ...Components.values.map((item) {
     return DocModel(
       docTitle: item.name,
+      id: item.prefix(),
       url: "$_baseUrl/${item.name}.md",
     );
   }),
@@ -26,6 +27,7 @@ List<DocModel> reactjsDocs = [
   ...Apis.values.map((item) {
     return DocModel(
       docTitle: item.name,
+      id: item.prefix(),
       url: "$_baseUrl/${item.name}.md",
     );
   }),
@@ -33,6 +35,7 @@ List<DocModel> reactjsDocs = [
   ...Directives.values.map((item) {
     return DocModel(
       docTitle: item.name,
+      id: item.prefix(),
       url: "$_baseUrl/${item.name}.md",
     );
   }),

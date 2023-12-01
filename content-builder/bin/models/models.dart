@@ -14,8 +14,10 @@ class TechModel {
   String version;
   String downloadSize;
   bool savedOffline;
+  // bool saved;
   List<SectionModel> sectionsList;
   List<String> related;
+  // String docsUrl;
   TechModel({
     required this.id,
     this.isSubTech = false,
@@ -200,6 +202,7 @@ class DocModel {
   String id;
   String docTitle;
   String url;
+  // bool saved;
   String markdown;
   List<String> keywords;
   DocModel({
@@ -209,7 +212,7 @@ class DocModel {
     this.markdown = "",
     this.keywords = const [],
   }) {
-    id = Uuid().v1();
+    // id = Uuid().v1();
   }
 
   DocModel copyWith({
@@ -285,6 +288,8 @@ class RemoteDataModel {
   int version;
   String objUrl;
   bool pendingDownload;
+  // String url;
+  // bool saved;
   RemoteDataModel({
     required this.id,
     required this.version,
@@ -396,6 +401,56 @@ class RemoteDataList {
     if (identical(this, other)) return true;
 
     return ListEquality().equals(other.list, list);
+  }
+
+  @override
+  int get hashCode => list.hashCode;
+}
+
+class DocsDataList {
+  List<DocModel> list;
+  DocsDataList({
+    required this.list,
+  });
+
+  DocsDataList copyWith({
+    List<DocModel>? list,
+  }) {
+    return DocsDataList(
+      list: list ?? this.list,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'list': list.map((x) => x.toMap()).toList(),
+    };
+  }
+
+  factory DocsDataList.fromMap(Map<String, dynamic> map) {
+    return DocsDataList(
+      list: List<DocModel>.from(
+        (map['list'] as List<int>).map<DocModel>(
+          (x) => DocModel.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory DocsDataList.fromJson(String source) =>
+      DocsDataList.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() => 'DocsDataList(list: $list)';
+
+  @override
+  bool operator ==(covariant DocsDataList other) {
+    if (identical(this, other)) return true;
+    final listEquals = const DeepCollectionEquality().equals;
+
+    return listEquals(other.list, list);
   }
 
   @override
