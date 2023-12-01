@@ -1,5 +1,5 @@
-import '../models/models.dart';
-import '../constants/tech_ids.dart';
+import '../../models/models.dart';
+import '../../constants/tech_ids.dart';
 
 TechModel tailwindCssContent = TechModel(
   id: TechIds.tailwindCss.name,

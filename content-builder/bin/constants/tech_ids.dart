@@ -1,1 +1,7 @@
-enum TechIds { test, remoteDataList, reactJs, tailwindCss }
+enum TechIds {
+  reactJs,
+  remoteDataList,
+  test,
+  tailwindCss,
+  ;
+}

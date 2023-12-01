@@ -1,5 +1,5 @@
-import '../models/models.dart';
-import '../constants/tech_ids.dart';
+import '../../models/models.dart';
+import '../../constants/tech_ids.dart';
 
 String _baseUrl =
     "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/${TechIds.reactJs.name}/content";

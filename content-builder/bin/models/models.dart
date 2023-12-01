@@ -197,17 +197,17 @@ class SectionModel {
 // * >--------------------------> doc model
 
 class DocModel {
-  String? id = Uuid().v1();
+  String id;
   String docTitle;
   String url;
   String markdown;
   List<String> keywords;
   DocModel({
-    this.id,
+    this.id = "",
     this.docTitle = "",
     this.url = "",
     this.markdown = "",
-    this.keywords = const[],
+    this.keywords = const [],
   }) {
     id = Uuid().v1();
   }

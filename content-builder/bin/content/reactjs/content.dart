@@ -1,5 +1,6 @@
-import '../models/models.dart';
-import '../constants/tech_ids.dart';
+import '../../models/models.dart';
+import '../../constants/tech_ids.dart';
+import 'ids.dart';
 
 String _baseUrl =
     "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/${TechIds.reactJs.name}/content";
@@ -15,9 +16,10 @@ TechModel reactjsContent = TechModel(
     SectionModel(
       sectionTitle: "Hooks",
       docList: [
-        ..._Hooks.values.map((item) {
+        ...Hooks.values.map((item) {
           return DocModel(
             docTitle: item.name,
+            // id: item.prefix(),
             url: "$_baseUrl/${item.name}.md",
           );
         }),
@@ -26,7 +28,7 @@ TechModel reactjsContent = TechModel(
     SectionModel(
       sectionTitle: "Components",
       docList: [
-        ..._Components.values.map((item) {
+        ...Components.values.map((item) {
           return DocModel(
             docTitle: item.name,
             url: "$_baseUrl/${item.name}.md",
@@ -37,7 +39,7 @@ TechModel reactjsContent = TechModel(
     SectionModel(
       sectionTitle: "Apis",
       docList: [
-        ..._Apis.values.map((item) {
+        ...Apis.values.map((item) {
           return DocModel(
             docTitle: item.name,
             url: "$_baseUrl/${item.name}.md",
@@ -48,7 +50,7 @@ TechModel reactjsContent = TechModel(
     SectionModel(
       sectionTitle: "Directives",
       docList: [
-        ..._Directives.values.map((item) {
+        ...Directives.values.map((item) {
           return DocModel(
             docTitle: item.name,
             url: "$_baseUrl/${item.name}.md",
@@ -58,48 +60,3 @@ TechModel reactjsContent = TechModel(
     ),
   ],
 );
-
-enum _Hooks {
-  hooks,
-  use,
-  useCallback,
-  useContext,
-  useDebugValue,
-  useDeferredValue,
-  useEffect,
-  useId,
-  useImperativeHandle,
-  useInsertionEffect,
-  useLayoutEffect,
-  useMemo,
-  useOptimistic,
-  useReducer,
-  useRef,
-  useState,
-  useSyncExternalStore,
-  useTransition
-}
-
-enum _Components {
-  component,
-  components,
-  fragment,
-  profiler,
-  strictMode,
-  suspense
-}
-
-enum _Apis {
-  apis,
-  cache,
-  createContext,
-  forwardRef,
-  lazy,
-  memo,
-  startTransition,
-  experimentalTaintObjectReference,
-  experimentalTaintUniqueValue,
-  experimentalUseEffectEvent
-}
-
-enum _Directives { directives, useClient, useServer }
