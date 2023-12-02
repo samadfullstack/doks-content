@@ -1,8 +1,8 @@
 import '../../models/models.dart';
-import 'ids.dart';
-import 'data.dart' show reactJsBaseUrl;
+import '../all_exports.dart';
+import '../reactjs/ids.dart';
 
-List<DocModel> reactjsDocs = [
+List<DocModel> testDocs = [
   // hooks section
   ...Hooks.values.map((item) {
     return DocModel(

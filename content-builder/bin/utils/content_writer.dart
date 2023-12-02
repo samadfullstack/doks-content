@@ -64,7 +64,7 @@ Future<List<ContentPath>> getContentPathCollection() async => [
       ),
       ContentPath(
         data: DataSet.test,
-        docs: "",
+        docs: DocsSet.test,
         dataPath: await MkPath.forTechData(TechIds.test.name),
         docsPath: await MkPath.forTechDocs(TechIds.test.name),
       ),
