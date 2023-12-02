@@ -1,9 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+
 import 'package:collection/collection.dart';
 
 // * >---------------------------------------> Tech model
-listEquals(list1, list2) => ListEquality().equals(list1, list2);
-
 class TechModel {
   String id;
 
@@ -12,21 +12,21 @@ class TechModel {
   String description;
   String version;
   String downloadSize;
-  bool saved;
+  bool savedOffline;
   List<SectionModel> sectionsList;
   List<String> related;
-  String docsUrl;
+  // bool saved;
+  // String docsUrl;
   TechModel({
     required this.id,
-    this.saved = false,
     this.isSubTech = false,
     required this.techTitle,
     required this.description,
     required this.version,
     required this.downloadSize,
+    this.savedOffline = false,
     required this.sectionsList,
     required this.related,
-    required this.docsUrl,
   });
 
   TechModel copyWith({
@@ -36,10 +36,9 @@ class TechModel {
     String? description,
     String? version,
     String? downloadSize,
-    bool? saved,
+    bool? savedOffline,
     List<SectionModel>? sectionsList,
     List<String>? related,
-    String? docsUrl,
   }) {
     return TechModel(
       id: id ?? this.id,
@@ -48,10 +47,9 @@ class TechModel {
       description: description ?? this.description,
       version: version ?? this.version,
       downloadSize: downloadSize ?? this.downloadSize,
-      saved: saved ?? this.saved,
+      savedOffline: savedOffline ?? this.savedOffline,
       sectionsList: sectionsList ?? this.sectionsList,
       related: related ?? this.related,
-      docsUrl: docsUrl ?? this.docsUrl,
     );
   }
 
@@ -63,10 +61,9 @@ class TechModel {
       'description': description,
       'version': version,
       'downloadSize': downloadSize,
-      'saved': saved,
+      'savedOffline': savedOffline,
       'sectionsList': sectionsList.map((x) => x.toMap()).toList(),
       'related': related,
-      'docsUrl': docsUrl,
     };
   }
 
@@ -78,14 +75,13 @@ class TechModel {
       description: map['description'] as String,
       version: map['version'] as String,
       downloadSize: map['downloadSize'] as String,
-      saved: map['saved'] as bool,
+      savedOffline: map['savedOffline'] as bool,
       sectionsList: List<SectionModel>.from(
-        (map['sectionsList'] as List<int>).map<SectionModel>(
+        (map['sectionsList'] as List<dynamic>).map<SectionModel>(
           (x) => SectionModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
       related: List<String>.from((map['related'] as List)),
-      docsUrl: map['docsUrl'] as String,
     );
   }
 
@@ -96,7 +92,7 @@ class TechModel {
 
   @override
   String toString() {
-    return 'TechModel(id: $id, isSubTech: $isSubTech, techTitle: $techTitle, description: $description, version: $version, downloadSize: $downloadSize, saved: $saved, sectionsList: $sectionsList, related: $related, docsUrl: $docsUrl)';
+    return 'TechModel(id: $id, isSubTech: $isSubTech, techTitle: $techTitle, description: $description, version: $version, downloadSize: $downloadSize, savedOffline: $savedOffline, sectionsList: $sectionsList, related: $related)';
   }
 
   @override
@@ -109,10 +105,9 @@ class TechModel {
         other.description == description &&
         other.version == version &&
         other.downloadSize == downloadSize &&
-        other.saved == saved &&
-        listEquals(other.sectionsList, sectionsList) &&
-        listEquals(other.related, related) &&
-        other.docsUrl == docsUrl;
+        other.savedOffline == savedOffline &&
+        ListEquality().equals(other.sectionsList, sectionsList) &&
+        ListEquality().equals(other.related, related);
   }
 
   @override
@@ -123,10 +118,9 @@ class TechModel {
         description.hashCode ^
         version.hashCode ^
         downloadSize.hashCode ^
-        saved.hashCode ^
+        savedOffline.hashCode ^
         sectionsList.hashCode ^
-        related.hashCode ^
-        docsUrl.hashCode;
+        related.hashCode;
   }
 }
 
@@ -134,7 +128,7 @@ class TechModel {
 
 class SectionModel {
   String sectionTitle;
-  List<String> docList;
+  List<DocModel> docList;
   List<SectionModel> subSections;
   SectionModel({
     this.sectionTitle = "",
@@ -144,7 +138,7 @@ class SectionModel {
 
   SectionModel copyWith({
     String? sectionTitle,
-    List<String>? docList,
+    List<DocModel>? docList,
     List<SectionModel>? subSections,
   }) {
     return SectionModel(
@@ -157,7 +151,7 @@ class SectionModel {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'sectionTitle': sectionTitle,
-      'docList': docList,
+      'docList': docList.map((x) => x.toMap()).toList(),
       'subSections': subSections.map((x) => x.toMap()).toList(),
     };
   }
@@ -165,9 +159,13 @@ class SectionModel {
   factory SectionModel.fromMap(Map<String, dynamic> map) {
     return SectionModel(
       sectionTitle: map['sectionTitle'] as String,
-      docList: List<String>.from((map['docList'] as List)),
+      docList: List<DocModel>.from(
+        (map['docList'] as List<dynamic>).map<DocModel>(
+          (x) => DocModel.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
       subSections: List<SectionModel>.from(
-        (map['subSections'] as List<int>).map<SectionModel>(
+        (map['subSections'] as List<dynamic>).map<SectionModel>(
           (x) => SectionModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
@@ -188,8 +186,8 @@ class SectionModel {
     if (identical(this, other)) return true;
 
     return other.sectionTitle == sectionTitle &&
-        listEquals(other.docList, docList) &&
-        listEquals(other.subSections, subSections);
+        ListEquality().equals(other.docList, docList) &&
+        ListEquality().equals(other.subSections, subSections);
   }
 
   @override
@@ -201,23 +199,23 @@ class SectionModel {
 
 class DocModel {
   String id;
-  bool saved;
   String docTitle;
   String url;
+  // bool saved;
   String markdown;
   List<String> keywords;
   DocModel({
-    this.saved = false,
     this.id = "",
     this.docTitle = "",
     this.url = "",
     this.markdown = "",
     this.keywords = const [],
-  });
+  }) {
+    // id = Uuid().v1();
+  }
 
   DocModel copyWith({
     String? id,
-    bool? saved,
     String? docTitle,
     String? url,
     String? markdown,
@@ -225,7 +223,6 @@ class DocModel {
   }) {
     return DocModel(
       id: id ?? this.id,
-      saved: saved ?? this.saved,
       docTitle: docTitle ?? this.docTitle,
       url: url ?? this.url,
       markdown: markdown ?? this.markdown,
@@ -236,7 +233,6 @@ class DocModel {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
-      'saved': saved,
       'docTitle': docTitle,
       'url': url,
       'markdown': markdown,
@@ -247,7 +243,6 @@ class DocModel {
   factory DocModel.fromMap(Map<String, dynamic> map) {
     return DocModel(
       id: map['id'] as String,
-      saved: map['saved'] as bool,
       docTitle: map['docTitle'] as String,
       url: map['url'] as String,
       markdown: map['markdown'] as String,
@@ -262,15 +257,15 @@ class DocModel {
 
   @override
   String toString() {
-    return 'DocModel(id: $id, saved: $saved, docTitle: $docTitle, url: $url, markdown: $markdown, keywords: $keywords)';
+    return 'DocModel(id: $id, docTitle: $docTitle, url: $url, markdown: $markdown, keywords: $keywords)';
   }
 
   @override
   bool operator ==(covariant DocModel other) {
     if (identical(this, other)) return true;
+    final listEquals = const DeepCollectionEquality().equals;
 
     return other.id == id &&
-        other.saved == saved &&
         other.docTitle == docTitle &&
         other.url == url &&
         other.markdown == markdown &&
@@ -280,7 +275,6 @@ class DocModel {
   @override
   int get hashCode {
     return id.hashCode ^
-        saved.hashCode ^
         docTitle.hashCode ^
         url.hashCode ^
         markdown.hashCode ^
@@ -290,10 +284,11 @@ class DocModel {
 
 class RemoteDataModel {
   String id;
-
   int version;
   String objUrl;
   bool pendingDownload;
+  // String url;
+  // bool saved;
   RemoteDataModel({
     required this.id,
     required this.version,
@@ -403,6 +398,56 @@ class RemoteDataList {
   @override
   bool operator ==(covariant RemoteDataList other) {
     if (identical(this, other)) return true;
+
+    return ListEquality().equals(other.list, list);
+  }
+
+  @override
+  int get hashCode => list.hashCode;
+}
+
+class DocsListAdapter {
+  List<DocModel> list;
+  DocsListAdapter({
+    required this.list,
+  });
+
+  DocsListAdapter copyWith({
+    List<DocModel>? list,
+  }) {
+    return DocsListAdapter(
+      list: list ?? this.list,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'list': list.map((x) => x.toMap()).toList(),
+    };
+  }
+
+  factory DocsListAdapter.fromMap(Map<String, dynamic> map) {
+    return DocsListAdapter(
+      list: List<DocModel>.from(
+        (map['list'] as List<int>).map<DocModel>(
+          (x) => DocModel.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory DocsListAdapter.fromJson(String source) =>
+      DocsListAdapter.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() => 'DocsDataList(list: $list)';
+
+  @override
+  bool operator ==(covariant DocsListAdapter other) {
+    if (identical(this, other)) return true;
+    final listEquals = const DeepCollectionEquality().equals;
 
     return listEquals(other.list, list);
   }

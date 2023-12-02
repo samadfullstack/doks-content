@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:path/path.dart' as pathpkg;
 
 class MkPath {
-  static Future<String> forTechDataInDocs(String fileName) async {
+  static Future<String> forTechData(String fileName) async {
     String dirPath = pathpkg.joinAll(["D:", "doks-content", "docs", fileName]);
 
     // create tech folder if it doesn't exist
@@ -12,7 +12,7 @@ class MkPath {
     return pathpkg.joinAll([dirPath, "data.json"]);
   }
 
-  static Future<String> forTechDocsInDocs(String fileName) async {
+  static Future<String> forTechDocs(String fileName) async {
     String dirPath = pathpkg.joinAll(["D:", "doks-content", "docs", fileName]);
 
     // create tech folder if it doesn't exist

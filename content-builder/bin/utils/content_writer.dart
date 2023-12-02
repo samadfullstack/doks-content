@@ -45,27 +45,27 @@ class ContentPath {
 
 Future<List<ContentPath>> getContentPathCollection() async => [
       ContentPath(
-        dataPath: await MkPath.forRemoteDataList(TechIds.remoteDataList.name),
-        docsPath: await MkPath.forRemoteDataList(TechIds.remoteDataList.name),
         data: DataSet.remoteDatalist,
         docs: "",
+        dataPath: await MkPath.forRemoteDataList(TechIds.remoteDataList.name),
+        docsPath: await MkPath.forRemoteDataList(TechIds.remoteDataList.name),
       ),
       ContentPath(
-        dataPath: await MkPath.forTechDataInDocs(TechIds.reactJs.name),
-        docsPath: await MkPath.forTechDocsInDocs(TechIds.reactJs.name),
         data: DataSet.reactjs,
         docs: DocsSet.reactjs,
+        dataPath: await MkPath.forTechData(TechIds.reactJs.name),
+        docsPath: await MkPath.forTechDocs(TechIds.reactJs.name),
       ),
       ContentPath(
-        dataPath: await MkPath.forTechDataInDocs(TechIds.tailwindCss.name),
-        docsPath: await MkPath.forTechDocsInDocs(TechIds.tailwindCss.name),
         data: DataSet.tailwindcss,
         docs: "",
+        dataPath: await MkPath.forTechData(TechIds.tailwindCss.name),
+        docsPath: await MkPath.forTechDocs(TechIds.tailwindCss.name),
       ),
       ContentPath(
-        dataPath: await MkPath.forTechDataInDocs(TechIds.test.name),
-        docsPath: await MkPath.forTechDocsInDocs(TechIds.test.name),
         data: DataSet.test,
         docs: "",
+        dataPath: await MkPath.forTechData(TechIds.test.name),
+        docsPath: await MkPath.forTechDocs(TechIds.test.name),
       ),
     ];
