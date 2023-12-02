@@ -2,7 +2,6 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:uuid/uuid.dart';
 
 // * >---------------------------------------> Tech model
 class TechModel {
@@ -14,9 +13,9 @@ class TechModel {
   String version;
   String downloadSize;
   bool savedOffline;
-  // bool saved;
   List<SectionModel> sectionsList;
   List<String> related;
+  // bool saved;
   // String docsUrl;
   TechModel({
     required this.id,
@@ -407,16 +406,16 @@ class RemoteDataList {
   int get hashCode => list.hashCode;
 }
 
-class DocsDataList {
+class DocsListAdapter {
   List<DocModel> list;
-  DocsDataList({
+  DocsListAdapter({
     required this.list,
   });
 
-  DocsDataList copyWith({
+  DocsListAdapter copyWith({
     List<DocModel>? list,
   }) {
-    return DocsDataList(
+    return DocsListAdapter(
       list: list ?? this.list,
     );
   }
@@ -427,8 +426,8 @@ class DocsDataList {
     };
   }
 
-  factory DocsDataList.fromMap(Map<String, dynamic> map) {
-    return DocsDataList(
+  factory DocsListAdapter.fromMap(Map<String, dynamic> map) {
+    return DocsListAdapter(
       list: List<DocModel>.from(
         (map['list'] as List<int>).map<DocModel>(
           (x) => DocModel.fromMap(x as Map<String, dynamic>),
@@ -439,14 +438,14 @@ class DocsDataList {
 
   String toJson() => json.encode(toMap());
 
-  factory DocsDataList.fromJson(String source) =>
-      DocsDataList.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory DocsListAdapter.fromJson(String source) =>
+      DocsListAdapter.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() => 'DocsDataList(list: $list)';
 
   @override
-  bool operator ==(covariant DocsDataList other) {
+  bool operator ==(covariant DocsListAdapter other) {
     if (identical(this, other)) return true;
     final listEquals = const DeepCollectionEquality().equals;
 

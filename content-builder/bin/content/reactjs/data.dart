@@ -7,7 +7,7 @@ String _baseUrl =
 
 TechModel reactjsContent = TechModel(
   techTitle: TechIds.reactJs.name,
-  id: TechIds.reactJs.name,
+  id: TechIds.reactJs.id,
   description: "Front-end javascript library",
   version: "18.2.0",
   downloadSize: "987 kb",
