@@ -1,6 +1,9 @@
 import '../../models/models.dart';
 import '../../constants/tech_ids.dart';
 
+String tailwindCssBaseUrl =
+    "https://raw.githubusercontent.com/samadfullstack/doks-content/version2/docs/${TechIds.tailwindCss.name}";
+
 TechModel tailwindCssContent = TechModel(
   id: TechIds.tailwindCss.name,
   techTitle: TechIds.tailwindCss.name,
@@ -10,5 +13,5 @@ TechModel tailwindCssContent = TechModel(
   sectionsList: [],
   isSubTech: true,
   related: [TechIds.tailwindCss.name, TechIds.reactJs.name],
-  docsUrl: "",
+  docsUrl: "$tailwindCssBaseUrl/docs.json",
 );

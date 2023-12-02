@@ -58,7 +58,7 @@ Future<List<ContentPath>> getContentPathCollection() async => [
       ),
       ContentPath(
         data: DataSet.tailwindcss,
-        docs: "",
+        docs: DocsSet.tailwindCss,
         dataPath: await MkPath.forTechData(TechIds.tailwindCss.name),
         docsPath: await MkPath.forTechDocs(TechIds.tailwindCss.name),
       ),
