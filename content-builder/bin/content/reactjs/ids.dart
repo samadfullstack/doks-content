@@ -21,7 +21,7 @@ enum Hooks {
 
   final String prefix_ = "reactJs";
 
-  String prefix() => "$prefix_:$name";
+  String get prefix => "$prefix_:$name";
   String unfix() => name.replaceAll(prefix_, "");
 }
 
@@ -36,7 +36,7 @@ enum Components {
 
   final String prefix_ = "reactJs";
 
-  String prefix() => "$prefix_:$name";
+  String get prefix => "$prefix_:$name";
   String unfix() => name.replaceAll(prefix_, "");
 }
 
@@ -55,7 +55,7 @@ enum Apis {
 
   final String prefix_ = "reactJs";
 
-  String prefix() => "$prefix_:$name";
+  String get prefix => "$prefix_:$name";
   String unfix() => name.replaceAll(prefix_, "");
 }
 
@@ -67,6 +67,6 @@ enum Directives {
 
   final String prefix_ = "reactJs";
 
-  String prefix() => "$prefix_:$name";
+  String get prefix => "$prefix_:$name";
   String unfix() => name.replaceAll(prefix_, "");
 }

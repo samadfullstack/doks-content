@@ -10,4 +10,5 @@ TechModel tailwindCssContent = TechModel(
   sectionsList: [],
   isSubTech: true,
   related: [TechIds.tailwindCss.name, TechIds.reactJs.name],
+  docsUrl: "",
 );

@@ -3,7 +3,7 @@ import 'content/reactjs.dart';
 import 'content/tailwindcss.dart';
 import 'content/test.dart';
 
-RemoteDataList remoteDataList = RemoteDataList(
+RemoteDataListAdapter remoteDataList = RemoteDataListAdapter(
   list: [
     reactjsRemoteData,
     tailwindCssData,

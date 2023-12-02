@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+
 import 'package:collection/collection.dart';
 
 // * >---------------------------------------> Tech model
@@ -362,16 +364,16 @@ class RemoteDataModel {
   }
 }
 
-class RemoteDataList {
+class RemoteDataListAdapter {
   List<RemoteDataModel> list;
-  RemoteDataList({
+  RemoteDataListAdapter({
     required this.list,
   });
 
-  RemoteDataList copyWith({
+  RemoteDataListAdapter copyWith({
     List<RemoteDataModel>? list,
   }) {
-    return RemoteDataList(
+    return RemoteDataListAdapter(
       list: list ?? this.list,
     );
   }
@@ -382,8 +384,8 @@ class RemoteDataList {
     };
   }
 
-  factory RemoteDataList.fromMap(Map<String, dynamic> map) {
-    return RemoteDataList(
+  factory RemoteDataListAdapter.fromMap(Map<String, dynamic> map) {
+    return RemoteDataListAdapter(
       list: List<RemoteDataModel>.from(
         (map['list'] as List<dynamic>).map<RemoteDataModel>(
           (x) => RemoteDataModel.fromMap(x as Map<String, dynamic>),
@@ -394,15 +396,66 @@ class RemoteDataList {
 
   String toJson() => json.encode(toMap());
 
-  factory RemoteDataList.fromJson(String source) =>
-      RemoteDataList.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory RemoteDataListAdapter.fromJson(String source) =>
+      RemoteDataListAdapter.fromMap(
+          json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() => 'RemoteDataList(list: $list)';
 
   @override
-  bool operator ==(covariant RemoteDataList other) {
+  bool operator ==(covariant RemoteDataListAdapter other) {
     if (identical(this, other)) return true;
+
+    return listEquals(other.list, list);
+  }
+
+  @override
+  int get hashCode => list.hashCode;
+}
+
+class DocsListAdapter {
+  List<DocModel> list;
+  DocsListAdapter({
+    required this.list,
+  });
+
+  DocsListAdapter copyWith({
+    List<DocModel>? list,
+  }) {
+    return DocsListAdapter(
+      list: list ?? this.list,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'list': list.map((x) => x.toMap()).toList(),
+    };
+  }
+
+  factory DocsListAdapter.fromMap(Map<String, dynamic> map) {
+    return DocsListAdapter(
+      list: List<DocModel>.from(
+        (map['list'] as List<int>).map<DocModel>(
+          (x) => DocModel.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory DocsListAdapter.fromJson(String source) =>
+      DocsListAdapter.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() => 'DocsListAdapter(list: $list)';
+
+  @override
+  bool operator ==(covariant DocsListAdapter other) {
+    if (identical(this, other)) return true;
+    final listEquals = const DeepCollectionEquality().equals;
 
     return listEquals(other.list, list);
   }
