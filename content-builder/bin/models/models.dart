@@ -415,29 +415,29 @@ class RemoteDataListAdapter {
 }
 
 class DocsListAdapter {
-  List<DocModel> list;
+  List<DocModel> docs;
   DocsListAdapter({
-    required this.list,
+    required this.docs,
   });
 
   DocsListAdapter copyWith({
-    List<DocModel>? list,
+    List<DocModel>? docs,
   }) {
     return DocsListAdapter(
-      list: list ?? this.list,
+      docs: docs ?? this.docs,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'list': list.map((x) => x.toMap()).toList(),
+      'docs': docs.map((x) => x.toMap()).toList(),
     };
   }
 
   factory DocsListAdapter.fromMap(Map<String, dynamic> map) {
     return DocsListAdapter(
-      list: List<DocModel>.from(
-        (map['list'] as List<int>).map<DocModel>(
+      docs: List<DocModel>.from(
+        (map['docs'] as List<int>).map<DocModel>(
           (x) => DocModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
@@ -450,16 +450,16 @@ class DocsListAdapter {
       DocsListAdapter.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  String toString() => 'DocsListAdapter(list: $list)';
+  String toString() => 'DocsListAdapter(docs: $docs)';
 
   @override
   bool operator ==(covariant DocsListAdapter other) {
     if (identical(this, other)) return true;
     final listEquals = const DeepCollectionEquality().equals;
 
-    return listEquals(other.list, list);
+    return listEquals(other.docs, docs);
   }
 
   @override
-  int get hashCode => list.hashCode;
+  int get hashCode => docs.hashCode;
 }
