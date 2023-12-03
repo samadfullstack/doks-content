@@ -17,7 +17,7 @@ List<DocModel> reactjsDocs = [
     return DocModel(
       docTitle: item.name,
       id: item.prefix,
-      url: "$reactJsBaseUrl/${item.name}.md",
+      url: "$reactJsBaseUrl/content/${item.name}.md",
     );
   }),
   //
@@ -25,7 +25,7 @@ List<DocModel> reactjsDocs = [
     return DocModel(
       docTitle: item.name,
       id: item.prefix,
-      url: "$reactJsBaseUrl/${item.name}.md",
+      url: "$reactJsBaseUrl/content/${item.name}.md",
     );
   }),
   //
@@ -33,7 +33,7 @@ List<DocModel> reactjsDocs = [
     return DocModel(
       docTitle: item.name,
       id: item.prefix,
-      url: "$reactJsBaseUrl/${item.name}.md",
+      url: "$reactJsBaseUrl/content/${item.name}.md",
     );
   }),
 ];
