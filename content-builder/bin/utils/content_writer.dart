@@ -30,12 +30,12 @@ class ContentWriter {
   }
 }
 
-class ContentPath {
+class DataDocsPaths {
   String dataPath;
   String docsPath;
   String data;
   String docs;
-  ContentPath({
+  DataDocsPaths({
     required this.dataPath,
     required this.docsPath,
     required this.data,
@@ -43,26 +43,26 @@ class ContentPath {
   });
 }
 
-Future<List<ContentPath>> getContentPathCollection() async => [
-      ContentPath(
+Future<List<DataDocsPaths>> getContentPathCollection() async => [
+      DataDocsPaths(
         data: DataSet.remoteDatalist,
         docs: "",
         dataPath: await MkPath.forRemoteDataList(TechIds.remoteDataList.name),
         docsPath: await MkPath.forRemoteDataList(TechIds.remoteDataList.name),
       ),
-      ContentPath(
+      DataDocsPaths(
         data: DataSet.reactjs,
         docs: DocsSet.reactjs,
         dataPath: await MkPath.forTechData(TechIds.reactJs.name),
         docsPath: await MkPath.forTechDocs(TechIds.reactJs.name),
       ),
-      ContentPath(
+      DataDocsPaths(
         data: DataSet.tailwindcss,
         docs: DocsSet.tailwindCss,
         dataPath: await MkPath.forTechData(TechIds.tailwindCss.name),
         docsPath: await MkPath.forTechDocs(TechIds.tailwindCss.name),
       ),
-      ContentPath(
+      DataDocsPaths(
         data: DataSet.test,
         docs: DocsSet.test,
         dataPath: await MkPath.forTechData(TechIds.test.name),

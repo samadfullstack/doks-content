@@ -1,5 +1,6 @@
 import '../../models/models.dart';
 import '../../constants/tech_ids.dart';
+import '../../utils/link_maker.dart';
 import 'ids.dart';
 
 String reactJsBaseUrl =
@@ -11,7 +12,8 @@ TechModel reactjsContent = TechModel(
   description: "Front-end javascript library",
   version: "18.2.0",
   downloadSize: "987 kb",
-  docsUrl: "$reactJsBaseUrl/docs.json",
+  docsUrl: MkLink.docs(TechIds.reactJs.name),
+  // docsUrl: "$reactJsBaseUrl/docs.json",
   related: [TechIds.tailwindCss.name, TechIds.reactJs.name],
   sectionsList: [
     SectionModel(

@@ -1,10 +1,10 @@
 import '../../constants/tech_ids.dart';
 import '../../models/models.dart';
-import '../base_url.dart';
+import '../../utils/link_maker.dart';
 
 var tailwindCssData = RemoteDataModel(
   id: TechIds.tailwindCss.name,
   version: 2,
-  objUrl: "$baseUrl${TechIds.tailwindCss.name}/data.json",
+  objUrl: MkLink.data(TechIds.tailwindCss.name),
   pendingDownload: true,
 );

@@ -1,7 +1,7 @@
 import '../models/models.dart';
-import 'content/reactjs.dart';
-import 'content/tailwindcss.dart';
-import 'content/test.dart';
+import '../content/reactjs/meta.dart';
+import '../content/tailwindcss/meta.dart';
+import '../content/test/meta.dart';
 
 RemoteDataListAdapter remoteDataList = RemoteDataListAdapter(
   list: [
