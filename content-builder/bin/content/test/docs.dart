@@ -1,39 +1,31 @@
+import '../../constants/tech_ids.dart';
 import '../../models/models.dart';
-import '../all_exports.dart';
+import '../../utils/link_maker.dart';
 import '../reactjs/ids.dart';
 
 List<DocModel> testDocs = [
-  // hooks section
-  ...Hooks.values.map((item) {
-    return DocModel(
+  ...Hooks.values.map((item) => DocModel(
       docTitle: item.name,
       id: item.prefix,
-      url: "$reactJsBaseUrl/${item.name}.md",
-    );
-  }),
-
-  //
-  ...Components.values.map((item) {
-    return DocModel(
+      url: MkLink.content(TechIds.reactJs.name, item.name)
+      // url: "$reactJsBaseUrl/content/${item.name}.md",
+      )),
+  ...Components.values.map((item) => DocModel(
       docTitle: item.name,
       id: item.prefix,
-      url: "$reactJsBaseUrl/${item.name}.md",
-    );
-  }),
-  //
-  ...Apis.values.map((item) {
-    return DocModel(
+      url: MkLink.content(TechIds.reactJs.name, item.name)
+      // url: "$reactJsBaseUrl/content/${item.name}.md",
+      )),
+  ...Apis.values.map((item) => DocModel(
       docTitle: item.name,
       id: item.prefix,
-      url: "$reactJsBaseUrl/${item.name}.md",
-    );
-  }),
-  //
-  ...Directives.values.map((item) {
-    return DocModel(
+      url: MkLink.content(TechIds.reactJs.name, item.name)
+      // url: "$reactJsBaseUrl/content/${item.name}.md",
+      )),
+  ...Directives.values.map((item) => DocModel(
       docTitle: item.name,
       id: item.prefix,
-      url: "$reactJsBaseUrl/${item.name}.md",
-    );
-  }),
+      url: MkLink.content(TechIds.reactJs.name, item.name)
+      // url: "$reactJsBaseUrl/content/${item.name}.md",
+      )),
 ];

@@ -1,3 +1,5 @@
+import '../../constants/tech_ids.dart';
+
 enum Hooks {
   hooks,
   use,
@@ -19,10 +21,7 @@ enum Hooks {
   useTransition,
   ;
 
-  final String prefix_ = "reactJs";
-
-  String get prefix => "$prefix_:$name";
-  String unfix() => name.replaceAll(prefix_, "");
+  String get prefix => "${TechIds.reactJs.name}:$name";
 }
 
 enum Components {
@@ -34,10 +33,7 @@ enum Components {
   suspense,
   ;
 
-  final String prefix_ = "reactJs";
-
-  String get prefix => "$prefix_:$name";
-  String unfix() => name.replaceAll(prefix_, "");
+  String get prefix => "${TechIds.reactJs.name}:$name";
 }
 
 enum Apis {
@@ -53,10 +49,7 @@ enum Apis {
   experimentalUseEffectEvent,
   ;
 
-  final String prefix_ = "reactJs";
-
-  String get prefix => "$prefix_:$name";
-  String unfix() => name.replaceAll(prefix_, "");
+  String get prefix => "${TechIds.reactJs.name}:$name";
 }
 
 enum Directives {
@@ -65,8 +58,5 @@ enum Directives {
   useServer,
   ;
 
-  final String prefix_ = "reactJs";
-
-  String get prefix => "$prefix_:$name";
-  String unfix() => name.replaceAll(prefix_, "");
+  String get prefix => "${TechIds.reactJs.name}:$name";
 }

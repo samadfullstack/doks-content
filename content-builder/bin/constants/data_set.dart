@@ -1,8 +1,8 @@
 import '../content/all_exports.dart';
 
 class DataSet {
-  static String get reactjs => reactjsContent.toJson().toString();
-  static String get tailwindcss => tailwindCssContent.toJson().toString();
-  static String get remoteDatalist => remoteDataList.toJson().toString();
-  static String get test => testContent.toJson().toString();
+  static String reactjs = reactjsContent.toJson();
+  static String tailwindcss = tailwindCssContent.toJson();
+  static String remoteDatalist = remoteDataList.toJson();
+  static String test = testContent.toJson();
 }
