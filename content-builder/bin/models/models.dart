@@ -290,30 +290,30 @@ class DocModel {
   }
 }
 
-class RemoteDataModel {
+class MetaData {
   String id;
 
   int version;
   String objUrl;
-  bool pendingDownload;
-  RemoteDataModel({
+  bool downloaded;
+  MetaData({
     required this.id,
     required this.version,
     required this.objUrl,
-    this.pendingDownload = true,
+    this.downloaded = false,
   });
 
-  RemoteDataModel copyWith({
+  MetaData copyWith({
     String? id,
     int? version,
     String? objUrl,
-    bool? pendingDownload,
+    bool? downloaded,
   }) {
-    return RemoteDataModel(
+    return MetaData(
       id: id ?? this.id,
       version: version ?? this.version,
       objUrl: objUrl ?? this.objUrl,
-      pendingDownload: pendingDownload ?? this.pendingDownload,
+      downloaded: downloaded ?? this.downloaded,
     );
   }
 
@@ -322,37 +322,37 @@ class RemoteDataModel {
       'id': id,
       'version': version,
       'objUrl': objUrl,
-      'pendingDownload': pendingDownload,
+      'downloaded': downloaded,
     };
   }
 
-  factory RemoteDataModel.fromMap(Map<String, dynamic> map) {
-    return RemoteDataModel(
+  factory MetaData.fromMap(Map<String, dynamic> map) {
+    return MetaData(
       id: map['id'] as String,
       version: map['version'] as int,
       objUrl: map['objUrl'] as String,
-      pendingDownload: map['pendingDownload'] as bool,
+      downloaded: map['downloaded'] as bool,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory RemoteDataModel.fromJson(String source) =>
-      RemoteDataModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory MetaData.fromJson(String source) =>
+      MetaData.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'RemoteDataModel(id: $id, version: $version, objUrl: $objUrl, pendingDownload: $pendingDownload)';
+    return 'MetaData(id: $id, version: $version, objUrl: $objUrl, downloaded: $downloaded)';
   }
 
   @override
-  bool operator ==(covariant RemoteDataModel other) {
+  bool operator ==(covariant MetaData other) {
     if (identical(this, other)) return true;
 
     return other.id == id &&
         other.version == version &&
         other.objUrl == objUrl &&
-        other.pendingDownload == pendingDownload;
+        other.downloaded == downloaded;
   }
 
   @override
@@ -360,20 +360,20 @@ class RemoteDataModel {
     return id.hashCode ^
         version.hashCode ^
         objUrl.hashCode ^
-        pendingDownload.hashCode;
+        downloaded.hashCode;
   }
 }
 
-class RemoteDataListAdapter {
-  List<RemoteDataModel> list;
-  RemoteDataListAdapter({
+class MetaDataAdapter {
+  List<MetaData> list;
+  MetaDataAdapter({
     required this.list,
   });
 
-  RemoteDataListAdapter copyWith({
-    List<RemoteDataModel>? list,
+  MetaDataAdapter copyWith({
+    List<MetaData>? list,
   }) {
-    return RemoteDataListAdapter(
+    return MetaDataAdapter(
       list: list ?? this.list,
     );
   }
@@ -384,11 +384,11 @@ class RemoteDataListAdapter {
     };
   }
 
-  factory RemoteDataListAdapter.fromMap(Map<String, dynamic> map) {
-    return RemoteDataListAdapter(
-      list: List<RemoteDataModel>.from(
-        (map['list'] as List<dynamic>).map<RemoteDataModel>(
-          (x) => RemoteDataModel.fromMap(x as Map<String, dynamic>),
+  factory MetaDataAdapter.fromMap(Map<String, dynamic> map) {
+    return MetaDataAdapter(
+      list: List<MetaData>.from(
+        (map['list'] as List<int>).map<MetaData>(
+          (x) => MetaData.fromMap(x as Map<String, dynamic>),
         ),
       ),
     );
@@ -396,15 +396,14 @@ class RemoteDataListAdapter {
 
   String toJson() => json.encode(toMap());
 
-  factory RemoteDataListAdapter.fromJson(String source) =>
-      RemoteDataListAdapter.fromMap(
-          json.decode(source) as Map<String, dynamic>);
+  factory MetaDataAdapter.fromJson(String source) =>
+      MetaDataAdapter.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  String toString() => 'RemoteDataList(list: $list)';
+  String toString() => 'MetaDataAdapter(list: $list)';
 
   @override
-  bool operator ==(covariant RemoteDataListAdapter other) {
+  bool operator ==(covariant MetaDataAdapter other) {
     if (identical(this, other)) return true;
 
     return listEquals(other.list, list);

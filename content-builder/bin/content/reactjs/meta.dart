@@ -2,9 +2,9 @@ import '../../constants/tech_ids.dart';
 import '../../models/models.dart';
 import '../../utils/link_maker.dart';
 
-var reactjsRemoteData = RemoteDataModel(
+var reactjsRemoteData = MetaData(
   version: 2,
-  pendingDownload: true,
+  downloaded: false,
   id: TechIds.reactJs.name,
   objUrl: MkLink.data(TechIds.reactJs.name),
   // objUrl: "$baseUrl${TechIds.reactJs.name}/data.json",
