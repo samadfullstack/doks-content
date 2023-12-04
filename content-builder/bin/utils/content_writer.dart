@@ -42,7 +42,7 @@ class DataDocsPaths {
     required this.docs,
   });
 }
-
+  
 Future<List<DataDocsPaths>> getContentPathCollection() async => [
       DataDocsPaths(
         data: DataSet.remoteDatalist,

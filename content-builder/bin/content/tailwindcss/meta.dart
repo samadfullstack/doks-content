@@ -6,5 +6,5 @@ var tailwindCssData = MetaData(
   id: TechIds.tailwindCss.name,
   version: 2,
   objUrl: MkLink.data(TechIds.tailwindCss.name),
-  downloaded: true,
+  downloaded: false,
 );
