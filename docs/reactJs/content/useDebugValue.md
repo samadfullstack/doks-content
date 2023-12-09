@@ -61,7 +61,7 @@ function useOnlineStatus() {
 
 This gives components calling `useOnlineStatus` a label like `OnlineStatus: "Online"` when you inspect them:
 
-![A screenshot of React DevTools showing the debug value](/images/docs/react-devtools-usedebugvalue.png)
+![A screenshot of React DevTools showing the debug value](https://react.dev/images/docs/react-devtools-usedebugvalue.png)
 
 Without the `useDebugValue` call, only the underlying data (in this example, `true`) would be displayed.
 
