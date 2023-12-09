@@ -36,6 +36,13 @@ enum Components {
   String get prefix => "${TechIds.reactJs.name}:$name";
 }
 
+enum Images {
+  images,
+  ;
+
+  String get prefix => "${TechIds.reactJs.name}:$name";
+}
+
 enum Apis {
   apis,
   cache,

@@ -19,6 +19,10 @@ TechModel testContent = TechModel(
       docList: Hooks.values.map((e) => e.prefix).toList(),
       subSections: [
         SectionModel(
+          sectionTitle: "Images",
+          docList: Images.values.map((e) => e.prefix).toList(),
+        ),
+        SectionModel(
           sectionTitle: "Level 2 Section",
           docList: Components.values.map((e) => e.prefix).toList(),
         ),
