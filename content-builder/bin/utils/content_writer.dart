@@ -10,22 +10,12 @@ import 'path_maker.dart';
 class ContentWriter {
   static Future<void> write() async {
     for (var item in await getContentPathCollection()) {
-      // ? >>---- files check
-      File dataFile = File(item.dataPath);
-      File docsFile = File(item.docsPath);
-      if (!await dataFile.exists()) dataFile.create();
-      if (!await docsFile.exists()) docsFile.create();
-
+      // ? >>---- Creating files
+      File dataFile = await File(item.dataPath).create(recursive: true);
+      File docsFile = await File(item.docsPath).create(recursive: true);
       // ? >>---- writing data and docs
-      // write data to file and catch any error that may occur
-      dataFile.writeAsString(item.data).catchError((error) {
-        print("error occured : $error");
-        return error;
-      });
-      docsFile.writeAsString(item.docs).catchError((error) {
-        print("error occured : $error");
-        return error;
-      });
+      dataFile.writeAsString(item.data);
+      docsFile.writeAsString(item.docs);
     }
   }
 }
@@ -42,7 +32,7 @@ class DataDocsPaths {
     required this.docs,
   });
 }
-  
+
 Future<List<DataDocsPaths>> getContentPathCollection() async => [
       DataDocsPaths(
         data: DataSet.remoteDatalist,
