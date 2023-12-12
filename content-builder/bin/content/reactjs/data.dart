@@ -4,13 +4,13 @@ import '../../utils/link_maker.dart';
 import 'ids.dart';
 
 TechModel reactjsContent = TechModel(
-  techTitle: TechIds.reactJs.name,
-  id: TechIds.reactJs.name,
-  description: "Front-end javascript library",
+  isSubTech: false,
   version: "18.2.0",
   downloadSize: "987 kb",
+  id: TechIds.reactJs.name,
+  techTitle: TechIds.reactJs.name,
+  description: "Front-end javascript library",
   docsUrl: MkLink.docs(TechIds.reactJs.name),
-  // docsUrl: "$reactJsBaseUrl/docs.json",
   related: [TechIds.tailwindCss.name, TechIds.reactJs.name],
   sectionsList: [
     SectionModel(

@@ -7,5 +7,4 @@ var reactjsRemoteData = MetaData(
   downloaded: false,
   id: TechIds.reactJs.name,
   objUrl: MkLink.data(TechIds.reactJs.name),
-  // objUrl: "$baseUrl${TechIds.reactJs.name}/data.json",
 );
