@@ -4,7 +4,7 @@ import '../../utils/link_maker.dart';
 import 'ids.dart';
 
 TechModel reactjsContent = TechModel(
-  isSubTech: false,
+  hidden: false,
   version: "18.2.0",
   downloadSize: "987 kb",
   id: TechIds.reactJs.name,

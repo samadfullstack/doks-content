@@ -1,12 +1,14 @@
-import '../abstract/abstract.dart';
-import '../constants/tech_ids.dart';
-import '../models/models.dart';
-import '../utils/link_maker.dart';
-import 'reactjs/ids.dart';
+import '../../abstract/abstract.dart';
+import '../../constants/tech_ids.dart';
+import '../../models/models.dart';
+import '../../utils/link_maker.dart';
 
 class Reactjs implements AbstractTechData {
   @override
   String get id => TechIds.reactJs.name;
+
+  @override
+  int get version => 0;
 
   @override
   List<String> get fileNames => [
@@ -19,7 +21,7 @@ class Reactjs implements AbstractTechData {
 
   @override
   TechModel get data => TechModel(
-        isSubTech: false,
+        hidden: false,
         version: "18.2.0",
         downloadSize: "987 kb",
         id: TechIds.reactJs.name,
@@ -46,4 +48,72 @@ class Reactjs implements AbstractTechData {
           ),
         ],
       );
+}
+
+enum Hooks {
+  hooks,
+  use,
+  useCallback,
+  useContext,
+  useDebugValue,
+  useDeferredValue,
+  useEffect,
+  useId,
+  useImperativeHandle,
+  useInsertionEffect,
+  useLayoutEffect,
+  useMemo,
+  useOptimistic,
+  useReducer,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  useTransition,
+  ;
+
+  String get prefix => "${TechIds.reactJs.name}:$name";
+}
+
+enum Components {
+  component,
+  components,
+  fragment,
+  profiler,
+  strictMode,
+  suspense,
+  ;
+
+  String get prefix => "${TechIds.reactJs.name}:$name";
+}
+
+enum Images {
+  images,
+  ;
+
+  String get prefix => "${TechIds.reactJs.name}:$name";
+}
+
+enum Apis {
+  apis,
+  cache,
+  createContext,
+  forwardRef,
+  lazy,
+  memo,
+  startTransition,
+  experimentalTaintObjectReference,
+  experimentalTaintUniqueValue,
+  experimentalUseEffectEvent,
+  ;
+
+  String get prefix => "${TechIds.reactJs.name}:$name";
+}
+
+enum Directives {
+  directives,
+  useClient,
+  useServer,
+  ;
+
+  String get prefix => "${TechIds.reactJs.name}:$name";
 }

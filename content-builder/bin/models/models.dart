@@ -9,19 +9,19 @@ listEquals(list1, list2) => ListEquality().equals(list1, list2);
 class TechModel {
   String id;
 
-  bool isSubTech;
+  bool hidden;
+  bool saved;
   String techTitle;
   String description;
   String version;
   String downloadSize;
-  bool saved;
   List<SectionModel> sectionsList;
   List<String> related;
   String docsUrl;
   TechModel({
     required this.id,
+    this.hidden = false,
     this.saved = false,
-    this.isSubTech = false,
     required this.techTitle,
     required this.description,
     required this.version,
@@ -33,24 +33,24 @@ class TechModel {
 
   TechModel copyWith({
     String? id,
-    bool? isSubTech,
+    bool? hidden,
+    bool? saved,
     String? techTitle,
     String? description,
     String? version,
     String? downloadSize,
-    bool? saved,
     List<SectionModel>? sectionsList,
     List<String>? related,
     String? docsUrl,
   }) {
     return TechModel(
       id: id ?? this.id,
-      isSubTech: isSubTech ?? this.isSubTech,
+      hidden: hidden ?? this.hidden,
+      saved: saved ?? this.saved,
       techTitle: techTitle ?? this.techTitle,
       description: description ?? this.description,
       version: version ?? this.version,
       downloadSize: downloadSize ?? this.downloadSize,
-      saved: saved ?? this.saved,
       sectionsList: sectionsList ?? this.sectionsList,
       related: related ?? this.related,
       docsUrl: docsUrl ?? this.docsUrl,
@@ -60,12 +60,12 @@ class TechModel {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
-      'isSubTech': isSubTech,
+      'hidden': hidden,
+      'saved': saved,
       'techTitle': techTitle,
       'description': description,
       'version': version,
       'downloadSize': downloadSize,
-      'saved': saved,
       'sectionsList': sectionsList.map((x) => x.toMap()).toList(),
       'related': related,
       'docsUrl': docsUrl,
@@ -75,14 +75,14 @@ class TechModel {
   factory TechModel.fromMap(Map<String, dynamic> map) {
     return TechModel(
       id: map['id'] as String,
-      isSubTech: map['isSubTech'] as bool,
+      hidden: map['hidden'] as bool,
+      saved: map['saved'] as bool,
       techTitle: map['techTitle'] as String,
       description: map['description'] as String,
       version: map['version'] as String,
       downloadSize: map['downloadSize'] as String,
-      saved: map['saved'] as bool,
       sectionsList: List<SectionModel>.from(
-        (map['sectionsList'] as List<int>).map<SectionModel>(
+        (map['sectionsList'] as List<dynamic>).map<SectionModel>(
           (x) => SectionModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
@@ -98,20 +98,21 @@ class TechModel {
 
   @override
   String toString() {
-    return 'TechModel(id: $id, isSubTech: $isSubTech, techTitle: $techTitle, description: $description, version: $version, downloadSize: $downloadSize, saved: $saved, sectionsList: $sectionsList, related: $related, docsUrl: $docsUrl)';
+    return 'TechModel(id: $id, hidden: $hidden, saved: $saved, techTitle: $techTitle, description: $description, version: $version, downloadSize: $downloadSize, sectionsList: $sectionsList, related: $related, docsUrl: $docsUrl)';
   }
 
   @override
   bool operator ==(covariant TechModel other) {
     if (identical(this, other)) return true;
+    final listEquals = const DeepCollectionEquality().equals;
 
     return other.id == id &&
-        other.isSubTech == isSubTech &&
+        other.hidden == hidden &&
+        other.saved == saved &&
         other.techTitle == techTitle &&
         other.description == description &&
         other.version == version &&
         other.downloadSize == downloadSize &&
-        other.saved == saved &&
         listEquals(other.sectionsList, sectionsList) &&
         listEquals(other.related, related) &&
         other.docsUrl == docsUrl;
@@ -120,12 +121,12 @@ class TechModel {
   @override
   int get hashCode {
     return id.hashCode ^
-        isSubTech.hashCode ^
+        hidden.hashCode ^
+        saved.hashCode ^
         techTitle.hashCode ^
         description.hashCode ^
         version.hashCode ^
         downloadSize.hashCode ^
-        saved.hashCode ^
         sectionsList.hashCode ^
         related.hashCode ^
         docsUrl.hashCode;
@@ -195,8 +196,7 @@ class SectionModel {
   }
 
   @override
-  int get hashCode =>
-      sectionTitle.hashCode ^ docList.hashCode ^ subSections.hashCode;
+  int get hashCode => sectionTitle.hashCode ^ docList.hashCode ^ subSections.hashCode;
 }
 
 // * >--------------------------> doc model
@@ -357,10 +357,7 @@ class MetaData {
 
   @override
   int get hashCode {
-    return id.hashCode ^
-        version.hashCode ^
-        objUrl.hashCode ^
-        downloaded.hashCode;
+    return id.hashCode ^ version.hashCode ^ objUrl.hashCode ^ downloaded.hashCode;
   }
 }
 
