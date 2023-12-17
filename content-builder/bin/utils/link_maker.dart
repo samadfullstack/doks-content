@@ -10,6 +10,5 @@ class MkLink {
   static String docs(String techId) => "$_baseUrl/$techId/docs.json";
 
   /// result will be _baseurl/techId/content/docId.md
-  static String content(String techId, String docId) =>
-      "$_baseUrl/$techId/content/$docId.md";
+  static String content(String techId, String docId) => "$_baseUrl/$techId/content/$docId.md";
 }
