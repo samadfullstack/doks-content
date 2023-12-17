@@ -14,7 +14,7 @@ class Reactjs implements AbstractTechData {
   List<String> get fileNames => [
         ...Hooks.values.map((e) => e.name),
         ...Components.values.map((e) => e.name),
-        ...Images.values.map((e) => e.name),
+        // ...Images.values.map((e) => e.name),
         ...Apis.values.map((e) => e.name),
         ...Directives.values.map((e) => e.name),
       ];
