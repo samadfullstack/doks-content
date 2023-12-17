@@ -8,7 +8,7 @@ class Reactjs implements AbstractTechData {
   String get id => TechIds.reactJs.name;
 
   @override
-  int get version => 0;
+  int get version => 1;
 
   @override
   List<String> get fileNames => [
@@ -52,6 +52,7 @@ class Reactjs implements AbstractTechData {
 enum Hooks {
   hooks,
   use,
+  images,
   useCallback,
   useContext,
   useDebugValue,

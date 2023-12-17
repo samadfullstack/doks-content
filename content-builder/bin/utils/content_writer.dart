@@ -4,7 +4,11 @@ import '../models/models.dart';
 import 'link_maker.dart';
 import 'path_maker.dart';
 
-writeContent() async {
+/// This will do the following things
+/// 1. create docs.json list file using file names
+/// 2. create data.json file from tech model
+/// 3. create metaDataList.json from techContentList
+Future<void> writeContent() async {
   // ? STEP 1
   for (var tech in techContentList) {
     // creating docs list for this tech using fileNames
