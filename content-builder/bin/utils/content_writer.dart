@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import '../content/tech_content_list.dart';
 import '../models/models.dart';
 import 'link_maker.dart';
@@ -38,4 +37,6 @@ writeContent() async {
 
   // writing to metaDataList
   await remoteDataListFile.writeAsString(MetaDataAdapter(list: metaDataList).toJson());
+
+  print("content written successfully _/");
 }

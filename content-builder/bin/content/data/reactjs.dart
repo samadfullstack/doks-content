@@ -27,7 +27,7 @@ class Reactjs implements AbstractTechData {
         techTitle: TechIds.reactJs.name,
         description: "Front-end javascript library",
         docsUrl: MkLink.docs(TechIds.reactJs.name),
-        related: [TechIds.tailwindCss.name, TechIds.reactJs.name],
+        related: [],
         sectionsList: [
           SectionModel(
             sectionTitle: "Hooks",

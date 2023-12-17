@@ -29,7 +29,7 @@ class MkPath {
     var techDir = Directory(dirPath);
     if (!await techDir.exists()) techDir.create();
 
-    return pathpkg.joinAll([dirPath, "remoteDataList.json"]);
+    return pathpkg.joinAll([dirPath, "metaDataList.json"]);
   }
 
   static Future<String> inDocsCollection(String fileName) async {
