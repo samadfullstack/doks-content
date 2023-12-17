@@ -1,7 +1,7 @@
-import '../../abstract_classes/abstract_tech_data.dart';
 import '../../tech_ids.dart';
 import '../../models/models.dart';
 import '../../utils/link_maker.dart';
+import '../../abstract_classes/abstract_tech_data.dart';
 
 class Reactjs implements AbstractTechData {
   @override

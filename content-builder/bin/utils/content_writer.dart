@@ -8,7 +8,7 @@ import 'path_maker.dart';
 /// 1. create docs.json list file using file names
 /// 2. create data.json file from tech model
 /// 3. create metaDataList.json from techContentList
-Future<void> writeContent() async {
+Future<void> writeDataAndDocs() async {
   // ? STEP 1
   for (var tech in techContentList) {
     // creating docs list for this tech using fileNames
@@ -25,7 +25,10 @@ Future<void> writeContent() async {
     await dataFile.writeAsString(tech.data.toJson());
     await docsFile.writeAsString(DocsListAdapter(docs: docs).toJson());
   }
+}
 
+// this will create metaDataList using techContent
+Future<void> writeMetaData() async {
   // ? STEP 2
   // creating content for metadata
   var remoteDataListFile = await File(await MkPath.forMetaDataList()).create(recursive: true);
