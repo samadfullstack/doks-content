@@ -1,5 +1,5 @@
 import '../../abstract_classes/abstract_tech_data.dart';
-import '../../constants/tech_ids.dart';
+import '../../tech_ids.dart';
 import '../../models/models.dart';
 import '../../utils/link_maker.dart';
 
@@ -14,7 +14,6 @@ class Reactjs implements AbstractTechData {
   List<String> get fileNames => [
         ...Hooks.values.map((e) => e.name),
         ...Components.values.map((e) => e.name),
-        // ...Images.values.map((e) => e.name),
         ...Apis.values.map((e) => e.name),
         ...Directives.values.map((e) => e.name),
       ];
@@ -81,13 +80,6 @@ enum Components {
   profiler,
   strictMode,
   suspense,
-  ;
-
-  String get prefix => "${TechIds.reactJs.name}:$name";
-}
-
-enum Images {
-  images,
   ;
 
   String get prefix => "${TechIds.reactJs.name}:$name";

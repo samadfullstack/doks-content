@@ -1,61 +1,41 @@
 import 'dart:io';
 
-import '../constants/data_set.dart';
-import '../constants/docs_set.dart';
-import '../constants/tech_ids.dart';
+import '../content/tech_content_list.dart';
+import '../models/models.dart';
+import 'link_maker.dart';
 import 'path_maker.dart';
 
-// >------------------------->>
+writeContent() async {
+  // ? STEP 1
+  for (var tech in techContentList) {
+    // creating docs list for this tech using fileNames
+    var docs = tech.fileNames
+        .map((item) => DocModel(
+            docTitle: item, id: "${tech.id}:$item", url: MkLink.content(tech.id, item)))
+        .toList();
 
-class ContentWriter {
-  static Future<void> write() async {
-    for (var item in await getContentPathCollection()) {
-      // ? >>---- Creating files
-      File dataFile = await File(item.dataPath).create(recursive: true);
-      File docsFile = await File(item.docsPath).create(recursive: true);
-      // ? >>---- writing data and docs
-      dataFile.writeAsString(item.data);
-      docsFile.writeAsString(item.docs);
-    }
+    // creating recursive data.json and docs.json files
+    var dataFile = await File(await MkPath.forTechDataJson(tech.id)).create(recursive: true);
+    var docsFile = await File(await MkPath.forTechDocsJson(tech.id)).create(recursive: true);
+
+    // writing tech data and techdocs to data.json and docs.json files
+    await dataFile.writeAsString(tech.data.toJson());
+    await docsFile.writeAsString(DocsListAdapter(docs: docs).toJson());
   }
-}
 
-class DataDocsPaths {
-  String dataPath;
-  String docsPath;
-  String data;
-  String docs;
-  DataDocsPaths({
-    required this.dataPath,
-    required this.docsPath,
-    required this.data,
-    required this.docs,
-  });
-}
+  // ? STEP 2
+  // creating content for metadata
+  var remoteDataListFile = await File(await MkPath.forMetaDataList()).create(recursive: true);
 
-Future<List<DataDocsPaths>> getContentPathCollection() async => [
-      DataDocsPaths(
-        data: DataSet.remoteDatalist,
-        docs: "",
-        dataPath: await MkPath.forMetaDataList(),
-        docsPath: await MkPath.forMetaDataList(),
-      ),
-      DataDocsPaths(
-        data: DataSet.reactjs,
-        docs: DocsSet.reactjs,
-        dataPath: await MkPath.forTechDataJson(TechIds.reactJs.name),
-        docsPath: await MkPath.forTechDocsJson(TechIds.reactJs.name),
-      ),
-      DataDocsPaths(
-        data: DataSet.tailwindcss,
-        docs: DocsSet.tailwindCss,
-        dataPath: await MkPath.forTechDataJson(TechIds.tailwindCss.name),
-        docsPath: await MkPath.forTechDocsJson(TechIds.tailwindCss.name),
-      ),
-      DataDocsPaths(
-        data: DataSet.test,
-        docs: DocsSet.test,
-        dataPath: await MkPath.forTechDataJson(TechIds.test.name),
-        docsPath: await MkPath.forTechDocsJson(TechIds.test.name),
-      ),
-    ];
+  // creating metaData for metaDataList
+  List<MetaData> metaDataList = techContentList
+      .map((tech) => MetaData(
+            id: tech.id,
+            version: tech.version,
+            objUrl: MkLink.data(tech.id),
+          ))
+      .toList();
+
+  // writing to metaDataList
+  await remoteDataListFile.writeAsString(MetaDataAdapter(list: metaDataList).toJson());
+}
