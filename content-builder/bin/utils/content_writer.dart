@@ -37,25 +37,25 @@ Future<List<DataDocsPaths>> getContentPathCollection() async => [
       DataDocsPaths(
         data: DataSet.remoteDatalist,
         docs: "",
-        dataPath: await MkPath.forRemoteDataList(TechIds.remoteDataList.name),
-        docsPath: await MkPath.forRemoteDataList(TechIds.remoteDataList.name),
+        dataPath: await MkPath.forMetaDataList(),
+        docsPath: await MkPath.forMetaDataList(),
       ),
       DataDocsPaths(
         data: DataSet.reactjs,
         docs: DocsSet.reactjs,
-        dataPath: await MkPath.forTechData(TechIds.reactJs.name),
-        docsPath: await MkPath.forTechDocs(TechIds.reactJs.name),
+        dataPath: await MkPath.forTechDataJson(TechIds.reactJs.name),
+        docsPath: await MkPath.forTechDocsJson(TechIds.reactJs.name),
       ),
       DataDocsPaths(
         data: DataSet.tailwindcss,
         docs: DocsSet.tailwindCss,
-        dataPath: await MkPath.forTechData(TechIds.tailwindCss.name),
-        docsPath: await MkPath.forTechDocs(TechIds.tailwindCss.name),
+        dataPath: await MkPath.forTechDataJson(TechIds.tailwindCss.name),
+        docsPath: await MkPath.forTechDocsJson(TechIds.tailwindCss.name),
       ),
       DataDocsPaths(
         data: DataSet.test,
         docs: DocsSet.test,
-        dataPath: await MkPath.forTechData(TechIds.test.name),
-        docsPath: await MkPath.forTechDocs(TechIds.test.name),
+        dataPath: await MkPath.forTechDataJson(TechIds.test.name),
+        docsPath: await MkPath.forTechDocsJson(TechIds.test.name),
       ),
     ];
