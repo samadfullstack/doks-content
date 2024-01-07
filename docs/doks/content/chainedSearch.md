@@ -9,11 +9,15 @@
 - Type the technology name (e.g., "reactjs") in the search bar.``
 - Add a dot (`.`) immediately after the technology name (e.g., "reactjs.") to initiate Chained Search.
 
-## 3. Focused Search Field Shortcut:
+## 3. Deactivating Chained Search:
+- When in Chained Search, pressing dot (`.`) will deactivate chained search. 
+- For example you've typed reactjs and dot (`.`) (reactjs.) to initiate chained search, now pressing dot (`.`) in this state will take you out of chained search to start the default search engine.
+
+## 4. Focused Search Field Shortcut:
 - Double-tap an empty search page to automatically focus the search field.
 - Simplifies the process, ensuring a quicker and more efficient search experience.
 
-## 4. Selecting Top Result Shortcut:
+## 5. Selecting Top Result Shortcut:
 - After performing a search, press the comma (`,`) key.
 - Automatically selects the top result, saving time and providing instant access to relevant information.
 
