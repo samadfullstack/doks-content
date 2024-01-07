@@ -8,6 +8,7 @@
 ## 2. Activating Chained Search:
 - Type the technology name (e.g., "reactjs") in the search bar.``
 - Add a dot (`.`) immediately after the technology name (e.g., "reactjs.") to initiate Chained Search.
+- Chained search initiates with the top result, if type `rea` of `reactJs` and by typing only `rea` reactjs appears on the top of the list, you don't need to type full word `reactJs` and then dot (`.`) to initiate chained search, instead typing `rea` and then dot (`.`) will initiate chained search on `reactJs`.
 
 ## 3. Deactivating Chained Search:
 - When in Chained Search, pressing dot (`.`) will deactivate chained search. 
