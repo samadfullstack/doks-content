@@ -1,9 +1,11 @@
 # Introducing Chained Search and Other Powerful Features in Doks App
 
+Chained Search narrows down results, focusing only on the documentation of the specified technology.
+
+
 ## 1. Chained Search Overview:
 - Open Doks app and enter the name of the technology you want to explore in the search bar.
 - Append a dot (`.`) after the technology's name (e.g., "reactjs.") to activate Chained Search.
-- Chained Search narrows down results, focusing only on the documentation of the specified technology.
 
 ## 2. Activating Chained Search:
 - Type the technology name (e.g., "reactjs") in the search bar.``
