@@ -23,6 +23,7 @@
 
 Enhance your Doks app experience for efficient tech documentation exploration!
 
-[ElitePort](doks:elitePort)
 
+For app tests only: 
+[ElitePort](doks:elitePort)
 [hooks](reactJs:hooks)
