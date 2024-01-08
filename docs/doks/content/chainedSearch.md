@@ -5,15 +5,15 @@
 
 **2. Activate Chained Search:**
 - Type tech name and add dot (`.`) for quick access.
-- Shortcuts: Type partial name + dot (`.`) to initiate.
+- Shortcuts: Type partial name + dot (`.`) to initiate, top result will be picked for chained search.
 
 **3. Deactivate Chained Search:**
 - In Chained Search, press dot (`.`) to return to default.
 
 **4. Focused Search Field:**
-- Double-tap for instant search field focus.
+- Double-tap empty search page for instant search field focus.
 
 **5. Top Result Shortcut:**
-- After search, press comma (`,`) for quick top result access.
+- After search, press comma (`,`) to quickly select top result.
 
 Enhance your Doks app experience for efficient tech documentation exploration!
