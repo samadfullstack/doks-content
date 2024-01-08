@@ -1,28 +1,19 @@
-# Introducing Chained Search and Other Powerful Features in Doks App
+# Doks App Search Guide
 
-Chained Search narrows down results, focusing only on the documentation of the specified technology.
+**1. Chained Search:**
+- Type tech name (e.g., "reactjs") and add dot (`.`) for focused results.
 
+**2. Activate Chained Search:**
+- Type tech name and add dot (`.`) for quick access.
+- Shortcuts: Type partial name + dot (`.`) to initiate.
 
-## 1. Chained Search Overview:
-- Open Doks app and enter the name of the technology you want to explore in the search bar.
-- Append a dot (`.`) after the technology's name (e.g., "reactjs.") to activate Chained Search.
+**3. Deactivate Chained Search:**
+- In Chained Search, press dot (`.`) to return to default.
 
-## 2. Activating Chained Search:
-- Type the technology name (e.g., "reactjs") in the search bar.``
-- Add a dot (`.`) immediately after the technology name (e.g., "reactjs.") to initiate Chained Search.
-- Chained search initiates with the top result after pressing dot (`.`), if you type `rea` of `reactJs` and reactjs appears on the top of the list, you don't need to type full word `reactJs` and then dot (`.`) to initiate chained search, instead typing `rea` and then dot (`.`) will initiate chained search on `reactJs`.
-- Its Similar to "member access" in programming where you use dot/member_access (`.`) to access properties on objects.
+**4. Focused Search Field:**
+- Double-tap for instant search field focus.
 
-## 3. Deactivating Chained Search:
-- When in Chained Search, pressing dot (`.`) will deactivate chained search. 
-- For example you've typed reactjs and dot (`.`) (reactjs.) to initiate chained search, now pressing dot (`.`) in this state will take you out of chained search to start the default search engine.
+**5. Top Result Shortcut:**
+- After search, press comma (`,`) for quick top result access.
 
-## 4. Focused Search Field Shortcut:
-- Double-tap an empty search page to automatically focus the search field.
-- Simplifies the process, ensuring a quicker and more efficient search experience.
-
-## 5. Selecting Top Result Shortcut:
-- After performing a search, press the comma (`,`) key.
-- Automatically selects the top result, saving time and providing instant access to relevant information.
-
-These new features enhance your Doks app experience, allowing you to navigate and explore technology documentation with increased efficiency and precision. Try them out to streamline your search process and access the information you need more effortlessly than ever before!
+Enhance your Doks app experience for efficient tech documentation exploration!
