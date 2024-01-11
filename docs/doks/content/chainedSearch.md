@@ -2,22 +2,15 @@
 
 **1. Chained Search:**
 
-- Type tech name (e.g., "reactjs") and add dot (`.`) for focused results.
+- Use Chained search for focused results. Search for any tech, or library, add dot at any point to pick top result for chained search. e.g (`reactjs.`). 
 
-**2. Activate Chained Search:**
+- While in Chained search press dot again to return to defaults. 
 
-- Type tech name and add dot (`.`) for quick access.
-- Shortcuts: Type partial name + dot (`.`) to initiate, top result will be picked for chained search.
-
-**3. Deactivate Chained Search:**
-
-- In Chained Search, press dot (`.`) to return to default.
-
-**4. Focused Search Field:**
+**2. Focused Search Field:**
 
 - Double-tap empty search page for instant search field focus.
 
-**5. Top Result Shortcut:**
+**3. Top Result Shortcut:**
 
 - After search, press comma (`,`) to quickly select top result.
 
@@ -27,3 +20,4 @@ Enhance your Doks app experience for efficient tech documentation exploration!
 For app tests only: 
 [ElitePort](doks:elitePort)
 [hooks](reactJs:hooks)
+[chainedSearch](doks:chainedSearch)
