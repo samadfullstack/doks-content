@@ -1,8 +1,4 @@
-# Why a structure like this ? 
+# Repo for doks app
 
-
-So that when i build
-
-
-# file naming convention
-1. lowerCamelCase for file names e.g "fullStackDeveloper" 
+link :
+https://play.google.com/store/apps/details?id=techxites.doks
