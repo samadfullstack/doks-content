@@ -15,11 +15,3 @@
 - After search, press comma (`,`) to quickly select top result.
 
 Enhance your Doks app experience for efficient tech documentation exploration!
-
-
-For app tests only: 
-[ElitePort](doks:elitePort)
-[hooks](reactJs:hooks)
-[chainedSearch](doks:chainedSearch)
-
-
