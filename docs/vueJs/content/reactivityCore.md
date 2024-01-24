@@ -1,4 +1,4 @@
-# Reactivity API: Core {#reactivity-api-core}
+# Reactivity API: Core 
 
 :::info See also
 To better understand the Reactivity APIs, it is recommended to read the following chapters in the guide:
@@ -7,7 +7,7 @@ To better understand the Reactivity APIs, it is recommended to read the followin
 - [Reactivity in Depth](/guide/extras/reactivity-in-depth)
   :::
 
-## ref() {#ref}
+## ref() 
 
 Takes an inner value and returns a reactive and mutable ref object, which has a single property `.value` that points to the inner value.
 
@@ -43,7 +43,7 @@ Takes an inner value and returns a reactive and mutable ref object, which has a 
   - [Guide - Reactivity Fundamentals with `ref()`](/guide/essentials/reactivity-fundamentals#ref)
   - [Guide - Typing `ref()`](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
 
-## computed() {#computed}
+## computed() 
 
 Takes a getter function and returns a readonly reactive [ref](#ref) object for the returned value from the getter. It can also take an object with `get` and `set` functions to create a writable ref object.
 
@@ -114,7 +114,7 @@ Takes a getter function and returns a readonly reactive [ref](#ref) object for t
   - [Guide - Typing `computed()`](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" />
   - [Guide - Performance - Computed Stability](/guide/best-practices/performance#computed-stability) <sup class="vt-badge" data-text="3.4+" />
 
-## reactive() {#reactive}
+## reactive() 
 
 Returns a reactive proxy of the object.
 
@@ -191,7 +191,7 @@ Returns a reactive proxy of the object.
   - [Guide - Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals)
   - [Guide - Typing `reactive()`](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
-## readonly() {#readonly}
+## readonly() 
 
 Takes an object (reactive or plain) or a [ref](#ref) and returns a readonly proxy to the original.
 
@@ -228,7 +228,7 @@ Takes an object (reactive or plain) or a [ref](#ref) and returns a readonly prox
   copy.count++ // warning!
   ```
 
-## watchEffect() {#watcheffect}
+## watchEffect() 
 
 Runs a function immediately while reactively tracking its dependencies and re-runs it whenever the dependencies are changed.
 
@@ -313,15 +313,15 @@ Runs a function immediately while reactively tracking its dependencies and re-ru
   - [Guide - Watchers](/guide/essentials/watchers#watcheffect)
   - [Guide - Watcher Debugging](/guide/extras/reactivity-in-depth#watcher-debugging)
 
-## watchPostEffect() {#watchposteffect}
+## watchPostEffect() 
 
 Alias of [`watchEffect()`](#watcheffect) with `flush: 'post'` option.
 
-## watchSyncEffect() {#watchsynceffect}
+## watchSyncEffect() 
 
 Alias of [`watchEffect()`](#watcheffect) with `flush: 'sync'` option.
 
-## watch() {#watch}
+## watch() 
 
 Watches one or more reactive data sources and invokes a callback function when the sources change.
 

@@ -1,6 +1,6 @@
-# Server-Side Rendering API {#server-side-rendering-api}
+# Server-Side Rendering API 
 
-## renderToString() {#rendertostring}
+## renderToString() 
 
 - **Exported from `vue/server-renderer`**
 
@@ -30,7 +30,7 @@
   })()
   ```
 
-  ### SSR Context {#ssr-context}
+  ### SSR Context 
 
   You can pass an optional context object, which can be used to record additional data during the render, for example [accessing content of Teleports](/guide/scaling-up/ssr#teleports):
 
@@ -45,7 +45,7 @@
 
 - **See also** [Guide - Server-Side Rendering](/guide/scaling-up/ssr)
 
-## renderToNodeStream() {#rendertonodestream}
+## renderToNodeStream() 
 
 Renders input as a [Node.js Readable stream](https://nodejs.org/api/stream.html#stream_class_stream_readable).
 
@@ -71,7 +71,7 @@ Renders input as a [Node.js Readable stream](https://nodejs.org/api/stream.html#
   This method is not supported in the ESM build of `vue/server-renderer`, which is decoupled from Node.js environments. Use [`pipeToNodeWritable`](#pipetonodewritable) instead.
   :::
 
-## pipeToNodeWritable() {#pipetonodewritable}
+## pipeToNodeWritable() 
 
 Render and pipe to an existing [Node.js Writable stream](https://nodejs.org/api/stream.html#stream_writable_streams) instance.
 
@@ -94,7 +94,7 @@ Render and pipe to an existing [Node.js Writable stream](https://nodejs.org/api/
   pipeToNodeWritable(app, {}, res)
   ```
 
-## renderToWebStream() {#rendertowebstream}
+## renderToWebStream() 
 
 Renders input as a [Web ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API).
 
@@ -120,7 +120,7 @@ Renders input as a [Web ReadableStream](https://developer.mozilla.org/en-US/docs
   In environments that do not expose `ReadableStream` constructor in the global scope, [`pipeToWebWritable()`](#pipetowebwritable) should be used instead.
   :::
 
-## pipeToWebWritable() {#pipetowebwritable}
+## pipeToWebWritable() 
 
 Render and pipe to an existing [Web WritableStream](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream) instance.
 
@@ -149,7 +149,7 @@ Render and pipe to an existing [Web WritableStream](https://developer.mozilla.or
   return new Response(readable)
   ```
 
-## renderToSimpleStream() {#rendertosimplestream}
+## renderToSimpleStream() 
 
 Renders input in streaming mode using a simple readable interface.
 
@@ -194,7 +194,7 @@ Renders input in streaming mode using a simple readable interface.
   )
   ```
 
-## useSSRContext() {#usessrcontext}
+## useSSRContext() 
 
 A runtime API used to retrieve the context object passed to `renderToString()` or other server render APIs.
 

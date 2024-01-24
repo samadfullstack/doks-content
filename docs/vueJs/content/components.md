@@ -2,7 +2,7 @@
 pageClass: api
 ---
 
-# Built-in Components {#built-in-components}
+# Built-in Components 
 
 :::info Registration and Usage
 Built-in components can be used directly in templates without needing to be registered. They are also tree-shakeable: they are only included in the build when they are used.
@@ -19,7 +19,7 @@ h(Transition, {
 
 :::
 
-## `<Transition>` {#transition}
+## `<Transition>` 
 
 Provides animated transition effects to a **single** element or component.
 
@@ -128,7 +128,7 @@ Provides animated transition effects to a **single** element or component.
 
 - **See also** [Guide - Transition](/guide/built-ins/transition)
 
-## `<TransitionGroup>` {#transitiongroup}
+## `<TransitionGroup>` 
 
 Provides transition effects for **multiple** elements or components in a list.
 
@@ -174,7 +174,7 @@ Provides transition effects for **multiple** elements or components in a list.
 
 - **See also** [Guide - TransitionGroup](/guide/built-ins/transition-group)
 
-## `<KeepAlive>` {#keepalive}
+## `<KeepAlive>` 
 
 Caches dynamically toggled components wrapped inside.
 
@@ -267,7 +267,7 @@ Caches dynamically toggled components wrapped inside.
 
 - **See also** [Guide - KeepAlive](/guide/built-ins/keep-alive)
 
-## `<Teleport>` {#teleport}
+## `<Teleport>` 
 
 Renders its slot content to another part of the DOM.
 
@@ -309,7 +309,7 @@ Renders its slot content to another part of the DOM.
 
 - **See also** [Guide - Teleport](/guide/built-ins/teleport)
 
-## `<Suspense>` <sup class="vt-badge experimental" /> {#suspense}
+## `<Suspense>` <sup class="vt-badge experimental" /> 
 
 Used for orchestrating nested async dependencies in a component tree.
 

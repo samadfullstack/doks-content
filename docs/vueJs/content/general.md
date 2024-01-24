@@ -1,6 +1,6 @@
-# Global API: General {#global-api-general}
+# Global API: General 
 
-## version {#version}
+## version 
 
 Exposes the current version of Vue.
 
@@ -14,7 +14,7 @@ Exposes the current version of Vue.
   console.log(version)
   ```
 
-## nextTick() {#nexttick}
+## nextTick() 
 
 A utility for waiting for the next DOM update flush.
 
@@ -94,7 +94,7 @@ A utility for waiting for the next DOM update flush.
 
 - **See also** [`this.$nextTick()`](/api/component-instance#nexttick)
 
-## defineComponent() {#definecomponent}
+## defineComponent() 
 
 A type helper for defining a Vue component with type inference.
 
@@ -129,7 +129,7 @@ A type helper for defining a Vue component with type inference.
   type FooInstance = InstanceType<typeof Foo>
   ```
 
-  ### Function Signature <sup class="vt-badge" data-text="3.3+" /> {#function-signature}
+  ### Function Signature <sup class="vt-badge" data-text="3.3+" /> 
 
   `defineComponent()` also has an alternative signature that is meant to be used with Composition API and [render functions or JSX](/guide/extras/render-function.html).
 
@@ -179,7 +179,7 @@ A type helper for defining a Vue component with type inference.
 
   In the future, we plan to provide a Babel plugin that automatically infers and injects the runtime props (like for `defineProps` in SFCs) so that the runtime props declaration can be omitted.
 
-  ### Note on webpack Treeshaking {#note-on-webpack-treeshaking}
+  ### Note on webpack Treeshaking 
 
   Because `defineComponent()` is a function call, it could look like that it would produce side-effects to some build tools, e.g. webpack. This will prevent the component from being tree-shaken even when the component is never used.
 
@@ -193,7 +193,7 @@ A type helper for defining a Vue component with type inference.
 
 - **See also** [Guide - Using Vue with TypeScript](/guide/typescript/overview#general-usage-notes)
 
-## defineAsyncComponent() {#defineasynccomponent}
+## defineAsyncComponent() 
 
 Define an async component which is lazy loaded only when it is rendered. The argument can either be a loader function, or an options object for more advanced control of the loading behavior.
 
@@ -224,7 +224,7 @@ Define an async component which is lazy loaded only when it is rendered. The arg
 
 - **See also** [Guide - Async Components](/guide/components/async)
 
-## defineCustomElement() {#definecustomelement}
+## defineCustomElement() 
 
 This method accepts the same argument as [`defineComponent`](#definecomponent), but instead returns a native [Custom Element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) class constructor.
 

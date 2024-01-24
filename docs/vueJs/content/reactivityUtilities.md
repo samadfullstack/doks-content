@@ -1,6 +1,6 @@
-# Reactivity API: Utilities {#reactivity-api-utilities}
+# Reactivity API: Utilities 
 
-## isRef() {#isref}
+## isRef() 
 
 Checks if a value is a ref object.
 
@@ -20,7 +20,7 @@ Checks if a value is a ref object.
   }
   ```
 
-## unref() {#unref}
+## unref() 
 
 Returns the inner value if the argument is a ref, otherwise return the argument itself. This is a sugar function for `val = isRef(val) ? val.value : val`.
 
@@ -39,7 +39,7 @@ Returns the inner value if the argument is a ref, otherwise return the argument 
   }
   ```
 
-## toRef() {#toref}
+## toRef() 
 
 Can be used to normalize values / refs / getters into refs (3.3+).
 
@@ -132,7 +132,7 @@ Can also be used to create a ref for a property on a source reactive object. The
 
   When using the object property signature, `toRef()` will return a usable ref even if the source property doesn't currently exist. This makes it possible to work with optional properties, which wouldn't be picked up by [`toRefs`](#torefs).
 
-## toValue() <sup class="vt-badge" data-text="3.3+" /> {#tovalue}
+## toValue() <sup class="vt-badge" data-text="3.3+" /> 
 
 Normalizes values / refs / getters to values. This is similar to [unref()](#unref), except that it also normalizes getters. If the argument is a getter, it will be invoked and its return value will be returned.
 
@@ -169,7 +169,7 @@ This can be used in [Composables](/guide/reusability/composables.html) to normal
   useFeature(() => 1)
   ```
 
-## toRefs() {#torefs}
+## toRefs() 
 
 Converts a reactive object to a plain object where each property of the resulting object is a ref pointing to the corresponding property of the original object. Each individual ref is created using [`toRef()`](#toref).
 
@@ -230,7 +230,7 @@ Converts a reactive object to a plain object where each property of the resultin
 
   `toRefs` will only generate refs for properties that are enumerable on the source object at call time. To create a ref for a property that may not exist yet, use [`toRef`](#toref) instead.
 
-## isProxy() {#isproxy}
+## isProxy() 
 
 Checks if an object is a proxy created by [`reactive()`](./reactivity-core#reactive), [`readonly()`](./reactivity-core#readonly), [`shallowReactive()`](./reactivity-advanced#shallowreactive) or [`shallowReadonly()`](./reactivity-advanced#shallowreadonly).
 
@@ -240,7 +240,7 @@ Checks if an object is a proxy created by [`reactive()`](./reactivity-core#react
   function isProxy(value: unknown): boolean
   ```
 
-## isReactive() {#isreactive}
+## isReactive() 
 
 Checks if an object is a proxy created by [`reactive()`](./reactivity-core#reactive) or [`shallowReactive()`](./reactivity-advanced#shallowreactive).
 
@@ -250,7 +250,7 @@ Checks if an object is a proxy created by [`reactive()`](./reactivity-core#react
   function isReactive(value: unknown): boolean
   ```
 
-## isReadonly() {#isreadonly}
+## isReadonly() 
 
 Checks whether the passed value is a readonly object. The properties of a readonly object can change, but they can't be assigned directly via the passed object.
 

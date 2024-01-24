@@ -1,6 +1,6 @@
-# Composition API: <br>Dependency Injection {#composition-api-dependency-injection}
+# Composition API: <br>Dependency Injection 
 
-## provide() {#provide}
+## provide() 
 
 Provides a value that can be injected by descendant components.
 
@@ -41,7 +41,7 @@ Provides a value that can be injected by descendant components.
   - [Guide - Provide / Inject](/guide/components/provide-inject)
   - [Guide - Typing Provide / Inject](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />
 
-## inject() {#inject}
+## inject() 
 
 Injects a value provided by an ancestor component or the application (via `app.provide()`).
 
@@ -103,7 +103,7 @@ Injects a value provided by an ancestor component or the application (via `app.p
   </script>
   ```
 
-## hasInjectionContext() <sup class="vt-badge" data-text="3.3+" /> {#has-injection-context}
+## hasInjectionContext() <sup class="vt-badge" data-text="3.3+" /> 
 
 Returns true if [inject()](#inject) can be used without warning about being called in the wrong place (e.g. outside of `setup()`). This method is designed to be used by libraries that want to use `inject()` internally without triggering a warning to the end user.
 

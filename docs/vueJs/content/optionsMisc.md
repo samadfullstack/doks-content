@@ -1,6 +1,6 @@
-# Options: Misc {#options-misc}
+# Options: Misc 
 
-## name {#name}
+## name 
 
 Explicitly declare a display name for the component.
 
@@ -32,7 +32,7 @@ Explicitly declare a display name for the component.
   Since version 3.2.34, a single-file component using `<script setup>` will automatically infer its `name` option based on the filename, removing the need to manually declare the name even when used with `<KeepAlive>`.
   :::
 
-## inheritAttrs {#inheritattrs}
+## inheritAttrs 
 
 Controls whether the default component attribute fallthrough behavior should be enabled.
 
@@ -103,7 +103,7 @@ Controls whether the default component attribute fallthrough behavior should be 
 
 - **See also** [Fallthrough Attributes](/guide/components/attrs)
 
-## components {#components}
+## components 
 
 An object that registers components to be made available to the component instance.
 
@@ -133,7 +133,7 @@ An object that registers components to be made available to the component instan
 
 - **See also** [Component Registration](/guide/components/registration)
 
-## directives {#directives}
+## directives 
 
 An object that registers directives to be made available to the component instance.
 

@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Compile-Time Flags {#compile-time-flags}
+# Compile-Time Flags 
 
 :::tip
 Compile-time flags only apply when using the `esm-bundler` build of Vue (i.e. `vue/dist/vue.esm-bundler.js`).
@@ -32,9 +32,9 @@ See [Configuration Guides](#configuration-guides) on how to configure them depen
 
   Enable/disable detailed warnings for hydration mismatches in production builds. This will result in more code included in the bundle, so it is recommended to only enable this for debugging purposes.
 
-## Configuration Guides {#configuration-guides}
+## Configuration Guides 
 
-### Vite {#vite}
+### Vite 
 
 `@vitejs/plugin-vue` automatically provides default values for these flags. To change the default values, use Vite's [`define` config option](https://vitejs.dev/config/shared-options.html#define):
 
@@ -50,7 +50,7 @@ export default defineConfig({
 })
 ```
 
-### vue-cli {#vue-cli}
+### vue-cli 
 
 `@vue/cli-service` automatically provides default values for some of these flags. To configure /change the values:
 
@@ -70,7 +70,7 @@ module.exports = {
 }
 ```
 
-### webpack {#webpack}
+### webpack 
 
 Flags should be defined using webpack's [DefinePlugin](https://webpack.js.org/plugins/define-plugin/):
 
@@ -88,7 +88,7 @@ module.exports = {
 }
 ```
 
-### Rollup {#rollup}
+### Rollup 
 
 Flags should be defined using [@rollup/plugin-replace](https://github.com/rollup/plugins/tree/master/packages/replace):
 

@@ -1,6 +1,6 @@
-# Composition API: setup() {#composition-api-setup}
+# Composition API: setup() 
 
-## Basic Usage {#basic-usage}
+## Basic Usage 
 
 The `setup()` hook serves as the entry point for Composition API usage in components in the following cases:
 
@@ -44,7 +44,7 @@ export default {
 
 `setup()` should return an object _synchronously_. The only case when `async setup()` can be used is when the component is a descendant of a [Suspense](../guide/built-ins/suspense) component.
 
-## Accessing Props {#accessing-props}
+## Accessing Props 
 
 The first argument in the `setup` function is the `props` argument. Just as you would expect in a standard component, `props` inside of a `setup` function are reactive and will be updated when new props are passed in.
 
@@ -79,7 +79,7 @@ export default {
 }
 ```
 
-## Setup Context {#setup-context}
+## Setup Context 
 
 The second argument passed to the `setup` function is a **Setup Context** object. The context object exposes other values that may be useful inside `setup`:
 
@@ -113,7 +113,7 @@ export default {
 
 `attrs` and `slots` are stateful objects that are always updated when the component itself is updated. This means you should avoid destructuring them and always reference properties as `attrs.x` or `slots.x`. Also note that, unlike `props`, the properties of `attrs` and `slots` are **not** reactive. If you intend to apply side effects based on changes to `attrs` or `slots`, you should do so inside an `onBeforeUpdate` lifecycle hook.
 
-### Exposing Public Properties {#exposing-public-properties}
+### Exposing Public Properties 
 
 `expose` is a function that can be used to explicitly limit the properties exposed when the component instance is accessed by a parent component via [template refs](/guide/essentials/template-refs#ref-on-component):
 
@@ -132,7 +132,7 @@ export default {
 }
 ```
 
-## Usage with Render Functions {#usage-with-render-functions}
+## Usage with Render Functions 
 
 `setup` can also return a [render function](/guide/extras/render-function) which can directly make use of the reactive state declared in the same scope:
 

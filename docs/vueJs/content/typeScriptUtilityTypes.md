@@ -1,10 +1,10 @@
-# Utility Types {#utility-types}
+# Utility Types 
 
 :::info
 This page only lists a few commonly used utility types that may need explanation for their usage. For a full list of exported types, consult the [source code](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/index.ts#L131).
 :::
 
-## PropType\<T> {#proptype-t}
+## PropType\<T> 
 
 Used to annotate a prop with more advanced types when using runtime props declarations.
 
@@ -32,19 +32,19 @@ Used to annotate a prop with more advanced types when using runtime props declar
 
 - **See also** [Guide - Typing Component Props](/guide/typescript/options-api#typing-component-props)
 
-## MaybeRef\<T> {#mayberef}
+## MaybeRef\<T> 
 
 Alias for `T | Ref<T>`. Useful for annotating arguments of [Composables](/guide/reusability/composables.html).
 
 - Only supported in 3.3+.
 
-## MaybeRefOrGetter\<T> {#maybereforgetter}
+## MaybeRefOrGetter\<T> 
 
 Alias for `T | Ref<T> | (() => T)`. Useful for annotating arguments of [Composables](/guide/reusability/composables.html).
 
 - Only supported in 3.3+.
 
-## ExtractPropTypes\<T> {#extractproptypes}
+## ExtractPropTypes\<T> 
 
 Extract prop types from a runtime props options object. The extracted types are internal facing - i.e. the resolved props received by the component. This means boolean props and props with default values are always defined, even if they are not required.
 
@@ -75,7 +75,7 @@ To extract public facing props, i.e. props that the parent is allowed to pass, u
   // }
   ```
 
-## ExtractPublicPropTypes\<T> {#extractpublicproptypes}
+## ExtractPublicPropTypes\<T> 
 
 Extract prop types from a runtime props options object. The extracted types are public facing - i.e. the props that the parent is allowed to pass.
 
@@ -104,7 +104,7 @@ Extract prop types from a runtime props options object. The extracted types are 
   // }
   ```
 
-## ComponentCustomProperties {#componentcustomproperties}
+## ComponentCustomProperties 
 
 Used to augment the component instance type to support custom global properties.
 
@@ -127,7 +127,7 @@ Used to augment the component instance type to support custom global properties.
 
 - **See also** [Guide - Augmenting Global Properties](/guide/typescript/options-api#augmenting-global-properties)
 
-## ComponentCustomOptions {#componentcustomoptions}
+## ComponentCustomOptions 
 
 Used to augment the component options type to support custom options.
 
@@ -149,7 +149,7 @@ Used to augment the component options type to support custom options.
 
 - **See also** [Guide - Augmenting Custom Options](/guide/typescript/options-api#augmenting-custom-options)
 
-## ComponentCustomProps {#componentcustomprops}
+## ComponentCustomProps 
 
 Used to augment allowed TSX props in order to use non-declared props on TSX elements.
 
@@ -174,7 +174,7 @@ Used to augment allowed TSX props in order to use non-declared props on TSX elem
   Augmentations must be placed in a module `.ts` or `.d.ts` file. See [Type Augmentation Placement](/guide/typescript/options-api#augmenting-global-properties) for more details.
   :::
 
-## CSSProperties {#cssproperties}
+## CSSProperties 
 
 Used to augment allowed values in style property bindings.
 

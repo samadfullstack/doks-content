@@ -1,6 +1,6 @@
-# SFC Syntax Specification {#sfc-syntax-specification}
+# SFC Syntax Specification 
 
-## Overview {#overview}
+## Overview 
 
 A Vue Single-File Component (SFC), conventionally using the `*.vue` file extension, is a custom file format that uses an HTML-like syntax to describe a Vue component. A Vue SFC is syntactically compatible with HTML.
 
@@ -32,15 +32,15 @@ export default {
 </custom1>
 ```
 
-## Language Blocks {#language-blocks}
+## Language Blocks 
 
-### `<template>` {#template}
+### `<template>` 
 
 - Each `*.vue` file can contain at most one top-level `<template>` block.
 
 - Contents will be extracted and passed on to `@vue/compiler-dom`, pre-compiled into JavaScript render functions, and attached to the exported component as its `render` option.
 
-### `<script>` {#script}
+### `<script>` 
 
 - Each `*.vue` file can contain at most one `<script>` block (excluding [`<script setup>`](/api/sfc-script-setup)).
 
@@ -48,19 +48,19 @@ export default {
 
 - The **default export** should be a Vue component options object, either as a plain object or as the return value of [defineComponent](/api/general#definecomponent).
 
-### `<script setup>` {#script-setup}
+### `<script setup>` 
 
 - Each `*.vue` file can contain at most one `<script setup>` block (excluding normal `<script>`).
 
 - The script is pre-processed and used as the component's `setup()` function, which means it will be executed **for each instance of the component**. Top-level bindings in `<script setup>` are automatically exposed to the template. For more details, see [dedicated documentation on `<script setup>`](/api/sfc-script-setup).
 
-### `<style>` {#style}
+### `<style>` 
 
 - A single `*.vue` file can contain multiple `<style>` tags.
 
 - A `<style>` tag can have `scoped` or `module` attributes (see [SFC Style Features](/api/sfc-css-features) for more details) to help encapsulate the styles to the current component. Multiple `<style>` tags with different encapsulation modes can be mixed in the same component.
 
-### Custom Blocks {#custom-blocks}
+### Custom Blocks 
 
 Additional custom blocks can be included in a `*.vue` file for any project-specific needs, for example a `<docs>` block. Some real-world examples of custom blocks include:
 
@@ -70,7 +70,7 @@ Additional custom blocks can be included in a `*.vue` file for any project-speci
 
 Handling of Custom Blocks will depend on tooling - if you want to build your own custom block integrations, see the [SFC custom block integrations tooling section](/guide/scaling-up/tooling#sfc-custom-block-integrations) for more details.
 
-## Automatic Name Inference {#automatic-name-inference}
+## Automatic Name Inference 
 
 An SFC automatically infers the component's name from its **filename** in the following cases:
 
@@ -78,7 +78,7 @@ An SFC automatically infers the component's name from its **filename** in the fo
 - DevTools inspection
 - Recursive self-reference, e.g. a file named `FooBar.vue` can refer to itself as `<FooBar/>` in its template. This has lower priority than explicitly registered/imported components.
 
-## Pre-Processors {#pre-processors}
+## Pre-Processors 
 
 Blocks can declare pre-processor languages using the `lang` attribute. The most common case is using TypeScript for the `<script>` block:
 
@@ -109,7 +109,7 @@ Note that integration with various pre-processors may differ by toolchain. Check
 - [Vue CLI](https://cli.vuejs.org/guide/css.html#pre-processors)
 - [webpack + vue-loader](https://vue-loader.vuejs.org/guide/pre-processors.html#using-pre-processors)
 
-## `src` Imports {#src-imports}
+## `src` Imports 
 
 If you prefer splitting up your `*.vue` components into multiple files, you can use the `src` attribute to import an external file for a language block:
 
@@ -136,6 +136,6 @@ Beware that `src` imports follow the same path resolution rules as webpack modul
 </unit-test>
 ```
 
-## Comments {#comments}
+## Comments 
 
 Inside each block you shall use the comment syntax of the language being used (HTML, CSS, JavaScript, Pug, etc.). For top-level comments, use HTML comment syntax: `<!-- comment contents here -->`

@@ -1,6 +1,6 @@
-# Reactivity API: Advanced {#reactivity-api-advanced}
+# Reactivity API: Advanced 
 
-## shallowRef() {#shallowref}
+## shallowRef() 
 
 Shallow version of [`ref()`](./reactivity-core#ref).
 
@@ -36,7 +36,7 @@ Shallow version of [`ref()`](./reactivity-core#ref).
   - [Guide - Reduce Reactivity Overhead for Large Immutable Structures](/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures)
   - [Guide - Integration with External State Systems](/guide/extras/reactivity-in-depth#integration-with-external-state-systems)
 
-## triggerRef() {#triggerref}
+## triggerRef() 
 
 Force trigger effects that depends on a [shallow ref](#shallowref). This is typically used after making deep mutations to the inner value of a shallow ref.
 
@@ -65,7 +65,7 @@ Force trigger effects that depends on a [shallow ref](#shallowref). This is typi
   triggerRef(shallow)
   ```
 
-## customRef() {#customref}
+## customRef() 
 
 Creates a customized ref with explicit control over its dependency tracking and updates triggering.
 
@@ -131,7 +131,7 @@ Creates a customized ref with explicit control over its dependency tracking and 
 
   [Try it in the Playground](https://play.vuejs.org/#eNplUkFugzAQ/MqKC1SiIekxIpEq9QVV1BMXCguhBdsyaxqE/PcuGAhNfYGd3Z0ZDwzeq1K7zqB39OI205UiaJGMOieiapTUBAOYFt/wUxqRYf6OBVgotGzA30X5Bt59tX4iMilaAsIbwelxMfCvWNfSD+Gw3++fEhFHTpLFuCBsVJ0ScgUQjw6Az+VatY5PiroHo3IeaeHANlkrh7Qg1NBL43cILUmlMAfqVSXK40QUOSYmHAZHZO0KVkIZgu65kTnWp8Qb+4kHEXfjaDXkhd7DTTmuNZ7MsGyzDYbz5CgSgbdppOBFqqT4l0eX1gZDYOm057heOBQYRl81coZVg9LQWGr+IlrchYKAdJp9h0C6KkvUT3A6u8V1dq4ASqRgZnVnWg04/QWYNyYzC2rD5Y3/hkDgz8fY/cOT1ZjqizMZzGY3rDPC12KGZYyd3J26M8ny1KKx7c3X25q1c1wrZN3L9LCMWs/+AmeG6xI=)
 
-## shallowReactive() {#shallowreactive}
+## shallowReactive() 
 
 Shallow version of [`reactive()`](./reactivity-core#reactive).
 
@@ -169,7 +169,7 @@ Shallow version of [`reactive()`](./reactivity-core#reactive).
   state.nested.bar++
   ```
 
-## shallowReadonly() {#shallowreadonly}
+## shallowReadonly() 
 
 Shallow version of [`readonly()`](./reactivity-core#readonly).
 
@@ -207,7 +207,7 @@ Shallow version of [`readonly()`](./reactivity-core#readonly).
   state.nested.bar++
   ```
 
-## toRaw() {#toraw}
+## toRaw() 
 
 Returns the raw, original object of a Vue-created proxy.
 
@@ -232,7 +232,7 @@ Returns the raw, original object of a Vue-created proxy.
   console.log(toRaw(reactiveFoo) === foo) // true
   ```
 
-## markRaw() {#markraw}
+## markRaw() 
 
 Marks an object so that it will never be converted to a proxy. Returns the object itself.
 
@@ -279,7 +279,7 @@ Marks an object so that it will never be converted to a proxy. Returns the objec
 
   :::
 
-## effectScope() {#effectscope}
+## effectScope() 
 
 Creates an effect scope object which can capture the reactive effects (i.e. computed and watchers) created within it so that these effects can be disposed together. For detailed use cases of this API, please consult its corresponding [RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0041-reactivity-effect-scope.md).
 
@@ -311,7 +311,7 @@ Creates an effect scope object which can capture the reactive effects (i.e. comp
   scope.stop()
   ```
 
-## getCurrentScope() {#getcurrentscope}
+## getCurrentScope() 
 
 Returns the current active [effect scope](#effectscope) if there is one.
 
@@ -321,7 +321,7 @@ Returns the current active [effect scope](#effectscope) if there is one.
   function getCurrentScope(): EffectScope | undefined
   ```
 
-## onScopeDispose() {#onscopedispose}
+## onScopeDispose() 
 
 Registers a dispose callback on the current active [effect scope](#effectscope). The callback will be invoked when the associated effect scope is stopped.
 

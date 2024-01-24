@@ -1,6 +1,6 @@
-# Options: Rendering {#options-rendering}
+# Options: Rendering 
 
-## template {#template}
+## template 
 
 A string template for the component.
 
@@ -26,7 +26,7 @@ A string template for the component.
   Only use template sources that you can trust. Do not use user-provided content as your template. See [Security Guide](/guide/best-practices/security#rule-no-1-never-use-non-trusted-templates) for more details.
   :::
 
-## render {#render}
+## render 
 
 A function that programmatically returns the virtual DOM tree of the component.
 
@@ -61,7 +61,7 @@ A function that programmatically returns the virtual DOM tree of the component.
   - [Rendering Mechanism](/guide/extras/rendering-mechanism)
   - [Render Functions](/guide/extras/render-function)
 
-## compilerOptions {#compileroptions}
+## compilerOptions 
 
 Configure runtime compiler options for the component's template.
 
@@ -84,7 +84,7 @@ Configure runtime compiler options for the component's template.
 
 - **See also** [app.config.compilerOptions](/api/application#app-config-compileroptions)
 
-## slots<sup class="vt-badge ts"/> {#slots}
+## slots<sup class="vt-badge ts"/> 
 
 An option to assist with type inference when using slots programmatically in render functions. Only supported in 3.3+.
 

@@ -1,10 +1,10 @@
-# Built-in Special Elements {#built-in-special-elements}
+# Built-in Special Elements 
 
 :::info Not Components
 `<component>`, `<slot>` and `<template>` are component-like features and part of the template syntax. They are not true components and are compiled away during template compilation. As such, they are conventionally written with lowercase in templates.
 :::
 
-## `<component>` {#component}
+## `<component>` 
 
 A "meta component" for rendering dynamic components or elements.
 
@@ -110,7 +110,7 @@ A "meta component" for rendering dynamic components or elements.
 
 - **See also** [Dynamic Components](/guide/essentials/component-basics#dynamic-components)
 
-## `<slot>` {#slot}
+## `<slot>` 
 
 Denotes slot content outlets in templates.
 
@@ -140,7 +140,7 @@ Denotes slot content outlets in templates.
 
 - **See also** [Component - Slots](/guide/components/slots)
 
-## `<template>` {#template}
+## `<template>` 
 
 The `<template>` tag is used as a placeholder when we want to use a built-in directive without rendering an element in the DOM.
 

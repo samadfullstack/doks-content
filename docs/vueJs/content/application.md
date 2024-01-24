@@ -1,6 +1,6 @@
-# Application API {#application-api}
+# Application API 
 
-## createApp() {#createapp}
+## createApp() 
 
 Creates an application instance.
 
@@ -37,11 +37,11 @@ Creates an application instance.
 
 - **See also** [Guide - Creating a Vue Application](/guide/essentials/application)
 
-## createSSRApp() {#createssrapp}
+## createSSRApp() 
 
 Creates an application instance in [SSR Hydration](/guide/scaling-up/ssr#client-hydration) mode. Usage is exactly the same as `createApp()`.
 
-## app.mount() {#app-mount}
+## app.mount() 
 
 Mounts the application instance in a container element.
 
@@ -78,7 +78,7 @@ Mounts the application instance in a container element.
   app.mount(document.body.firstChild)
   ```
 
-## app.unmount() {#app-unmount}
+## app.unmount() 
 
 Unmounts a mounted application instance, triggering the unmount lifecycle hooks for all components in the application's component tree.
 
@@ -90,7 +90,7 @@ Unmounts a mounted application instance, triggering the unmount lifecycle hooks 
   }
   ```
 
-## app.component() {#app-component}
+## app.component() 
 
 Registers a global component if passing both a name string and a component definition, or retrieves an already registered one if only the name is passed.
 
@@ -121,7 +121,7 @@ Registers a global component if passing both a name string and a component defin
 
 - **See also** [Component Registration](/guide/components/registration)
 
-## app.directive() {#app-directive}
+## app.directive() 
 
 Registers a global custom directive if passing both a name string and a directive definition, or retrieves an already registered one if only the name is passed.
 
@@ -159,7 +159,7 @@ Registers a global custom directive if passing both a name string and a directiv
 
 - **See also** [Custom Directives](/guide/reusability/custom-directives)
 
-## app.use() {#app-use}
+## app.use() 
 
 Installs a [plugin](/guide/reusability/plugins).
 
@@ -194,7 +194,7 @@ Installs a [plugin](/guide/reusability/plugins).
 
 - **See also** [Plugins](/guide/reusability/plugins)
 
-## app.mixin() {#app-mixin}
+## app.mixin() 
 
 Applies a global mixin (scoped to the application). A global mixin applies its included options to every component instance in the application.
 
@@ -212,7 +212,7 @@ For logic reuse, prefer [Composables](/guide/reusability/composables) instead.
   }
   ```
 
-## app.provide() {#app-provide}
+## app.provide() 
 
 Provide a value that can be injected in all descendant components within the application.
 
@@ -271,7 +271,7 @@ Provide a value that can be injected in all descendant components within the app
   - [App-level Provide](/guide/components/provide-inject#app-level-provide)
   - [app.runWithContext()](#app-runwithcontext)
 
-## app.runWithContext()<sup class="vt-badge" data-text="3.3+" /> {#app-runwithcontext}
+## app.runWithContext()<sup class="vt-badge" data-text="3.3+" /> 
 
 Execute a callback with the current app as injection context.
 
@@ -301,7 +301,7 @@ Execute a callback with the current app as injection context.
   console.log(injected) // 1
   ```
 
-## app.version {#app-version}
+## app.version 
 
 Provides the version of Vue that the application was created with. This is useful inside [plugins](/guide/reusability/plugins), where you might need conditional logic based on different Vue versions.
 
@@ -330,7 +330,7 @@ Provides the version of Vue that the application was created with. This is usefu
 
 - **See also** [Global API - version](/api/general#version)
 
-## app.config {#app-config}
+## app.config 
 
 Every application instance exposes a `config` object that contains the configuration settings for that application. You can modify its properties (documented below) before mounting your application.
 
@@ -342,7 +342,7 @@ const app = createApp(/* ... */)
 console.log(app.config)
 ```
 
-## app.config.errorHandler {#app-config-errorhandler}
+## app.config.errorHandler 
 
 Assign a global handler for uncaught errors propagating from within the application.
 
@@ -386,7 +386,7 @@ Assign a global handler for uncaught errors propagating from within the applicat
   }
   ```
 
-## app.config.warnHandler {#app-config-warnhandler}
+## app.config.warnHandler 
 
 Assign a custom handler for runtime warnings from Vue.
 
@@ -420,7 +420,7 @@ Assign a custom handler for runtime warnings from Vue.
   }
   ```
 
-## app.config.performance {#app-config-performance}
+## app.config.performance 
 
 Set this to `true` to enable component init, compile, render and patch performance tracing in the browser devtool performance/timeline panel. Only works in development mode and in browsers that support the [performance.mark](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark) API.
 
@@ -428,7 +428,7 @@ Set this to `true` to enable component init, compile, render and patch performan
 
 - **See also** [Guide - Performance](/guide/best-practices/performance)
 
-## app.config.compilerOptions {#app-config-compileroptions}
+## app.config.compilerOptions 
 
 Configure runtime compiler options. Values set on this object will be passed to the in-browser template compiler and affect every component in the configured app. Note you can also override these options on a per-component basis using the [`compilerOptions` option](/api/options-rendering#compileroptions).
 
@@ -440,7 +440,7 @@ This config option is only respected when using the full build (i.e. the standal
 - For `vite`: [pass via `@vitejs/plugin-vue` options](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#options).
   :::
 
-### app.config.compilerOptions.isCustomElement {#app-config-compileroptions-iscustomelement}
+### app.config.compilerOptions.isCustomElement 
 
 Specifies a check method to recognize native custom elements.
 
@@ -463,7 +463,7 @@ Specifies a check method to recognize native custom elements.
 
 - **See also** [Vue and Web Components](/guide/extras/web-components)
 
-### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
+### app.config.compilerOptions.whitespace 
 
 Adjusts template whitespace handling behavior.
 
@@ -487,7 +487,7 @@ Adjusts template whitespace handling behavior.
   app.config.compilerOptions.whitespace = 'preserve'
   ```
 
-### app.config.compilerOptions.delimiters {#app-config-compileroptions-delimiters}
+### app.config.compilerOptions.delimiters 
 
 Adjusts the delimiters used for text interpolation within the template.
 
@@ -506,7 +506,7 @@ Adjusts the delimiters used for text interpolation within the template.
   app.config.compilerOptions.delimiters = ['${', '}']
   ```
 
-### app.config.compilerOptions.comments {#app-config-compileroptions-comments}
+### app.config.compilerOptions.comments 
 
 Adjusts treatment of HTML comments in templates.
 
@@ -524,7 +524,7 @@ Adjusts treatment of HTML comments in templates.
   app.config.compilerOptions.comments = true
   ```
 
-## app.config.globalProperties {#app-config-globalproperties}
+## app.config.globalProperties 
 
 An object that can be used to register global properties that can be accessed on any component instance inside the application.
 
@@ -560,7 +560,7 @@ An object that can be used to register global properties that can be accessed on
 
 - **See also** [Guide - Augmenting Global Properties](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
 
-## app.config.optionMergeStrategies {#app-config-optionmergestrategies}
+## app.config.optionMergeStrategies 
 
 An object for defining merging strategies for custom component options.
 
