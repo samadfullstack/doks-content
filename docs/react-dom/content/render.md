@@ -24,9 +24,9 @@ render(reactNode, domNode, callback?)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `render(reactNode, domNode, callback?)` {/*render*/}
+### `render(reactNode, domNode, callback?)` 
 
 Call `render` to display a React component inside a browser DOM element.
 
@@ -43,7 +43,7 @@ An app fully built with React will usually only have one `render` call with its 
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `reactNode`: A *React node* that you want to display. This will usually be a piece of JSX like `<App />`, but you can also pass a React element constructed with [`createElement()`](/reference/react/createElement), a string, a number, `null`, or `undefined`. 
 
@@ -52,11 +52,11 @@ An app fully built with React will usually only have one `render` call with its 
 * **optional** `callback`: A function. If passed, React will call it after your component is placed into the DOM.
 
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `render` usually returns `null`. However, if the `reactNode` you pass is a *class component*, then it will return an instance of that component.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * In React 18, `render` was replaced by [`createRoot`.](/reference/react-dom/client/createRoot) Please use `createRoot` for React 18 and beyond.
 
@@ -68,7 +68,7 @@ An app fully built with React will usually only have one `render` call with its 
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
 Call `render` to display a <CodeStep step={1}>React component</CodeStep> inside a <CodeStep step={2}>browser DOM node</CodeStep>.
 
@@ -79,7 +79,7 @@ import App from './App.js';
 render(<App />, document.getElementById('root'));
 ```
 
-### Rendering the root component {/*rendering-the-root-component*/}
+### Rendering the root component 
 
 In apps fully built with React, **you will usually only do this once at startup**--to render the "root" component.
 
@@ -105,7 +105,7 @@ Usually you shouldn't need to call `render` again or to call it in more places. 
 
 ---
 
-### Rendering multiple roots {/*rendering-multiple-roots*/}
+### Rendering multiple roots 
 
 If your page [isn't fully built with React](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page), call `render` for each top-level piece of UI managed by React.
 
@@ -181,7 +181,7 @@ You can destroy the rendered trees with [`unmountComponentAtNode()`.](/reference
 
 ---
 
-### Updating the rendered tree {/*updating-the-rendered-tree*/}
+### Updating the rendered tree 
 
 You can call `render` more than once on the same DOM node. As long as the component tree structure matches up with what was previously rendered, React will [preserve the state.](/learn/preserving-and-resetting-state) Notice how you can type in the input, which means that the updates from repeated `render` calls every second are not destructive:
 

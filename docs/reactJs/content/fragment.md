@@ -19,17 +19,17 @@ title: <Fragment> (<>...</>)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `<Fragment>` {/*fragment*/}
+### `<Fragment>` 
 
 Wrap elements in `<Fragment>` to group them together in situations where you need a single element. Grouping elements in `Fragment` has no effect on the resulting DOM; it is the same as if the elements were not grouped. The empty JSX tag `<></>` is shorthand for `<Fragment></Fragment>` in most cases.
 
-#### Props {/*props*/}
+#### Props 
 
 - **optional** `key`: Fragments declared with the explicit `<Fragment>` syntax may have [keys.](/learn/rendering-lists#keeping-list-items-in-order-with-key)
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 - If you want to pass `key` to a Fragment, you can't use the `<>...</>` syntax. You have to explicitly import `Fragment` from `'react'` and render `<Fragment key={yourKey}>...</Fragment>`.
 
@@ -37,9 +37,9 @@ Wrap elements in `<Fragment>` to group them together in situations where you nee
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Returning multiple elements {/*returning-multiple-elements*/}
+### Returning multiple elements 
 
 Use `Fragment`, or the equivalent `<>...</>` syntax, to group multiple elements together. You can use it to put multiple elements in any place where a single element can go. For example, a component can only return one element, but by using a Fragment you can group multiple elements together and then return them as a group:
 
@@ -94,7 +94,7 @@ function PostBody({ body }) {
 
 <DeepDive>
 
-#### How to write a Fragment without the special syntax? {/*how-to-write-a-fragment-without-the-special-syntax*/}
+#### How to write a Fragment without the special syntax? 
 
 The example above is equivalent to importing `Fragment` from React:
 
@@ -117,7 +117,7 @@ Usually you won't need this unless you need to [pass a `key` to your `Fragment`.
 
 ---
 
-### Assigning multiple elements to a variable {/*assigning-multiple-elements-to-a-variable*/}
+### Assigning multiple elements to a variable 
 
 Like any other element, you can assign Fragment elements to variables, pass them as props, and so on:
 
@@ -139,7 +139,7 @@ function CloseDialog() {
 
 ---
 
-### Grouping elements with text {/*grouping-elements-with-text*/}
+### Grouping elements with text 
 
 You can use `Fragment` to group text together with components:
 
@@ -158,7 +158,7 @@ function DateRangePicker({ start, end }) {
 
 ---
 
-### Rendering a list of Fragments {/*rendering-a-list-of-fragments*/}
+### Rendering a list of Fragments 
 
 Here's a situation where you need to write `Fragment` explicitly instead of using the `<></>` syntax. When you [render multiple elements in a loop](/learn/rendering-lists), you need to assign a `key` to each element. If the elements within the loop are Fragments, you need to use the normal JSX element syntax in order to provide the `key` attribute:
 

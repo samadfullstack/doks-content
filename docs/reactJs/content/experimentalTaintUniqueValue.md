@@ -35,9 +35,9 @@ To prevent passing an object containing sensitive data, see [`taintObjectReferen
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `taintUniqueValue(message, lifetime, value)` {/*taintuniquevalue*/}
+### `taintUniqueValue(message, lifetime, value)` 
 
 Call `taintUniqueValue` with a password, token, key or hash to register it with React as something that should not be allowed to be passed to the Client as is:
 
@@ -53,7 +53,7 @@ experimental_taintUniqueValue(
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `message`: The message you want to display if `value` is passed to a Client Component. This message will be displayed as a part of the Error that will be thrown if `value` is passed to a Client Component.
 
@@ -61,20 +61,20 @@ experimental_taintUniqueValue(
 
 * `value`: A string, bigint or TypedArray. `value` must be a unique sequence of characters or bytes with high entropy such as a cryptographic token, private key, hash, or a long password. `value` will be blocked from being sent to any Client Component.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `experimental_taintUniqueValue` returns `undefined`.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * Deriving new values from tainted values can compromise tainting protection. New values created by uppercasing tainted values, concatenating tainted string values into a larger string, converting tainted values to base64, substringing tainted values, and other similar transformations are not tainted unless you explicitly call `taintUniqueValue` on these newly created values.
 * Do not use `taintUniqueValue` to protect low-entropy values such as PIN codes or phone numbers. If any value in a request is controlled by an attacker, they could infer which value is tainted by enumerating all possible values of the secret.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Prevent a token from being passed to Client Components {/*prevent-a-token-from-being-passed-to-client-components*/}
+### Prevent a token from being passed to Client Components 
 
 To ensure that sensitive information such as passwords, session tokens, or other unique values do not inadvertently get passed to Client Components, the `taintUniqueValue` function provides a layer of protection. When a value is tainted, any attempt to pass it to a Client Component will result in an error. 
 
@@ -137,7 +137,7 @@ Tainting only protects against simple mistakes like explicitly passing secret va
 
 <DeepDive>
 
-#### Using `server-only` and `taintUniqueValue` to prevent leaking secrets {/*using-server-only-and-taintuniquevalue-to-prevent-leaking-secrets*/}
+#### Using `server-only` and `taintUniqueValue` to prevent leaking secrets 
 
 If you're running a Server Components environment that has access to private keys or passwords such as database passwords, you have to be careful not to pass that to a Client Component.
 

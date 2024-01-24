@@ -23,9 +23,9 @@ The `useOptimistic` Hook is currently only available in React's canary and exper
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `useOptimistic(state, updateFn)` {/*use*/}
+### `useOptimistic(state, updateFn)` 
 
 `useOptimistic` is a React hook that lets you show a different state while an async action is underway. It accepts some state as an argument and returns a copy of that state that can be different during the duration of an async action such as a network request. You provide a function that takes the current state and the input to the action, and returns the optimistic state to be used while the action is pending.
 
@@ -48,22 +48,22 @@ function AppContainer() {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `state`: the value to be returned initially and whenever no action is pending.
 * `updateFn(currentState, optimisticValue)`: a function that takes the current state and the optimistic value passed to `addOptimistic` and returns the resulting optimistic state. It must be a pure function. `updateFn` takes in two parameters. The `currentState` and the `optimisticValue`. The return value will be the merged value of the `currentState` and `optimisticValue`.
 
 
-#### Returns {/*returns*/}
+#### Returns 
 
 * `optimisticState`: The resulting optimistic state. It is equal to `state` unless an action is pending, in which case it is equal to the value returned by `updateFn`.
 * `addOptimistic`: `addOptimistic` is the dispatching function to call when you have an optimistic update. It takes one argument, `optimisticValue`, of any type and will call the `updateFn` with `state` and `optimisticValue`.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Optimistically updating forms {/*optimistically-updating-with-forms*/}
+### Optimistically updating forms 
 
 The `useOptimistic` Hook provides a way to optimistically update the user interface before a background operation, like a network request, completes. In the context of forms, this technique helps to make apps feel more responsive. When a user submits a form, instead of waiting for the server's response to reflect the changes, the interface is immediately updated with the expected outcome.
 

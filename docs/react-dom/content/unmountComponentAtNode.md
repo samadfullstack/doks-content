@@ -24,9 +24,9 @@ unmountComponentAtNode(domNode)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `unmountComponentAtNode(domNode)` {/*unmountcomponentatnode*/}
+### `unmountComponentAtNode(domNode)` 
 
 Call `unmountComponentAtNode` to remove a mounted React component from the DOM and clean up its event handlers and state.
 
@@ -41,17 +41,17 @@ unmountComponentAtNode(domNode);
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `domNode`: A [DOM element.](https://developer.mozilla.org/en-US/docs/Web/API/Element) React will remove a mounted React component from this element.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `unmountComponentAtNode` returns `true` if a component was unmounted and `false` otherwise.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
 Call `unmountComponentAtNode` to remove a <CodeStep step={1}>mounted React component</CodeStep> from a <CodeStep step={2}>browser DOM node</CodeStep> and clean up its event handlers and state.
 
@@ -67,7 +67,7 @@ unmountComponentAtNode(rootNode);
 ```
 
 
-### Removing a React app from a DOM element {/*removing-a-react-app-from-a-dom-element*/}
+### Removing a React app from a DOM element 
 
 Occasionally, you may want to "sprinkle" React on an existing page, or a page that is not fully written in React. In those cases, you may need to "stop" the React app, by removing all of the UI, state, and listeners from the DOM node it was rendered to.
 

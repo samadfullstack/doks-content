@@ -16,9 +16,9 @@ startTransition(scope)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `startTransition(scope)` {/*starttransitionscope*/}
+### `startTransition(scope)` 
 
 The `startTransition` function lets you mark a state update as a transition.
 
@@ -39,15 +39,15 @@ function TabContainer() {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `scope`: A function that updates some state by calling one or more [`set` functions.](/reference/react/useState#setstate) React immediately calls `scope` with no parameters and marks all state updates scheduled synchronously during the `scope` function call as transitions. They will be [non-blocking](/reference/react/useTransition#marking-a-state-update-as-a-non-blocking-transition) and [will not display unwanted loading indicators.](/reference/react/useTransition#preventing-unwanted-loading-indicators)
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `startTransition` does not return anything.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * `startTransition` does not provide a way to track whether a transition is pending. To show a pending indicator while the transition is ongoing, you need [`useTransition`](/reference/react/useTransition) instead.
 
@@ -63,9 +63,9 @@ function TabContainer() {
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Marking a state update as a non-blocking transition {/*marking-a-state-update-as-a-non-blocking-transition*/}
+### Marking a state update as a non-blocking transition 
 
 You can mark a state update as a *transition* by wrapping it in a `startTransition` call:
 

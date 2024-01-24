@@ -16,9 +16,9 @@ const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?)` {/*usesyncexternalstore*/}
+### `useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?)` 
 
 Call `useSyncExternalStore` at the top level of your component to read a value from an external data store.
 
@@ -39,7 +39,7 @@ It returns the snapshot of the data in the store. You need to pass two functions
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `subscribe`: A function that takes a single `callback` argument and subscribes it to the store. When the store changes, it should invoke the provided `callback`. This will cause the component to re-render. The `subscribe` function should return a function that cleans up the subscription.
 
@@ -47,11 +47,11 @@ It returns the snapshot of the data in the store. You need to pass two functions
 
 * **optional** `getServerSnapshot`: A function that returns the initial snapshot of the data in the store. It will be used only during server rendering and during hydration of server-rendered content on the client. The server snapshot must be the same between the client and the server, and is usually serialized and passed from the server to the client. If you omit this argument, rendering the component on the server will throw an error.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 The current snapshot of the store which you can use in your rendering logic.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * The store snapshot returned by `getSnapshot` must be immutable. If the underlying store has mutable data, return a new immutable snapshot if the data has changed. Otherwise, return a cached last snapshot.
 
@@ -79,9 +79,9 @@ The current snapshot of the store which you can use in your rendering logic.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Subscribing to an external store {/*subscribing-to-an-external-store*/}
+### Subscribing to an external store 
 
 Most of your React components will only read data from their [props,](/learn/passing-props-to-a-component) [state,](/reference/react/useState) and [context.](/reference/react/useContext) However, sometimes a component needs to read some data from some store outside of React that changes over time. This includes:
 
@@ -175,7 +175,7 @@ When possible, we recommend using built-in React state with [`useState`](/refere
 
 ---
 
-### Subscribing to a browser API {/*subscribing-to-a-browser-api*/}
+### Subscribing to a browser API 
 
 Another reason to add `useSyncExternalStore` is when you want to subscribe to some value exposed by the browser that changes over time. For example, suppose that you want your component to display whether the network connection is active. The browser exposes this information via a property called [`navigator.onLine`.](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine)
 
@@ -241,7 +241,7 @@ function subscribe(callback) {
 
 ---
 
-### Extracting the logic to a custom Hook {/*extracting-the-logic-to-a-custom-hook*/}
+### Extracting the logic to a custom Hook 
 
 Usually you won't write `useSyncExternalStore` directly in your components. Instead, you'll typically call it from your own custom Hook. This lets you use the same external store from different components.
 
@@ -326,7 +326,7 @@ function subscribe(callback) {
 
 ---
 
-### Adding support for server rendering {/*adding-support-for-server-rendering*/}
+### Adding support for server rendering 
 
 If your React app uses [server rendering,](/reference/react-dom/server) your React components will also run outside the browser environment to generate the initial HTML. This creates a few challenges when connecting to an external store:
 
@@ -371,9 +371,9 @@ Make sure that `getServerSnapshot` returns the same exact data on the initial cl
 
 ---
 
-## Troubleshooting {/*troubleshooting*/}
+## Troubleshooting 
 
-### I'm getting an error: "The result of `getSnapshot` should be cached" {/*im-getting-an-error-the-result-of-getsnapshot-should-be-cached*/}
+### I'm getting an error: "The result of `getSnapshot` should be cached" 
 
 This error means your `getSnapshot` function returns a new object every time it's called, for example:
 
@@ -401,7 +401,7 @@ If your store data is mutable, your `getSnapshot` function should return an immu
 
 ---
 
-### My `subscribe` function gets called after every re-render {/*my-subscribe-function-gets-called-after-every-re-render*/}
+### My `subscribe` function gets called after every re-render 
 
 This `subscribe` function is defined *inside* a component so it is different on every re-render:
 

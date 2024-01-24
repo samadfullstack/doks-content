@@ -16,9 +16,9 @@ useEffect(setup, dependencies?)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `useEffect(setup, dependencies?)` {/*useeffect*/}
+### `useEffect(setup, dependencies?)` 
 
 Call `useEffect` at the top level of your component to declare an Effect:
 
@@ -42,17 +42,17 @@ function ChatRoom({ roomId }) {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `setup`: The function with your Effect's logic. Your setup function may also optionally return a *cleanup* function. When your component is added to the DOM, React will run your setup function. After every re-render with changed dependencies, React will first run the cleanup function (if you provided it) with the old values, and then run your setup function with the new values. After your component is removed from the DOM, React will run your cleanup function.
  
 * **optional** `dependencies`: The list of all reactive values referenced inside of the `setup` code. Reactive values include props, state, and all the variables and functions declared directly inside your component body. If your linter is [configured for React](/learn/editor-setup#linting), it will verify that every reactive value is correctly specified as a dependency. The list of dependencies must have a constant number of items and be written inline like `[dep1, dep2, dep3]`. React will compare each dependency with its previous value using the [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison. If you omit this argument, your Effect will re-run after every re-render of the component. [See the difference between passing an array of dependencies, an empty array, and no dependencies at all.](#examples-dependencies)
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `useEffect` returns `undefined`.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * `useEffect` is a Hook, so you can only call it **at the top level of your component** or your own Hooks. You can't call it inside loops or conditions. If you need that, extract a new component and move the state into it.
 
@@ -70,9 +70,9 @@ function ChatRoom({ roomId }) {
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Connecting to an external system {/*connecting-to-an-external-system*/}
+### Connecting to an external system 
 
 Some components need to stay connected to the network, some browser API, or a third-party library, while they are displayed on the page. These systems aren't controlled by React, so they are called *external.*
 
@@ -132,7 +132,7 @@ An Effect lets you [keep your component synchronized](/learn/synchronizing-with-
 
 <Recipes titleText="Examples of connecting to an external system" titleId="examples-connecting">
 
-#### Connecting to a chat server {/*connecting-to-a-chat-server*/}
+#### Connecting to a chat server 
 
 In this example, the `ChatRoom` component uses an Effect to stay connected to an external system defined in `chat.js`. Press "Open chat" to make the `ChatRoom` component appear. This sandbox runs in development mode, so there is an extra connect-and-disconnect cycle, as [explained here.](/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed) Try changing the `roomId` and `serverUrl` using the dropdown and the input, and see how the Effect re-connects to the chat. Press "Close chat" to see the Effect disconnect one last time.
 
@@ -216,7 +216,7 @@ button { margin-left: 10px; }
 
 <Solution />
 
-#### Listening to a global browser event {/*listening-to-a-global-browser-event*/}
+#### Listening to a global browser event 
 
 In this example, the external system is the browser DOM itself. Normally, you'd specify event listeners with JSX, but you can't listen to the global [`window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) object this way. An Effect lets you connect to the `window` object and listen to its events. Listening to the `pointermove` event lets you track the cursor (or finger) position and update the red dot to move with it.
 
@@ -265,7 +265,7 @@ body {
 
 <Solution />
 
-#### Triggering an animation {/*triggering-an-animation*/}
+#### Triggering an animation 
 
 In this example, the external system is the animation library in `animation.js`. It provides a JavaScript class called `FadeInAnimation` that takes a DOM node as an argument and exposes `start()` and `stop()` methods to control the animation. This component [uses a ref](/learn/manipulating-the-dom-with-refs) to access the underlying DOM node. The Effect reads the DOM node from the ref and automatically starts the animation for that node when the component appears.
 
@@ -364,7 +364,7 @@ html, body { min-height: 300px; }
 
 <Solution />
 
-#### Controlling a modal dialog {/*controlling-a-modal-dialog*/}
+#### Controlling a modal dialog 
 
 In this example, the external system is the browser DOM. The `ModalDialog` component renders a [`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) element. It uses an Effect to synchronize the `isOpen` prop to the [`showModal()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) and [`close()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close) method calls.
 
@@ -424,7 +424,7 @@ body {
 
 <Solution />
 
-#### Tracking element visibility {/*tracking-element-visibility*/}
+#### Tracking element visibility 
 
 In this example, the external system is again the browser DOM. The `App` component displays a long list, then a `Box` component, and then another long list. Scroll the list down. Notice that when all of the `Box` component is fully visible in the viewport, the background color changes to black. To implement this, the `Box` component uses an Effect to manage an [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). This browser API notifies you when the DOM element is visible in the viewport.
 
@@ -500,7 +500,7 @@ export default function Box() {
 
 ---
 
-### Wrapping Effects in custom Hooks {/*wrapping-effects-in-custom-hooks*/}
+### Wrapping Effects in custom Hooks 
 
 Effects are an ["escape hatch":](/learn/escape-hatches) you use them when you need to "step outside React" and when there is no better built-in solution for your use case. If you find yourself often needing to manually write Effects, it's usually a sign that you need to extract some [custom Hooks](/learn/reusing-logic-with-custom-hooks) for common behaviors your components rely on.
 
@@ -539,7 +539,7 @@ There are also many excellent custom Hooks for every purpose available in the Re
 
 <Recipes titleText="Examples of wrapping Effects in custom Hooks" titleId="examples-custom-hooks">
 
-#### Custom `useChatRoom` Hook {/*custom-usechatroom-hook*/}
+#### Custom `useChatRoom` Hook 
 
 This example is identical to one of the [earlier examples,](#examples-connecting) but the logic is extracted to a custom Hook.
 
@@ -635,7 +635,7 @@ button { margin-left: 10px; }
 
 <Solution />
 
-#### Custom `useWindowListener` Hook {/*custom-usewindowlistener-hook*/}
+#### Custom `useWindowListener` Hook 
 
 This example is identical to one of the [earlier examples,](#examples-connecting) but the logic is extracted to a custom Hook.
 
@@ -692,7 +692,7 @@ body {
 
 <Solution />
 
-#### Custom `useIntersectionObserver` Hook {/*custom-useintersectionobserver-hook*/}
+#### Custom `useIntersectionObserver` Hook 
 
 This example is identical to one of the [earlier examples,](#examples-connecting) but the logic is partially extracted to a custom Hook.
 
@@ -784,7 +784,7 @@ export function useIntersectionObserver(ref) {
 
 ---
 
-### Controlling a non-React widget {/*controlling-a-non-react-widget*/}
+### Controlling a non-React widget 
 
 Sometimes, you want to keep an external system synchronized to some prop or state of your component.
 
@@ -892,7 +892,7 @@ In this example, a cleanup function is not needed because the `MapWidget` class 
 
 ---
 
-### Fetching data with Effects {/*fetching-data-with-effects*/}
+### Fetching data with Effects 
 
 You can use an Effect to fetch data for your component. Note that [if you use a framework,](/learn/start-a-new-react-project#production-grade-react-frameworks) using your framework's data fetching mechanism will be a lot more efficient than writing Effects manually.
 
@@ -1035,7 +1035,7 @@ Writing data fetching directly in Effects gets repetitive and makes it difficult
 
 <DeepDive>
 
-#### What are good alternatives to data fetching in Effects? {/*what-are-good-alternatives-to-data-fetching-in-effects*/}
+#### What are good alternatives to data fetching in Effects? 
 
 Writing `fetch` calls inside Effects is a [popular way to fetch data](https://www.robinwieruch.de/react-hooks-fetch-data/), especially in fully client-side apps. This is, however, a very manual approach and it has significant downsides:
 
@@ -1055,7 +1055,7 @@ You can continue fetching data directly in Effects if neither of these approache
 
 ---
 
-### Specifying reactive dependencies {/*specifying-reactive-dependencies*/}
+### Specifying reactive dependencies 
 
 **Notice that you can't "choose" the dependencies of your Effect.** Every <CodeStep step={2}>reactive value</CodeStep> used by your Effect's code must be declared as a dependency. Your Effect's dependency list is determined by the surrounding code:
 
@@ -1140,7 +1140,7 @@ useEffect(() => {
 
 <Recipes titleText="Examples of passing reactive dependencies" titleId="examples-dependencies">
 
-#### Passing a dependency array {/*passing-a-dependency-array*/}
+#### Passing a dependency array 
 
 If you specify the dependencies, your Effect runs **after the initial render _and_ after re-renders with changed dependencies.**
 
@@ -1237,7 +1237,7 @@ button { margin-left: 5px; }
 
 <Solution />
 
-#### Passing an empty dependency array {/*passing-an-empty-dependency-array*/}
+#### Passing an empty dependency array 
 
 If your Effect truly doesn't use any reactive values, it will only run **after the initial render.**
 
@@ -1314,7 +1314,7 @@ export function createConnection(serverUrl, roomId) {
 <Solution />
 
 
-#### Passing no dependency array at all {/*passing-no-dependency-array-at-all*/}
+#### Passing no dependency array at all 
 
 If you pass no dependency array at all, your Effect runs **after every single render (and re-render)** of your component.
 
@@ -1415,7 +1415,7 @@ button { margin-left: 5px; }
 
 ---
 
-### Updating state based on previous state from an Effect {/*updating-state-based-on-previous-state-from-an-effect*/}
+### Updating state based on previous state from an Effect 
 
 When you want to update state based on previous state from an Effect, you might run into a problem:
 
@@ -1475,7 +1475,7 @@ Now that you're passing `c => c + 1` instead of `count + 1`, [your Effect no lon
 ---
 
 
-### Removing unnecessary object dependencies {/*removing-unnecessary-object-dependencies*/}
+### Removing unnecessary object dependencies 
 
 If your Effect depends on an object or a function created during rendering, it might run too often. For example, this Effect re-connects after every render because the `options` object is [different for every render:](/learn/removing-effect-dependencies#does-some-reactive-value-change-unintentionally)
 
@@ -1578,7 +1578,7 @@ With this fix, typing into the input doesn't reconnect the chat. Unlike an objec
 
 ---
 
-### Removing unnecessary function dependencies {/*removing-unnecessary-function-dependencies*/}
+### Removing unnecessary function dependencies 
 
 If your Effect depends on an object or a function created during rendering, it might run too often. For example, this Effect re-connects after every render because the `createOptions` function is [different for every render:](/learn/removing-effect-dependencies#does-some-reactive-value-change-unintentionally)
 
@@ -1686,7 +1686,7 @@ Now that you define the `createOptions` function inside the Effect, the Effect i
 
 ---
 
-### Reading the latest props and state from an Effect {/*reading-the-latest-props-and-state-from-an-effect*/}
+### Reading the latest props and state from an Effect 
 
 <Wip>
 
@@ -1729,7 +1729,7 @@ function Page({ url, shoppingCart }) {
 
 ---
 
-### Displaying different content on the server and the client {/*displaying-different-content-on-the-server-and-the-client*/}
+### Displaying different content on the server and the client 
 
 If your app uses server rendering (either [directly](/reference/react-dom/server) or via a [framework](/learn/start-a-new-react-project#production-grade-react-frameworks)), your component will render in two different environments. On the server, it will render to produce the initial HTML. On the client, React will run the rendering code again so that it can attach your event handlers to that HTML. This is why, for [hydration](/reference/react-dom/client/hydrateRoot#hydrating-server-rendered-html) to work, your initial render output must be identical on the client and the server.
 
@@ -1757,9 +1757,9 @@ Use this pattern sparingly. Keep in mind that users with a slow connection will 
 
 ---
 
-## Troubleshooting {/*troubleshooting*/}
+## Troubleshooting 
 
-### My Effect runs twice when the component mounts {/*my-effect-runs-twice-when-the-component-mounts*/}
+### My Effect runs twice when the component mounts 
 
 When Strict Mode is on, in development, React runs setup and cleanup one extra time before the actual setup.
 
@@ -1769,7 +1769,7 @@ Read more about [how this helps find bugs](/learn/synchronizing-with-effects#ste
 
 ---
 
-### My Effect runs after every re-render {/*my-effect-runs-after-every-re-render*/}
+### My Effect runs after every re-render 
 
 First, check that you haven't forgotten to specify the dependency array:
 
@@ -1810,7 +1810,7 @@ As a last resort (if these methods didn't help), wrap its creation with [`useMem
 
 ---
 
-### My Effect keeps re-running in an infinite cycle {/*my-effect-keeps-re-running-in-an-infinite-cycle*/}
+### My Effect keeps re-running in an infinite cycle 
 
 If your Effect runs in an infinite cycle, these two things must be true:
 
@@ -1827,7 +1827,7 @@ Finally, if your Effect is updating the state at the right time, but there is st
 
 ---
 
-### My cleanup logic runs even though my component didn't unmount {/*my-cleanup-logic-runs-even-though-my-component-didnt-unmount*/}
+### My cleanup logic runs even though my component didn't unmount 
 
 The cleanup function runs not only during unmount, but before every re-render with changed dependencies. Additionally, in development, React [runs setup+cleanup one extra time immediately after component mounts.](#my-effect-runs-twice-when-the-component-mounts)
 
@@ -1858,6 +1858,6 @@ Your cleanup logic should be "symmetrical" to the setup logic, and should stop o
 
 ---
 
-### My Effect does something visual, and I see a flicker before it runs {/*my-effect-does-something-visual-and-i-see-a-flicker-before-it-runs*/}
+### My Effect does something visual, and I see a flicker before it runs 
 
 If your Effect must block the browser from [painting the screen,](/learn/render-and-commit#epilogue-browser-paint) replace `useEffect` with [`useLayoutEffect`](/reference/react/useLayoutEffect). Note that **this shouldn't be needed for the vast majority of Effects.** You'll only need this if it's crucial to run your Effect before the browser paint: for example, to measure and position a tooltip before the user sees it.

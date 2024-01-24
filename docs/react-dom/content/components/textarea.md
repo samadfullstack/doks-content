@@ -16,9 +16,9 @@ The [built-in browser `<textarea>` component](https://developer.mozilla.org/en-U
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `<textarea>` {/*textarea*/}
+### `<textarea>` 
 
 To display a text area, render the [built-in browser `<textarea>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) component.
 
@@ -28,7 +28,7 @@ To display a text area, render the [built-in browser `<textarea>`](https://devel
 
 [See more examples below.](#usage)
 
-#### Props {/*props*/}
+#### Props 
 
 `<textarea>` supports all [common element props.](/reference/react-dom/components/common#props)
 
@@ -67,7 +67,7 @@ These `<textarea>` props are relevant both for uncontrolled and controlled text 
 * [`rows`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#rows): A number. Specifies the default height in average character heights. Defaults to `2`.
 * [`wrap`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#wrap): Either `'hard'`, `'soft'`, or `'off'`. Specifies how the text should be wrapped when submitting a form.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 - Passing children like `<textarea>something</textarea>` is not allowed. [Use `defaultValue` for initial content.](#providing-an-initial-value-for-a-text-area)
 - If a text area receives a string `value` prop, it will be [treated as controlled.](#controlling-a-text-area-with-a-state-variable)
@@ -77,9 +77,9 @@ These `<textarea>` props are relevant both for uncontrolled and controlled text 
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Displaying a text area {/*displaying-a-text-area*/}
+### Displaying a text area 
 
 Render `<textarea>` to display a text area. You can specify its default size with the [`rows`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#rows) and [`cols`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#cols) attributes, but by default the user will be able to resize it. To disable resizing, you can specify `resize: none` in the CSS.
 
@@ -107,7 +107,7 @@ label, textarea { display: block; }
 
 ---
 
-### Providing a label for a text area {/*providing-a-label-for-a-text-area*/}
+### Providing a label for a text area 
 
 Typically, you will place every `<textarea>` inside a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) tag. This tells the browser that this label is associated with that text area. When the user clicks the label, the browser will focus the text area. It's also essential for accessibility: a screen reader will announce the label caption when the user focuses the text area.
 
@@ -144,7 +144,7 @@ input { margin: 5px; }
 
 ---
 
-### Providing an initial value for a text area {/*providing-an-initial-value-for-a-text-area*/}
+### Providing an initial value for a text area 
 
 You can optionally specify the initial value for the text area. Pass it as the `defaultValue` string.
 
@@ -183,7 +183,7 @@ Unlike in HTML, passing initial text like `<textarea>Some content</textarea>` is
 
 ---
 
-### Reading the text area value when submitting a form {/*reading-the-text-area-value-when-submitting-a-form*/}
+### Reading the text area value when submitting a form 
 
 Add a [`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form) around your textarea with a [`<button type="submit">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) inside. It will call your `<form onSubmit>` event handler. By default, the browser will send the form data to the current URL and refresh the page. You can override that behavior by calling `e.preventDefault()`. Read the form data with [`new FormData(e.target)`](https://developer.mozilla.org/en-US/docs/Web/API/FormData).
 <Sandpack>
@@ -249,7 +249,7 @@ By default, *any* `<button>` inside a `<form>` will submit it. This can be surpr
 
 ---
 
-### Controlling a text area with a state variable {/*controlling-a-text-area-with-a-state-variable*/}
+### Controlling a text area with a state variable 
 
 A text area like `<textarea />` is *uncontrolled.* Even if you [pass an initial value](#providing-an-initial-value-for-a-text-area) like `<textarea defaultValue="Initial text" />`, your JSX only specifies the initial value, not the value right now.
 
@@ -336,9 +336,9 @@ textarea { display: block; margin-top: 5px; margin-bottom: 10px; }
 
 ---
 
-## Troubleshooting {/*troubleshooting*/}
+## Troubleshooting 
 
-### My text area doesn't update when I type into it {/*my-text-area-doesnt-update-when-i-type-into-it*/}
+### My text area doesn't update when I type into it 
 
 If you render a text area with `value` but no `onChange`, you will see an error in the console:
 
@@ -376,7 +376,7 @@ If the value is intentionally read-only, add a `readOnly` prop to suppress the e
 
 ---
 
-### My text area caret jumps to the beginning on every keystroke {/*my-text-area-caret-jumps-to-the-beginning-on-every-keystroke*/}
+### My text area caret jumps to the beginning on every keystroke 
 
 If you [control a text area,](#controlling-a-text-area-with-a-state-variable) you must update its state variable to the text area's value from the DOM during `onChange`.
 
@@ -413,7 +413,7 @@ If this doesn't fix the problem, it's possible that the text area gets removed a
 
 ---
 
-### I'm getting an error: "A component is changing an uncontrolled input to be controlled" {/*im-getting-an-error-a-component-is-changing-an-uncontrolled-input-to-be-controlled*/}
+### I'm getting an error: "A component is changing an uncontrolled input to be controlled" 
 
 
 If you provide a `value` to the component, it must remain a string throughout its lifetime.

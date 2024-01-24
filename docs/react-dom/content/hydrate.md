@@ -24,9 +24,9 @@ hydrate(reactNode, domNode, callback?)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `hydrate(reactNode, domNode, callback?)` {/*hydrate*/}
+### `hydrate(reactNode, domNode, callback?)` 
 
 Call `hydrate` in React 17 and below to “attach” React to existing HTML that was already rendered by React in a server environment.
 
@@ -40,7 +40,7 @@ React will attach to the HTML that exists inside the `domNode`, and take over ma
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `reactNode`: The "React node" used to render the existing HTML. This will usually be a piece of JSX like `<App />` which was rendered with a `ReactDOM Server` method such as `renderToString(<App />)` in React 17.
 
@@ -48,11 +48,11 @@ React will attach to the HTML that exists inside the `domNode`, and take over ma
 
 * **optional**: `callback`: A function. If passed, React will call it after your component is hydrated.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `hydrate` returns null.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 * `hydrate` expects the rendered content to be identical with the server-rendered content. React can patch up differences in text content, but you should treat mismatches as bugs and fix them.
 * In development mode, React warns about mismatches during hydration. There are no guarantees that attribute differences will be patched up in case of mismatches. This is important for performance reasons because in most apps, mismatches are rare, and so validating all markup would be prohibitively expensive.
 * You'll likely have only one `hydrate` call in your app. If you use a framework, it might do this call for you.
@@ -60,7 +60,7 @@ React will attach to the HTML that exists inside the `domNode`, and take over ma
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
 Call `hydrate` to attach a <CodeStep step={1}>React component</CodeStep> into a server-rendered <CodeStep step={2}>browser DOM node</CodeStep>.
 
@@ -72,7 +72,7 @@ hydrate(<App />, document.getElementById('root'));
 
 Using `hydrate()` to render a client-only app (an app without server-rendered HTML) is not supported. Use [`render()`](/reference/react-dom/render) (in React 17 and below) or [`createRoot()`](/reference/react-dom/client/createRoot) (in React 18+) instead.
 
-### Hydrating server-rendered HTML {/*hydrating-server-rendered-html*/}
+### Hydrating server-rendered HTML 
 
 In React, "hydration" is how React "attaches" to existing HTML that was already rendered by React in a server environment. During hydration, React will attempt to attach event listeners to the existing markup and take over rendering the app on the client.
 
@@ -110,7 +110,7 @@ For more information on hydration, see the docs for [`hydrateRoot`.](/reference/
 
 ---
 
-### Suppressing unavoidable hydration mismatch errors {/*suppressing-unavoidable-hydration-mismatch-errors*/}
+### Suppressing unavoidable hydration mismatch errors 
 
 If a single element’s attribute or text content is unavoidably different between the server and the client (for example, a timestamp), you may silence the hydration mismatch warning.
 
@@ -150,7 +150,7 @@ This only works one level deep, and is intended to be an escape hatch. Don’t o
 
 ---
 
-### Handling different client and server content {/*handling-different-client-and-server-content*/}
+### Handling different client and server content 
 
 If you intentionally need to render something different on the server and the client, you can do a two-pass rendering. Components that render something different on the client can read a [state variable](/reference/react/useState) like `isClient`, which you can set to `true` in an [effect](/reference/react/useEffect):
 

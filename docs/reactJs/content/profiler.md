@@ -18,9 +18,9 @@ title: <Profiler>
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `<Profiler>` {/*profiler*/}
+### `<Profiler>` 
 
 Wrap a component tree in a `<Profiler>` to measure its rendering performance.
 
@@ -30,18 +30,18 @@ Wrap a component tree in a `<Profiler>` to measure its rendering performance.
 </Profiler>
 ```
 
-#### Props {/*props*/}
+#### Props 
 
 * `id`: A string identifying the part of the UI you are measuring.
 * `onRender`: An [`onRender` callback](#onrender-callback) that React calls every time components within the profiled tree update. It receives information about what was rendered and how much time it took.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * Profiling adds some additional overhead, so **it is disabled in the production build by default.** To opt into production profiling, you need to enable a [special production build with profiling enabled.](https://fb.me/react-profiling)
 
 ---
 
-### `onRender` callback {/*onrender-callback*/}
+### `onRender` callback 
 
 React will call your `onRender` callback with information about what was rendered.
 
@@ -51,7 +51,7 @@ function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime
 }
 ```
 
-#### Parameters {/*onrender-parameters*/}
+#### Parameters 
 
 * `id`: The string `id` prop of the `<Profiler>` tree that has just committed. This lets you identify which part of the tree was committed if you are using multiple profilers.
 * `phase`: `"mount"`, `"update"` or `"nested-update"`. This lets you know whether the tree has just been mounted for the first time or re-rendered due to a change in props, state, or hooks.
@@ -62,9 +62,9 @@ function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Measuring rendering performance programmatically {/*measuring-rendering-performance-programmatically*/}
+### Measuring rendering performance programmatically 
 
 Wrap the `<Profiler>` component around a React tree to measure its rendering performance.
 
@@ -93,7 +93,7 @@ Profiling adds some additional overhead, so **it is disabled in the production b
 
 ---
 
-### Measuring different parts of the application {/*measuring-different-parts-of-the-application*/}
+### Measuring different parts of the application 
 
 You can use multiple `<Profiler>` components to measure different parts of your application:
 

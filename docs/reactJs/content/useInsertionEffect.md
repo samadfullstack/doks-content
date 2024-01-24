@@ -22,9 +22,9 @@ useInsertionEffect(setup, dependencies?)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `useInsertionEffect(setup, dependencies?)` {/*useinsertioneffect*/}
+### `useInsertionEffect(setup, dependencies?)` 
 
 Call `useInsertionEffect` to insert styles before any effects fire that may need to read layout:
 
@@ -42,17 +42,17 @@ function useCSS(rule) {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `setup`: The function with your Effect's logic. Your setup function may also optionally return a *cleanup* function. When your component is added to the DOM, but before any layout effects fire, React will run your setup function. After every re-render with changed dependencies, React will first run the cleanup function (if you provided it) with the old values, and then run your setup function with the new values. When your component is removed from the DOM, React will run your cleanup function.
  
 * **optional** `dependencies`: The list of all reactive values referenced inside of the `setup` code. Reactive values include props, state, and all the variables and functions declared directly inside your component body. If your linter is [configured for React](/learn/editor-setup#linting), it will verify that every reactive value is correctly specified as a dependency. The list of dependencies must have a constant number of items and be written inline like `[dep1, dep2, dep3]`. React will compare each dependency with its previous value using the [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison algorithm. If you don't specify the dependencies at all, your Effect will re-run after every re-render of the component.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `useInsertionEffect` returns `undefined`.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * Effects only run on the client. They don't run during server rendering.
 * You can't update state from inside `useInsertionEffect`.
@@ -61,9 +61,9 @@ function useCSS(rule) {
 * Unlike other types of Effects, which fire cleanup for every Effect and then setup for every Effect, `useInsertionEffect` will fire both cleanup and setup one component at a time. This results in an "interleaving" of the cleanup and setup functions.
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Injecting dynamic styles from CSS-in-JS libraries {/*injecting-dynamic-styles-from-css-in-js-libraries*/}
+### Injecting dynamic styles from CSS-in-JS libraries 
 
 Traditionally, you would style React components using plain CSS.
 
@@ -131,7 +131,7 @@ function useCSS(rule) {
 
 <DeepDive>
 
-#### How is this better than injecting styles during rendering or useLayoutEffect? {/*how-is-this-better-than-injecting-styles-during-rendering-or-uselayouteffect*/}
+#### How is this better than injecting styles during rendering or useLayoutEffect? 
 
 If you insert styles during rendering and React is processing a [non-blocking update,](/reference/react/useTransition#marking-a-state-update-as-a-non-blocking-transition) the browser will recalculate the styles every single frame while rendering a component tree, which can be **extremely slow.**
 

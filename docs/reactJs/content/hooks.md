@@ -10,7 +10,7 @@ _Hooks_ let you use different React features from your components. You can eithe
 
 ---
 
-## State Hooks {/_state-hooks_/}
+## State Hooks 
 
 _State_ lets a component ["remember" information like user input.](/learn/state-a-components-memory) For example, a form component can use state to store the input value, while an image gallery component can use state to store the selected image index.
 
@@ -27,7 +27,7 @@ function ImageGallery() {
 
 ---
 
-## Context Hooks {/_context-hooks_/}
+## Context Hooks 
 
 _Context_ lets a component [receive information from distant parents without passing it as props.](/learn/passing-props-to-a-component) For example, your app's top-level component can pass the current UI theme to all components below, no matter how deep.
 
@@ -41,7 +41,7 @@ function Button() {
 
 ---
 
-## Ref Hooks {/_ref-hooks_/}
+## Ref Hooks 
 
 _Refs_ let a component [hold some information that isn't used for rendering,](/learn/referencing-values-with-refs) like a DOM node or a timeout ID. Unlike with state, updating a ref does not re-render your component. Refs are an "escape hatch" from the React paradigm. They are useful when you need to work with non-React systems, such as the built-in browser APIs.
 
@@ -56,7 +56,7 @@ function Form() {
 
 ---
 
-## Effect Hooks {/_effect-hooks_/}
+## Effect Hooks 
 
 _Effects_ let a component [connect to and synchronize with external systems.](/learn/synchronizing-with-effects) This includes dealing with network, browser DOM, animations, widgets written using a different UI library, and other non-React code.
 
@@ -81,7 +81,7 @@ There are two rarely used variations of `useEffect` with differences in timing:
 
 ---
 
-## Performance Hooks {/_performance-hooks_/}
+## Performance Hooks 
 
 A common way to optimize re-rendering performance is to skip unnecessary work. For example, you can tell React to reuse a cached calculation or to skip a re-render if the data has not changed since the previous render.
 
@@ -106,7 +106,7 @@ To prioritize rendering, use one of these Hooks:
 
 ---
 
-## Resource Hooks {/_resource-hooks_/}
+## Resource Hooks 
 
 _Resources_ can be accessed by a component without having them as part of their state. For example, a component can read a message from a Promise or read styling information from a context.
 
@@ -124,7 +124,7 @@ function MessageComponent({ messagePromise }) {
 
 ---
 
-## Other Hooks {/_other-hooks_/}
+## Other Hooks 
 
 These Hooks are mostly useful to library authors and aren't commonly used in the application code.
 
@@ -134,6 +134,6 @@ These Hooks are mostly useful to library authors and aren't commonly used in the
 
 ---
 
-## Your own Hooks {/_your-own-hooks_/}
+## Your own Hooks 
 
 You can also [define your own custom Hooks](/learn/reusing-logic-with-custom-hooks#extracting-your-own-custom-hook-from-a-component) as JavaScript functions.

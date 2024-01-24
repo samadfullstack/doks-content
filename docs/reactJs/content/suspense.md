@@ -19,15 +19,15 @@ title: <Suspense>
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `<Suspense>` {/*suspense*/}
+### `<Suspense>` 
 
-#### Props {/*props*/}
+#### Props 
 * `children`: The actual UI you intend to render. If `children` suspends while rendering, the Suspense boundary will switch to rendering `fallback`.
 * `fallback`: An alternate UI to render in place of the actual UI if it has not finished loading. Any valid React node is accepted, though in practice, a fallback is a lightweight placeholder view, such as a loading spinner or skeleton. Suspense will automatically switch to `fallback` when `children` suspends, and back to `children` when the data is ready. If `fallback` suspends while rendering, it will activate the closest parent Suspense boundary.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 - React does not preserve any state for renders that got suspended before they were able to mount for the first time. When the component has loaded, React will retry rendering the suspended tree from scratch.
 - If Suspense was displaying content for the tree, but then it suspended again, the `fallback` will be shown again unless the update causing it was caused by [`startTransition`](/reference/react/startTransition) or [`useDeferredValue`](/reference/react/useDeferredValue).
@@ -36,9 +36,9 @@ title: <Suspense>
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Displaying a fallback while content is loading {/*displaying-a-fallback-while-content-is-loading*/}
+### Displaying a fallback while content is loading 
 
 You can wrap any part of your application with a Suspense boundary:
 
@@ -266,7 +266,7 @@ Suspense-enabled data fetching without the use of an opinionated framework is no
 
 ---
 
-### Revealing content together at once {/*revealing-content-together-at-once*/}
+### Revealing content together at once 
 
 By default, the whole tree inside Suspense is treated as a single unit. For example, even if *only one* of these components suspends waiting for some data, *all* of them together will be replaced by the loading indicator:
 
@@ -584,7 +584,7 @@ function Details({ artistId }) {
 
 ---
 
-### Revealing nested content as it loads {/*revealing-nested-content-as-it-loads*/}
+### Revealing nested content as it loads 
 
 When a component suspends, the closest parent Suspense component shows the fallback. This lets you nest multiple Suspense components to create a loading sequence. Each Suspense boundary's fallback will be filled in as the next level of content becomes available. For example, you can give the album list its own fallback:
 
@@ -923,7 +923,7 @@ Don't put a Suspense boundary around every component. Suspense boundaries should
 
 ---
 
-### Showing stale content while fresh content is loading {/*showing-stale-content-while-fresh-content-is-loading*/}
+### Showing stale content while fresh content is loading 
 
 In this example, the `SearchResults` component suspends while fetching the search results. Type `"a"`, wait for the results, and then edit it to `"ab"`. The results for `"a"` will get replaced by the loading fallback.
 
@@ -1354,7 +1354,7 @@ Both deferred values and [transitions](#preventing-already-revealed-content-from
 
 ---
 
-### Preventing already revealed content from hiding {/*preventing-already-revealed-content-from-hiding*/}
+### Preventing already revealed content from hiding 
 
 When a component suspends, the closest parent Suspense boundary switches to showing the fallback. This can lead to a jarring user experience if it was already displaying some content. Try pressing this button:
 
@@ -2122,7 +2122,7 @@ Suspense-enabled routers are expected to wrap the navigation updates into transi
 
 ---
 
-### Indicating that a transition is happening {/*indicating-that-a-transition-is-happening*/}
+### Indicating that a transition is happening 
 
 In the above example, once you click the button, there is no visual indication that a navigation is in progress. To add an indicator, you can replace [`startTransition`](/reference/react/startTransition) with [`useTransition`](/reference/react/useTransition) which gives you a boolean `isPending` value. In the example below, it's used to change the website header styling while a transition is happening:
 
@@ -2500,7 +2500,7 @@ main {
 
 ---
 
-### Resetting Suspense boundaries on navigation {/*resetting-suspense-boundaries-on-navigation*/}
+### Resetting Suspense boundaries on navigation 
 
 During a transition, React will avoid hiding already revealed content. However, if you navigate to a route with different parameters, you might want to tell React it is *different* content. You can express this with a `key`:
 
@@ -2514,7 +2514,7 @@ However, now imagine you're navigating between two different user profiles. In t
 
 ---
 
-### Providing a fallback for server errors and client-only content {/*providing-a-fallback-for-server-errors-and-client-only-content*/}
+### Providing a fallback for server errors and client-only content 
 
 If you use one of the [streaming server rendering APIs](/reference/react-dom/server) (or a framework that relies on them), React will also use your `<Suspense>` boundaries to handle errors on the server. If a component throws an error on the server, React will not abort the server render. Instead, it will find the closest `<Suspense>` component above it and include its fallback (such as a spinner) into the generated server HTML. The user will see a spinner at first.
 
@@ -2539,9 +2539,9 @@ The server HTML will include the loading indicator. It will be replaced by the `
 
 ---
 
-## Troubleshooting {/*troubleshooting*/}
+## Troubleshooting 
 
-### How do I prevent the UI from being replaced by a fallback during an update? {/*preventing-unwanted-fallbacks*/}
+### How do I prevent the UI from being replaced by a fallback during an update? 
 
 Replacing visible UI with a fallback creates a jarring user experience. This can happen when an update causes a component to suspend, and the nearest Suspense boundary is already showing content to the user.
 

@@ -22,9 +22,9 @@ const clonedElement = cloneElement(element, props, ...children)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `cloneElement(element, props, ...children)` {/*cloneelement*/}
+### `cloneElement(element, props, ...children)` 
 
 Call `cloneElement` to create a React element based on the `element`, but with different `props` and `children`:
 
@@ -45,7 +45,7 @@ console.log(clonedElement); // <Row title="Cabbage" isHighlighted={true}>Goodbye
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `element`: The `element` argument must be a valid React element. For example, it could be a JSX node like `<Something />`, the result of calling [`createElement`](/reference/react/createElement), or the result of another `cloneElement` call.
 
@@ -53,7 +53,7 @@ console.log(clonedElement); // <Row title="Cabbage" isHighlighted={true}>Goodbye
 
 * **optional** `...children`: Zero or more child nodes. They can be any React nodes, including React elements, strings, numbers, [portals](/reference/react-dom/createPortal), empty nodes (`null`, `undefined`, `true`, and `false`), and arrays of React nodes. If you don't pass any `...children` arguments, the original `element.props.children` will be preserved.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `cloneElement` returns a React element object with a few properties:
 
@@ -64,7 +64,7 @@ console.log(clonedElement); // <Row title="Cabbage" isHighlighted={true}>Goodbye
 
 Usually, you'll return the element from your component or make it a child of another element. Although you may read the element's properties, it's best to treat every element as opaque after it's created, and only render it.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * Cloning an element **does not modify the original element.**
 
@@ -74,9 +74,9 @@ Usually, you'll return the element from your component or make it a child of ano
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Overriding props of an element {/*overriding-props-of-an-element*/}
+### Overriding props of an element 
 
 To override the props of some <CodeStep step={1}>React element</CodeStep>, pass it to `cloneElement` with the <CodeStep step={2}>props you want to override</CodeStep>:
 
@@ -242,9 +242,9 @@ Cloning children makes it hard to tell how the data flows through your app. Try 
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives 
 
-### Passing data with a render prop {/*passing-data-with-a-render-prop*/}
+### Passing data with a render prop 
 
 Instead of using `cloneElement`, consider accepting a *render prop* like `renderItem`. Here, `List` receives `renderItem` as a prop. `List` calls `renderItem` for every item and passes `isHighlighted` as an argument: 
 
@@ -393,7 +393,7 @@ This pattern is preferred to `cloneElement` because it is more explicit.
 
 ---
 
-### Passing data through context {/*passing-data-through-context*/}
+### Passing data through context 
 
 Another alternative to `cloneElement` is to [pass data through context.](/learn/passing-data-deeply-with-context)
 
@@ -554,7 +554,7 @@ button {
 
 ---
 
-### Extracting logic into a custom Hook {/*extracting-logic-into-a-custom-hook*/}
+### Extracting logic into a custom Hook 
 
 Another approach you can try is to extract the "non-visual" logic into your own Hook, and use the information returned by your Hook to decide what to render. For example, you could write a `useList` custom Hook like this:
 

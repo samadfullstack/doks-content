@@ -27,9 +27,9 @@ The [built-in browser `<form>` component](https://developer.mozilla.org/en-US/do
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `<form>` {/*form*/}
+### `<form>` 
 
 To create interactive controls for submitting information, render the [built-in browser `<form>` component](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form).
 
@@ -42,21 +42,21 @@ To create interactive controls for submitting information, render the [built-in 
 
 [See more examples below.](#usage)
 
-#### Props {/*props*/}
+#### Props 
 
 `<form>` supports all [common element props.](/reference/react-dom/components/common#props)
 
 [`action`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#action): a URL or function. When a URL is passed to `action` the form will behave like the HTML form component. When a function is passed to `action` the function will handle the form submission. The function passed to `action` may be async and will be called with a single argument containing the [form data](https://developer.mozilla.org/en-US/docs/Web/API/FormData) of the submitted form. The `action` prop can be overridden by a `formAction` attribute on a `<button>`, `<input type="submit">`, or `<input type="image">` component.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * When a function is passed to `action` or `formAction` the HTTP method will be POST regardless of value of the `method` prop.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Handle form submission on the client {/*handle-form-submission-on-the-client*/}
+### Handle form submission on the client 
 
 Pass a function to the `action` prop of form to run the function when the form is submitted. [`formData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) will be passed to the function as an argument so you can access the data submitted by the form. This differs from the conventional [HTML action](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#action), which only accepts URLs.
 
@@ -91,7 +91,7 @@ export default function Search() {
 
 </Sandpack>
 
-### Handle form submission with a Server Action {/*handle-form-submission-with-a-server-action*/}
+### Handle form submission with a Server Action 
 
 Render a `<form>` with an input and submit button. Pass a server action (a function marked with [`'use server'`](/reference/react/use-server)) to the `action` prop of form to run the function when the form is submitted.
 
@@ -139,7 +139,7 @@ function AddToCart({productId}) {
 
 When `<form>` is rendered by a [Server Component](/reference/react/use-client), and a [Server Action](/reference/react/use-server) is passed to the `<form>`'s `action` prop, the form is [progressively enhanced](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement).
 
-### Display a pending state during form submission {/*display-a-pending-state-during-form-submission*/}
+### Display a pending state during form submission 
 To display a pending state when a form is being submitted, you can call the `useFormStatus` Hook in a component rendered in a `<form>` and read the `pending` property returned.
 
 Here, we use the `pending` property to indicate the form is submitting.
@@ -193,7 +193,7 @@ export async function submitForm(query) {
 
 To learn more about the `useFormStatus` Hook see the [reference documentation](/reference/react-dom/hooks/useFormStatus).
 
-### Optimistically updating form data {/*optimistically-updating-form-data*/}
+### Optimistically updating form data 
 The `useOptimistic` Hook provides a way to optimistically update the user interface before a background operation, like a network request, completes. In the context of forms, this technique helps to make apps feel more responsive. When a user submits a form, instead of waiting for the server's response to reflect the changes, the interface is immediately updated with the expected outcome.
 
 For example, when a user types a message into the form and hits the "Send" button, the `useOptimistic` Hook allows the message to immediately appear in the list with a "Sending..." label, even before the message is actually sent to a server. This "optimistic" approach gives the impression of speed and responsiveness. The form then attempts to truly send the message in the background. Once the server confirms the message has been received, the "Sending..." label is removed.
@@ -276,7 +276,7 @@ export async function deliverMessage(message) {
 [//]: # 'Uncomment the next line, and delete this line after the `useOptimistic` reference documentatino page is published'
 [//]: # 'To learn more about the `useOptimistic` Hook see the [reference documentation](/reference/react/hooks/useOptimistic).'
 
-### Handling form submission errors {/*handling-form-submission-errors*/}
+### Handling form submission errors 
 
 In some cases the function called by a `<form>`'s `action` prop throw an error. You can handle these errors by wrapping `<form>` in an Error Boundary. If the function called by a `<form>`'s `action` prop throws an error, the fallback for the error boundary will be displayed.
 
@@ -318,7 +318,7 @@ export default function Search() {
 
 </Sandpack>
 
-### Display a form submission error without JavaScript {/*display-a-form-submission-error-without-javascript*/}
+### Display a form submission error without JavaScript 
 
 Displaying a form submission error message before the JavaScript bundle loads for progressive enhancement requires that:
 
@@ -388,7 +388,7 @@ export async function signUpNewUser(newEmail) {
 
 Learn more about updating state from a form action with the [`useFormState`](/reference/react-dom/hooks/useFormState) docs
 
-### Handling multiple submission types {/*handling-multiple-submission-types*/}
+### Handling multiple submission types 
 
 Forms can be designed to handle multiple submission actions based on the button pressed by the user. Each button inside a form can be associated with a distinct action or behavior by setting the `formAction` prop.
 

@@ -20,9 +20,9 @@ title: <StrictMode>
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `<StrictMode>` {/*strictmode*/}
+### `<StrictMode>` 
 
 Use `StrictMode` to enable additional development behaviors and warnings for the component tree inside:
 
@@ -46,19 +46,19 @@ Strict Mode enables the following development-only behaviors:
 - Your components will [re-run Effects an extra time](#fixing-bugs-found-by-re-running-effects-in-development) to find bugs caused by missing Effect cleanup.
 - Your components will [be checked for usage of deprecated APIs.](#fixing-deprecation-warnings-enabled-by-strict-mode)
 
-#### Props {/*props*/}
+#### Props 
 
 `StrictMode` accepts no props.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * There is no way to opt out of Strict Mode inside a tree wrapped in `<StrictMode>`. This gives you confidence that all components inside `<StrictMode>` are checked. If two teams working on a product disagree whether they find the checks valuable, they need to either reach consensus or move `<StrictMode>` down in the tree.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Enabling Strict Mode for entire app {/*enabling-strict-mode-for-entire-app*/}
+### Enabling Strict Mode for entire app 
 
 Strict Mode enables extra development-only checks for the entire component tree inside the `<StrictMode>` component. These checks help you find common bugs in your components early in the development process.
 
@@ -95,7 +95,7 @@ Strict Mode enables the following checks in development:
 
 ---
 
-### Enabling strict mode for a part of the app {/*enabling-strict-mode-for-a-part-of-the-app*/}
+### Enabling strict mode for a part of the app 
 
 You can also enable Strict Mode for any part of your application:
 
@@ -122,7 +122,7 @@ In this example, Strict Mode checks will not run against the `Header` and `Foote
 
 ---
 
-### Fixing bugs found by double rendering in development {/*fixing-bugs-found-by-double-rendering-in-development*/}
+### Fixing bugs found by double rendering in development 
 
 [React assumes that every component you write is a pure function.](/learn/keeping-components-pure) This means that React components you write must always return the same JSX given the same inputs (props, state, and context).
 
@@ -495,7 +495,7 @@ If you have [React DevTools](/learn/react-developer-tools) installed, any `conso
 
 ---
 
-### Fixing bugs found by re-running Effects in development {/*fixing-bugs-found-by-re-running-effects-in-development*/}
+### Fixing bugs found by re-running Effects in development 
 
 Strict Mode can also help find bugs in [Effects.](/learn/synchronizing-with-effects)
 
@@ -818,7 +818,7 @@ Without Strict Mode, it was easy to miss that your Effect needed cleanup. By run
 
 ---
 
-### Fixing deprecation warnings enabled by Strict Mode {/*fixing-deprecation-warnings-enabled-by-strict-mode*/}
+### Fixing deprecation warnings enabled by Strict Mode 
 
 React warns if some component anywhere inside a `<StrictMode>` tree uses one of these deprecated APIs:
 

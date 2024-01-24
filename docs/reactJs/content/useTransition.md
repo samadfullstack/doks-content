@@ -16,9 +16,9 @@ const [isPending, startTransition] = useTransition()
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `useTransition()` {/*usetransition*/}
+### `useTransition()` 
 
 Call `useTransition` at the top level of your component to mark some state updates as transitions.
 
@@ -33,11 +33,11 @@ function TabContainer() {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 `useTransition` does not take any parameters.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `useTransition` returns an array with exactly two items:
 
@@ -46,7 +46,7 @@ function TabContainer() {
 
 ---
 
-### `startTransition` function {/*starttransition*/}
+### `startTransition` function 
 
 The `startTransition` function returned by `useTransition` lets you mark a state update as a transition.
 
@@ -64,15 +64,15 @@ function TabContainer() {
 }
 ```
 
-#### Parameters {/*starttransition-parameters*/}
+#### Parameters 
 
 * `scope`: A function that updates some state by calling one or more [`set` functions.](/reference/react/useState#setstate) React immediately calls `scope` with no parameters and marks all state updates scheduled synchronously during the `scope` function call as transitions. They will be [non-blocking](#marking-a-state-update-as-a-non-blocking-transition) and [will not display unwanted loading indicators.](#preventing-unwanted-loading-indicators)
 
-#### Returns {/*starttransition-returns*/}
+#### Returns 
 
 `startTransition` does not return anything.
 
-#### Caveats {/*starttransition-caveats*/}
+#### Caveats 
 
 * `useTransition` is a Hook, so it can only be called inside components or custom Hooks. If you need to start a transition somewhere else (for example, from a data library), call the standalone [`startTransition`](/reference/react/startTransition) instead.
 
@@ -88,9 +88,9 @@ function TabContainer() {
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Marking a state update as a non-blocking transition {/*marking-a-state-update-as-a-non-blocking-transition*/}
+### Marking a state update as a non-blocking transition 
 
 Call `useTransition` at the top level of your component to mark state updates as non-blocking *transitions*.
 
@@ -130,7 +130,7 @@ With a transition, your UI stays responsive in the middle of a re-render. For ex
 
 <Recipes titleText="The difference between useTransition and regular state updates" titleId="examples">
 
-#### Updating the current tab in a transition {/*updating-the-current-tab-in-a-transition*/}
+#### Updating the current tab in a transition 
 
 In this example, the "Posts" tab is **artificially slowed down** so that it takes at least a second to render.
 
@@ -269,7 +269,7 @@ b { display: inline-block; margin-right: 10px; }
 
 <Solution />
 
-#### Updating the current tab without a transition {/*updating-the-current-tab-without-a-transition*/}
+#### Updating the current tab without a transition 
 
 In this example, the "Posts" tab is also **artificially slowed down** so that it takes at least a second to render. Unlike in the previous example, this state update is **not a transition.**
 
@@ -409,7 +409,7 @@ b { display: inline-block; margin-right: 10px; }
 
 ---
 
-### Updating the parent component in a transition {/*updating-the-parent-component-in-a-transition*/}
+### Updating the parent component in a transition 
 
 You can update a parent component's state from the `useTransition` call, too. For example, this `TabButton` component wraps its `onClick` logic in a transition:
 
@@ -560,7 +560,7 @@ b { display: inline-block; margin-right: 10px; }
 
 ---
 
-### Displaying a pending visual state during the transition {/*displaying-a-pending-visual-state-during-the-transition*/}
+### Displaying a pending visual state during the transition 
 
 You can use the `isPending` boolean value returned by `useTransition` to indicate to the user that a transition is in progress. For example, the tab button can have a special "pending" visual state:
 
@@ -707,7 +707,7 @@ b { display: inline-block; margin-right: 10px; }
 
 ---
 
-### Preventing unwanted loading indicators {/*preventing-unwanted-loading-indicators*/}
+### Preventing unwanted loading indicators 
 
 In this example, the `PostsTab` component fetches some data using a [Suspense-enabled](/reference/react/Suspense) data source. When you click the "Posts" tab, the `PostsTab` component *suspends*, causing the closest loading fallback to appear:
 
@@ -1097,7 +1097,7 @@ Transitions will only "wait" long enough to avoid hiding *already revealed* cont
 
 ---
 
-### Building a Suspense-enabled router {/*building-a-suspense-enabled-router*/}
+### Building a Suspense-enabled router 
 
 If you're building a React framework or a router, we recommend marking page navigations as transitions.
 
@@ -1501,7 +1501,7 @@ main {
 
 ---
 
-### Displaying an error to users with a error boundary {/*displaying-an-error-to-users-with-error-boundary*/}
+### Displaying an error to users with a error boundary 
 
 <Canary>
 
@@ -1595,9 +1595,9 @@ root.render(
 
 ---
 
-## Troubleshooting {/*troubleshooting*/}
+## Troubleshooting 
 
-### Updating an input in a transition doesn't work {/*updating-an-input-in-a-transition-doesnt-work*/}
+### Updating an input in a transition doesn't work 
 
 You can't use a transition for a state variable that controls an input:
 
@@ -1621,7 +1621,7 @@ This is because transitions are non-blocking, but updating an input in response 
 
 ---
 
-### React doesn't treat my state update as a transition {/*react-doesnt-treat-my-state-update-as-a-transition*/}
+### React doesn't treat my state update as a transition 
 
 When you wrap a state update in a transition, make sure that it happens *during* the `startTransition` call:
 
@@ -1678,13 +1678,13 @@ startTransition(() => {
 
 ---
 
-### I want to call `useTransition` from outside a component {/*i-want-to-call-usetransition-from-outside-a-component*/}
+### I want to call `useTransition` from outside a component 
 
 You can't call `useTransition` outside a component because it's a Hook. In this case, use the standalone [`startTransition`](/reference/react/startTransition) method instead. It works the same way, but it doesn't provide the `isPending` indicator.
 
 ---
 
-### The function I pass to `startTransition` executes immediately {/*the-function-i-pass-to-starttransition-executes-immediately*/}
+### The function I pass to `startTransition` executes immediately 
 
 If you run this code, it will print 1, 2, 3:
 

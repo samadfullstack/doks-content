@@ -21,9 +21,9 @@ canary: true
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `'use server'` {/*use-server*/}
+### `'use server'` 
 
 Add `'use server'` at the top of an async function body to mark the function as callable by the client. We call these functions _server actions_.
 
@@ -38,7 +38,7 @@ When calling a server action on the client, it will make a network request to th
 
 Instead of individually marking functions with `'use server'`, you can add the directive to the top of a file to mark all exports within that file as server actions that can be used anywhere, including imported in client code.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 * `'use server'` must be at the very beginning of their function or module; above any other code including imports (comments above directives are OK). They must be written with single or double quotes, not backticks.
 * `'use server'` can only be used in server-side files. The resulting server actions can be passed to Client Components through props. See supported [types for serialization](#serializable-parameters-and-return-values).
 * To import a server action from [client code](/reference/react/use-client), the directive must be used on a module level.
@@ -47,7 +47,7 @@ Instead of individually marking functions with `'use server'`, you can add the d
 * Server actions should be called in a [transition](/reference/react/useTransition). Server actions passed to [`<form action>`](/reference/react-dom/components/form#props) or [`formAction`](/reference/react-dom/components/input#props) will automatically be called in a transition.
 * Server actions are designed for mutations that update server-side state; they are not recommended for data fetching. Accordingly, frameworks implementing server actions typically process one action at a time and do not have a way to cache the return value.
 
-### Security considerations {/*security*/}
+### Security considerations 
 
 Arguments to server actions are fully client-controlled. For security, always treat them as untrusted input, and make sure to validate and escape arguments as appropriate.
 
@@ -61,7 +61,7 @@ See [experimental_taintUniqueValue](/reference/react/experimental_taintUniqueVal
 
 </Wip>
 
-### Serializable arguments and return values {/*serializable-parameters-and-return-values*/}
+### Serializable arguments and return values 
 
 As client code calls the server action over the network, any arguments passed will need to be serializable.
 
@@ -98,9 +98,9 @@ Notably, these are not supported:
 Supported serializable return values are the same as [serializable props](/reference/react/use-client#passing-props-from-server-to-client-components) for a boundary Client Component.
 
 
-## Usage {/*usage*/}
+## Usage 
 
-### Server actions in forms {/*server-actions-in-forms*/}
+### Server actions in forms 
 
 The most common use case of server actions will be calling server functions that mutate data. On the browser, the [HTML form element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form) is the traditional approach for a user to submit a mutation. With React Server Components, React introduces first-class support for server actions in [forms](/reference/react-dom/components/form).
 
@@ -127,7 +127,7 @@ In this example `requestUsername` is a server action passed to a `<form>`. When 
 
 By passing a server action to the form `action`, React can [progressively enhance](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) the form. This means that forms can be submitted before the JavaScript bundle is loaded.
 
-#### Handling return values in forms {/*handling-return-values*/}
+#### Handling return values in forms 
 
 In the username request form, there might be the chance that a username is not available. `requestUsername` should tell us if it fails or not.
 
@@ -171,7 +171,7 @@ function UsernameForm() {
 
 Note that like most Hooks, `useFormState` can only be called in <CodeStep step={1}>[client code](/reference/react/use-client)</CodeStep>.
 
-### Calling a server action outside of `<form>` {/*calling-a-server-action-outside-of-form*/}
+### Calling a server action outside of `<form>` 
 
 Server actions are exposed server endpoints and can be called anywhere in client code.
 

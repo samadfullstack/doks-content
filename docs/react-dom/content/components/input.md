@@ -16,9 +16,9 @@ The [built-in browser `<input>` component](https://developer.mozilla.org/en-US/d
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `<input>` {/*input*/}
+### `<input>` 
 
 To display an input, render the [built-in browser `<input>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) component.
 
@@ -28,7 +28,7 @@ To display an input, render the [built-in browser `<input>`](https://developer.m
 
 [See more examples below.](#usage)
 
-#### Props {/*props*/}
+#### Props 
 
 `<input>` supports all [common element props.](/reference/react-dom/components/common#props)
 
@@ -93,7 +93,7 @@ These `<input>` props are relevant both for uncontrolled and controlled inputs:
 * [`type`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#type): A string. One of the [input types.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types)
 * [`width`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#width):  A string. Specifies the image width for a `type="image"` input.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 - Checkboxes need `checked` (or `defaultChecked`), not `value` (or `defaultValue`).
 - If a text input receives a string `value` prop, it will be [treated as controlled.](#controlling-an-input-with-a-state-variable)
@@ -104,9 +104,9 @@ These `<input>` props are relevant both for uncontrolled and controlled inputs:
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Displaying inputs of different types {/*displaying-inputs-of-different-types*/}
+### Displaying inputs of different types 
 
 To display an input, render an `<input>` component. By default, it will be a text input. You can pass `type="checkbox"` for a checkbox, `type="radio"` for a radio button, [or one of the other input types.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types)
 
@@ -153,7 +153,7 @@ input { margin: 5px; }
 
 ---
 
-### Providing a label for an input {/*providing-a-label-for-an-input*/}
+### Providing a label for an input 
 
 Typically, you will place every `<input>` inside a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) tag. This tells the browser that this label is associated with that input. When the user clicks the label, the browser will automatically focus the input. It's also essential for accessibility: a screen reader will announce the label caption when the user focuses the associated input.
 
@@ -188,7 +188,7 @@ input { margin: 5px; }
 
 ---
 
-### Providing an initial value for an input {/*providing-an-initial-value-for-an-input*/}
+### Providing an initial value for an input 
 
 You can optionally specify the initial value for any input. Pass it as the `defaultValue` string for text inputs. Checkboxes and radio buttons should specify the initial value with the `defaultChecked` boolean instead.
 
@@ -240,7 +240,7 @@ input { margin: 5px; }
 
 ---
 
-### Reading the input values when submitting a form {/*reading-the-input-values-when-submitting-a-form*/}
+### Reading the input values when submitting a form 
 
 Add a [`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form) around your inputs with a [`<button type="submit">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) inside. It will call your `<form onSubmit>` event handler. By default, the browser will send the form data to the current URL and refresh the page. You can override that behavior by calling `e.preventDefault()`. Read the form data with [`new FormData(e.target)`](https://developer.mozilla.org/en-US/docs/Web/API/FormData).
 <Sandpack>
@@ -308,7 +308,7 @@ By default, *any* `<button>` inside a `<form>` will submit it. This can be surpr
 
 ---
 
-### Controlling an input with a state variable {/*controlling-an-input-with-a-state-variable*/}
+### Controlling an input with a state variable 
 
 An input like `<input />` is *uncontrolled.* Even if you [pass an initial value](#providing-an-initial-value-for-an-input) like `<input defaultValue="Initial text" />`, your JSX only specifies the initial value. It does not control what the value should be right now.
 
@@ -421,7 +421,7 @@ p { font-weight: bold; }
 
 ---
 
-### Optimizing re-rendering on every keystroke {/*optimizing-re-rendering-on-every-keystroke*/}
+### Optimizing re-rendering on every keystroke 
 
 When you use a controlled input, you set the state on every keystroke. If the component containing your state re-renders a large tree, this can get slow. There's a few ways you can optimize re-rendering performance.
 
@@ -469,9 +469,9 @@ If there is no way to avoid re-rendering (for example, if `PageContent` depends 
 
 ---
 
-## Troubleshooting {/*troubleshooting*/}
+## Troubleshooting 
 
-### My text input doesn't update when I type into it {/*my-text-input-doesnt-update-when-i-type-into-it*/}
+### My text input doesn't update when I type into it 
 
 If you render an input with `value` but no `onChange`, you will see an error in the console:
 
@@ -509,7 +509,7 @@ If the value is intentionally read-only, add a `readOnly` prop to suppress the e
 
 ---
 
-### My checkbox doesn't update when I click on it {/*my-checkbox-doesnt-update-when-i-click-on-it*/}
+### My checkbox doesn't update when I click on it 
 
 If you render a checkbox with `checked` but no `onChange`, you will see an error in the console:
 
@@ -553,7 +553,7 @@ If the checkbox is intentionally read-only, add a `readOnly` prop to suppress th
 
 ---
 
-### My input caret jumps to the beginning on every keystroke {/*my-input-caret-jumps-to-the-beginning-on-every-keystroke*/}
+### My input caret jumps to the beginning on every keystroke 
 
 If you [control an input,](#controlling-an-input-with-a-state-variable) you must update its state variable to the input's value from the DOM during `onChange`.
 
@@ -590,7 +590,7 @@ If this doesn't fix the problem, it's possible that the input gets removed and r
 
 ---
 
-### I'm getting an error: "A component is changing an uncontrolled input to be controlled" {/*im-getting-an-error-a-component-is-changing-an-uncontrolled-input-to-be-controlled*/}
+### I'm getting an error: "A component is changing an uncontrolled input to be controlled" 
 
 
 If you provide a `value` to the component, it must remain a string throughout its lifetime.

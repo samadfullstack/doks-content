@@ -22,9 +22,9 @@ const html = renderToString(reactNode)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `renderToString(reactNode)` {/*rendertostring*/}
+### `renderToString(reactNode)` 
 
 On the server, call `renderToString` to render your app to HTML.
 
@@ -38,15 +38,15 @@ On the client, call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to 
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `reactNode`: A React node you want to render to HTML. For example, a JSX node like `<App />`.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 An HTML string.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * `renderToString` has limited Suspense support. If a component suspends, `renderToString` immediately sends its fallback as HTML.
 
@@ -54,9 +54,9 @@ An HTML string.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Rendering a React tree as HTML to a string {/*rendering-a-react-tree-as-html-to-a-string*/}
+### Rendering a React tree as HTML to a string 
 
 Call `renderToString` to render your app to an HTML string which you can send with your server response:
 
@@ -81,9 +81,9 @@ This will produce the initial non-interactive HTML output of your React componen
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives 
 
-### Migrating from `renderToString` to a streaming method on the server {/*migrating-from-rendertostring-to-a-streaming-method-on-the-server*/}
+### Migrating from `renderToString` to a streaming method on the server 
 
 `renderToString` returns a string immediately, so it does not support streaming or waiting for data.
 
@@ -96,7 +96,7 @@ You can continue using `renderToString` if your server environment does not supp
 
 ---
 
-### Removing `renderToString` from the client code {/*removing-rendertostring-from-the-client-code*/}
+### Removing `renderToString` from the client code 
 
 Sometimes, `renderToString` is used on the client to convert some component to HTML.
 
@@ -126,9 +126,9 @@ The [`flushSync`](/reference/react-dom/flushSync) call is necessary so that the 
 
 ---
 
-## Troubleshooting {/*troubleshooting*/}
+## Troubleshooting 
 
-### When a component suspends, the HTML always contains a fallback {/*when-a-component-suspends-the-html-always-contains-a-fallback*/}
+### When a component suspends, the HTML always contains a fallback 
 
 `renderToString` does not fully support Suspense.
 

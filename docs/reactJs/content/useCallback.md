@@ -16,9 +16,9 @@ const cachedFn = useCallback(fn, dependencies)
 
 ---
 
-## Reference {/_reference_/}
+## Reference 
 
-### `useCallback(fn, dependencies)` {/_usecallback_/}
+### `useCallback(fn, dependencies)` 
 
 Call `useCallback` at the top level of your component to cache a function definition between re-renders:
 
@@ -36,28 +36,28 @@ export default function ProductPage({ productId, referrer, theme }) {
 
 [See more examples below.](#usage)
 
-#### Parameters {/_parameters_/}
+#### Parameters 
 
 - `fn`: The function value that you want to cache. It can take any arguments and return any values. React will return (not call!) your function back to you during the initial render. On next renders, React will give you the same function again if the `dependencies` have not changed since the last render. Otherwise, it will give you the function that you have passed during the current render, and store it in case it can be reused later. React will not call your function. The function is returned to you so you can decide when and whether to call it.
 
 - `dependencies`: The list of all reactive values referenced inside of the `fn` code. Reactive values include props, state, and all the variables and functions declared directly inside your component body. If your linter is [configured for React](/learn/editor-setup#linting), it will verify that every reactive value is correctly specified as a dependency. The list of dependencies must have a constant number of items and be written inline like `[dep1, dep2, dep3]`. React will compare each dependency with its previous value using the [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison algorithm.
 
-#### Returns {/_returns_/}
+#### Returns 
 
 On the initial render, `useCallback` returns the `fn` function you have passed.
 
 During subsequent renders, it will either return an already stored `fn` function from the last render (if the dependencies haven't changed), or return the `fn` function you have passed during this render.
 
-#### Caveats {/_caveats_/}
+#### Caveats 
 
 - `useCallback` is a Hook, so you can only call it **at the top level of your component** or your own Hooks. You can't call it inside loops or conditions. If you need that, extract a new component and move the state into it.
 - React **will not throw away the cached function unless there is a specific reason to do that.** For example, in development, React throws away the cache when you edit the file of your component. Both in development and in production, React will throw away the cache if your component suspends during the initial mount. In the future, React may add more features that take advantage of throwing away the cache--for example, if React adds built-in support for virtualized lists in the future, it would make sense to throw away the cache for items that scroll out of the virtualized table viewport. This should match your expectations if you rely on `useCallback` as a performance optimization. Otherwise, a [state variable](/reference/react/useState#im-trying-to-set-state-to-a-function-but-it-gets-called-instead) or a [ref](/reference/react/useRef#avoiding-recreating-the-ref-contents) may be more appropriate.
 
 ---
 
-## Usage {/_usage_/}
+## Usage 
 
-### Skipping re-rendering of components {/_skipping-re-rendering-of-components_/}
+### Skipping re-rendering of components 
 
 When you optimize rendering performance, you will sometimes need to cache the functions that you pass to child components. Let's first look at the syntax for how to do this, and then see in which cases it's useful.
 
@@ -127,7 +127,7 @@ function ProductPage({ productId, referrer, theme }) {
 
   return (
     <div className={theme}>
-      {/* ... so ShippingForm's props will never be the same, and it will re-render every time */}
+      
       <ShippingForm onSubmit={handleSubmit} />
     </div>
   );
@@ -148,7 +148,7 @@ function ProductPage({ productId, referrer, theme }) {
 
   return (
     <div className={theme}>
-      {/* ...ShippingForm will receive the same props and can skip re-rendering */}
+      
       <ShippingForm onSubmit={handleSubmit} />
     </div>
   );
@@ -165,7 +165,7 @@ function ProductPage({ productId, referrer, theme }) {
 
 <DeepDive>
 
-#### How is useCallback related to useMemo? {/_how-is-usecallback-related-to-usememo_/}
+#### How is useCallback related to useMemo? 
 
 You will often see [`useMemo`](/reference/react/useMemo) alongside `useCallback`. They are both useful when you're trying to optimize a child component. They let you [memoize](https://en.wikipedia.org/wiki/Memoization) (or, in other words, cache) something you're passing down:
 
@@ -214,7 +214,7 @@ function useCallback(fn, dependencies) {
 
 <DeepDive>
 
-#### Should you add useCallback everywhere? {/_should-you-add-usecallback-everywhere_/}
+#### Should you add useCallback everywhere? 
 
 If your app is like this site, and most interactions are coarse (like replacing a page or an entire section), memoization is usually unnecessary. On the other hand, if your app is more like a drawing editor, and most interactions are granular (like moving shapes), then you might find memoization very helpful.
 
@@ -241,7 +241,7 @@ If a specific interaction still feels laggy, [use the React Developer Tools prof
 
 <Recipes titleText="The difference between useCallback and declaring a function directly" titleId="examples-rerendering">
 
-#### Skipping re-rendering with `useCallback` and `memo` {/_skipping-re-rendering-with-usecallback-and-memo_/}
+#### Skipping re-rendering with `useCallback` and `memo` 
 
 In this example, the `ShippingForm` component is **artificially slowed down** so that you can see what happens when a React component you're rendering is genuinely slow. Try incrementing the counter and toggling the theme.
 
@@ -383,7 +383,7 @@ button[type="button"] {
 
 <Solution />
 
-#### Always re-rendering a component {/_always-re-rendering-a-component_/}
+#### Always re-rendering a component 
 
 In this example, the `ShippingForm` implementation is also **artificially slowed down** so that you can see what happens when some React component you're rendering is genuinely slow. Try incrementing the counter and toggling the theme.
 
@@ -658,7 +658,7 @@ Keep in mind that you need to run React in production mode, disable [React Devel
 
 ---
 
-### Updating state from a memoized callback {/_updating-state-from-a-memoized-callback_/}
+### Updating state from a memoized callback 
 
 Sometimes, you might need to update state based on previous state from a memoized callback.
 
@@ -692,7 +692,7 @@ Here, instead of making `todos` a dependency and reading it inside, you pass an 
 
 ---
 
-### Preventing an Effect from firing too often {/_preventing-an-effect-from-firing-too-often_/}
+### Preventing an Effect from firing too often 
 
 Sometimes, you might want to call a function from inside an [Effect:](/learn/synchronizing-with-effects)
 
@@ -774,7 +774,7 @@ Now your code is simpler and doesn't need `useCallback`. [Learn more about remov
 
 ---
 
-### Optimizing a custom Hook {/_optimizing-a-custom-hook_/}
+### Optimizing a custom Hook 
 
 If you're writing a [custom Hook,](/learn/reusing-logic-with-custom-hooks) it's recommended to wrap any functions that it returns into `useCallback`:
 
@@ -801,9 +801,9 @@ This ensures that the consumers of your Hook can optimize their own code when ne
 
 ---
 
-## Troubleshooting {/_troubleshooting_/}
+## Troubleshooting 
 
-### Every time my component renders, `useCallback` returns a different function {/_every-time-my-component-renders-usecallback-returns-a-different-function_/}
+### Every time my component renders, `useCallback` returns a different function 
 
 Make sure you've specified the dependency array as a second argument!
 
@@ -855,7 +855,7 @@ When you find which dependency is breaking memoization, either find a way to rem
 
 ---
 
-### I need to call `useCallback` for each list item in a loop, but it's not allowed {/_i-need-to-call-usememo-for-each-list-item-in-a-loop-but-its-not-allowed_/}
+### I need to call `useCallback` for each list item in a loop, but it's not allowed 
 
 Suppose the `Chart` component is wrapped in [`memo`](/reference/react/memo). You want to skip re-rendering every `Chart` in the list when the `ReportList` component re-renders. However, you can't call `useCallback` in a loop:
 

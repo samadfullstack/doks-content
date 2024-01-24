@@ -10,7 +10,7 @@ The `react-dom` package contains Hooks that are only supported for web applicati
 
 ---
 
-## Form Hooks {/*form-hooks*/}
+## Form Hooks 
 
 <Canary>
 

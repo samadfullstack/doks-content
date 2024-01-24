@@ -23,9 +23,9 @@ const value = use(resource);
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `use(resource)` {/*use*/}
+### `use(resource)` 
 
 Call `use` in your component to read the value of a resource like a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) or [context](/learn/passing-data-deeply-with-context).
 
@@ -44,15 +44,15 @@ When called with a Promise, the `use` Hook integrates with [`Suspense`](/referen
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `resource`: this is the source of the data you want to read a value from. A resource can be a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) or a [context](/learn/passing-data-deeply-with-context).
 
-#### Returns {/*returns*/}
+#### Returns 
 
 The `use` Hook returns the value that was read from the resource like the resolved value of a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) or [context](/learn/passing-data-deeply-with-context).
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * The `use` Hook must be called inside a Component or a Hook.
 * When fetching data in a [Server Component](/reference/react/use-server), prefer `async` and `await` over `use`. `async` and `await` pick up rendering from the point where `await` was invoked, whereas `use` re-renders the component after the data is resolved.
@@ -60,9 +60,9 @@ The `use` Hook returns the value that was read from the resource like the resolv
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Reading context with `use` {/*reading-context-with-use*/}
+### Reading context with `use` 
 
 When a [context](/learn/passing-data-deeply-with-context) is passed to `use`, it works similarly to [`useContext`](/reference/react/useContext). While `useContext` must be called at the top level of your component, `use` can be called inside conditionals like `if` and loops like `for`. `use` is preferred over `useContext` because it is more flexible.
 
@@ -212,7 +212,7 @@ function Button({ show, children }) {
 
 </Sandpack>
 
-### Streaming data from the server to the client {/*streaming-data-from-server-to-client*/}
+### Streaming data from the server to the client 
 
 Data can be streamed from the server to the client by passing a Promise as a prop from a <CodeStep step={1}>Server Component</CodeStep> to a <CodeStep step={2}>Client Component</CodeStep>.
 
@@ -332,7 +332,7 @@ When passing a Promise from a Server Component to a Client Component, its resolv
 
 <DeepDive>
 
-#### Should I resolve a Promise in a Server or Client Component? {/*resolve-promise-in-server-or-client-component*/}
+#### Should I resolve a Promise in a Server or Client Component? 
 
 A Promise can be passed from a Server Component to a Client Component and resolved in the Client component with the `use` Hook. You can also resolve the Promise in a Server Component with `await` and pass the required data to the Client Component as a prop.
 
@@ -347,7 +347,7 @@ But using `await` in a [Server Component](/reference/react/components#server-com
 
 </DeepDive>
 
-### Dealing with rejected Promises {/*dealing-with-rejected-promises*/}
+### Dealing with rejected Promises 
 
 In some cases a Promise passed to `use` could be rejected. You can handle rejected Promises by either:
 
@@ -358,7 +358,7 @@ In some cases a Promise passed to `use` could be rejected. You can handle reject
 `use` cannot be called in a try-catch block. Instead of a try-catch block [wrap your component in an Error Boundary](#displaying-an-error-to-users-with-error-boundary), or [provide an alternative value to use with the Promise's `.catch` method](#providing-an-alternative-value-with-promise-catch).
 </Pitfall>
 
-#### Displaying an error to users with a error boundary {/*displaying-an-error-to-users-with-error-boundary*/}
+#### Displaying an error to users with a error boundary 
 
 If you'd like to display an error to your users when a Promise is rejected, you can use an [error boundary](/reference/react/Component#catching-rendering-errors-with-an-error-boundary). To use an error boundary, wrap the component where you are calling the `use` Hook in an error boundary. If the Promise passed to `use` is rejected the fallback for the error boundary will be displayed.
 
@@ -444,7 +444,7 @@ root.render(
 ```
 </Sandpack>
 
-#### Providing an alternative value with `Promise.catch` {/*providing-an-alternative-value-with-promise-catch*/}
+#### Providing an alternative value with `Promise.catch` 
 
 If you'd like to provide an alternative value when the Promise passed to `use` is rejected you can use the Promise's <CodeStep step={1}>[`catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch)</CodeStep> method.
 
@@ -470,9 +470,9 @@ To use the Promise's <CodeStep step={1}>`catch`</CodeStep> method, call <CodeSte
 
 ---
 
-## Troubleshooting {/*troubleshooting*/}
+## Troubleshooting 
 
-### "Suspense Exception: This is not a real error!" {/*suspense-exception-error*/}
+### "Suspense Exception: This is not a real error!" 
 
 You are either calling `use` outside of a React component or Hook function, or calling `use` in a try–catch block. If you are calling `use` inside a try–catch block, wrap your component in an error boundary, or call the Promise's `catch` to catch the error and resolve the Promise with another value. [See these examples](#dealing-with-rejected-promises).
 

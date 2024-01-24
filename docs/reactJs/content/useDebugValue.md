@@ -16,9 +16,9 @@ useDebugValue(value, format?)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `useDebugValue(value, format?)` {/*usedebugvalue*/}
+### `useDebugValue(value, format?)` 
 
 Call `useDebugValue` at the top level of your [custom Hook](/learn/reusing-logic-with-custom-hooks) to display a readable debug value:
 
@@ -34,18 +34,18 @@ function useOnlineStatus() {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `value`: The value you want to display in React DevTools. It can have any type.
 * **optional** `format`: A formatting function. When the component is inspected, React DevTools will call the formatting function with the `value` as the argument, and then display the returned formatted value (which may have any type). If you don't specify the formatting function, the original `value` itself will be displayed.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `useDebugValue` does not return anything.
 
-## Usage {/*usage*/}
+## Usage 
 
-### Adding a label to a custom Hook {/*adding-a-label-to-a-custom-hook*/}
+### Adding a label to a custom Hook 
 
 Call `useDebugValue` at the top level of your [custom Hook](/learn/reusing-logic-with-custom-hooks) to display a readable <CodeStep step={1}>debug value</CodeStep> for [React DevTools.](/learn/react-developer-tools)
 
@@ -109,7 +109,7 @@ Don't add debug values to every custom Hook. It's most valuable for custom Hooks
 
 ---
 
-### Deferring formatting of a debug value {/*deferring-formatting-of-a-debug-value*/}
+### Deferring formatting of a debug value 
 
 You can also pass a formatting function as the second argument to `useDebugValue`:
 

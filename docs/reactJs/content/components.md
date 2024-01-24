@@ -10,7 +10,7 @@ React exposes a few built-in components that you can use in your JSX.
 
 ---
 
-## Built-in components {/*built-in-components*/}
+## Built-in components 
 
 * [`<Fragment>`](/reference/react/Fragment), alternatively written as `<>...</>`, lets you group multiple JSX nodes together.
 * [`<Profiler>`](/reference/react/Profiler) lets you measure rendering performance of a React tree programmatically.
@@ -19,6 +19,6 @@ React exposes a few built-in components that you can use in your JSX.
 
 ---
 
-## Your own components {/*your-own-components*/}
+## Your own components 
 
 You can also [define your own components](/learn/your-first-component) as JavaScript functions.

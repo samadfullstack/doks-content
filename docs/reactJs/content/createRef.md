@@ -25,9 +25,9 @@ class MyInput extends Component {
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `createRef()` {/*createref*/}
+### `createRef()` 
 
 Call `createRef` to declare a [ref](/learn/referencing-values-with-refs) inside a [class component.](/reference/react/Component)
 
@@ -42,17 +42,17 @@ class MyComponent extends Component {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 `createRef` takes no parameters.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `createRef` returns an object with a single property:
 
 * `current`: Initially, it's set to the `null`. You can later set it to something else. If you pass the ref object to React as a `ref` attribute to a JSX node, React will set its `current` property.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * `createRef` always returns a *different* object. It's equivalent to writing `{ current: null }` yourself.
 * In a function component, you probably want [`useRef`](/reference/react/useRef) instead which always returns the same object.
@@ -60,9 +60,9 @@ class MyComponent extends Component {
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Declaring a ref in a class component {/*declaring-a-ref-in-a-class-component*/}
+### Declaring a ref in a class component 
 
 To declare a ref inside a [class component,](/reference/react/Component) call `createRef` and assign its result to a class field:
 
@@ -113,9 +113,9 @@ export default class Form extends Component {
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives 
 
-### Migrating from a class with `createRef` to a function with `useRef` {/*migrating-from-a-class-with-createref-to-a-function-with-useref*/}
+### Migrating from a class with `createRef` to a function with `useRef` 
 
 We recommend using function components instead of [class components](/reference/react/Component) in new code. If you have some existing class components using `createRef`, here is how you can convert them. This is the original code:
 

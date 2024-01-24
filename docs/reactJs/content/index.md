@@ -10,7 +10,7 @@ This section provides detailed reference documentation for working with React. F
 
 Our The React reference documentation is broken down into functional subsections:
 
-## React {/*react*/}
+## React 
 
 Programmatic React features:
 
@@ -19,7 +19,7 @@ Programmatic React features:
 * [APIs](/reference/react/apis) - APIs that are useful for defining components.
 * [Directives](/reference/react/directives) - Provide instructions to bundlers compatible with React Server Components.
 
-## React DOM {/*react-dom*/}
+## React DOM 
 
 React-dom contains features that are only supported for web applications (which run in the browser DOM environment). This section is broken into the following:
 
@@ -29,6 +29,6 @@ React-dom contains features that are only supported for web applications (which 
 * [Client APIs](/reference/react-dom/client) - The `react-dom/client` APIs let you render React components on the client (in the browser).
 * [Server APIs](/reference/react-dom/server) - The `react-dom/server` APIs let you render React components to HTML on the server.
 
-## Legacy APIs {/*legacy-apis*/}
+## Legacy APIs 
 
 * [Legacy APIs](/reference/react/legacy) - Exported from the `react` package, but not recommended for use in newly written code.

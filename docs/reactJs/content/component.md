@@ -26,9 +26,9 @@ class Greeting extends Component {
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `Component` {/*component*/}
+### `Component` 
 
 To define a React component as a class, extend the built-in `Component` class and define a [`render` method:](#render)
 
@@ -48,7 +48,7 @@ Only the `render` method is required, other methods are optional.
 
 ---
 
-### `context` {/*context*/}
+### `context` 
 
 The [context](/learn/passing-data-deeply-with-context) of a class component is available as `this.context`. It is only available if you specify *which* context you want to receive using [`static contextType`](#static-contexttype) (modern) or [`static contextTypes`](#static-contexttypes) (deprecated).
 
@@ -81,7 +81,7 @@ Reading `this.context` in class components is equivalent to [`useContext`](/refe
 
 ---
 
-### `props` {/*props*/}
+### `props` 
 
 The props passed to a class component are available as `this.props`.
 
@@ -105,7 +105,7 @@ Reading `this.props` in class components is equivalent to [declaring props](/lea
 
 ---
 
-### `refs` {/*refs*/}
+### `refs` 
 
 <Deprecated>
 
@@ -117,7 +117,7 @@ Lets you access [legacy string refs](https://reactjs.org/docs/refs-and-the-dom.h
 
 ---
 
-### `state` {/*state*/}
+### `state` 
 
 The state of a class component is available as `this.state`. The `state` field must be an object. Do not mutate the state directly. If you wish to change the state, call `setState` with the new state.
 
@@ -156,7 +156,7 @@ Defining `state` in class components is equivalent to calling [`useState`](/refe
 
 ---
 
-### `constructor(props)` {/*constructor*/}
+### `constructor(props)` 
 
 The [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor) runs before your class component *mounts* (gets added to the screen). Typically, a constructor is only used for two purposes in React. It lets you declare state and [bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) your class methods to the class instance:
 
@@ -186,15 +186,15 @@ class Counter extends Component {
 
 A constructor should not contain any side effects or subscriptions.
 
-#### Parameters {/*constructor-parameters*/}
+#### Parameters 
 
 * `props`: The component's initial props.
 
-#### Returns {/*constructor-returns*/}
+#### Returns 
 
 `constructor` should not return anything.
 
-#### Caveats {/*constructor-caveats*/}
+#### Caveats 
 
 * Do not run any side effects or subscriptions in the constructor. Instead, use [`componentDidMount`](#componentdidmount) for that.
 
@@ -214,7 +214,7 @@ There is no exact equivalent for `constructor` in function components. To declar
 
 ---
 
-### `componentDidCatch(error, info)` {/*componentdidcatch*/}
+### `componentDidCatch(error, info)` 
 
 If you define `componentDidCatch`, React will call it when some child component (including distant children) throws an error during rendering. This lets you log that error to an error reporting service in production.
 
@@ -222,17 +222,17 @@ Typically, it is used together with [`static getDerivedStateFromError`](#static-
 
 [See an example.](#catching-rendering-errors-with-an-error-boundary)
 
-#### Parameters {/*componentdidcatch-parameters*/}
+#### Parameters 
 
 * `error`: The error that was thrown. In practice, it will usually be an instance of [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) but this is not guaranteed because JavaScript allows to [`throw`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw) any value, including strings or even `null`.
 
 * `info`: An object containing additional information about the error. Its `componentStack` field contains a stack trace with the component that threw, as well as the names and source locations of all its parent components. In production, the component names will be minified. If you set up production error reporting, you can decode the component stack using sourcemaps the same way as you would do for regular JavaScript error stacks.
 
-#### Returns {/*componentdidcatch-returns*/}
+#### Returns 
 
 `componentDidCatch` should not return anything.
 
-#### Caveats {/*componentdidcatch-caveats*/}
+#### Caveats 
 
 * In the past, it was common to call `setState` inside `componentDidCatch` in order to update the UI and display the fallback error message. This is deprecated in favor of defining [`static getDerivedStateFromError`.](#static-getderivedstatefromerror)
 
@@ -246,7 +246,7 @@ There is no direct equivalent for `componentDidCatch` in function components yet
 
 ---
 
-### `componentDidMount()` {/*componentdidmount*/}
+### `componentDidMount()` 
 
 If you define the `componentDidMount` method, React will call it when your component is added *(mounted)* to the screen. This is a common place to start data fetching, set up subscriptions, or manipulate the DOM nodes.
 
@@ -282,15 +282,15 @@ class ChatRoom extends Component {
 
 [See more examples.](#adding-lifecycle-methods-to-a-class-component)
 
-#### Parameters {/*componentdidmount-parameters*/}
+#### Parameters 
 
 `componentDidMount` does not take any parameters.
 
-#### Returns {/*componentdidmount-returns*/}
+#### Returns 
 
 `componentDidMount` should not return anything.
 
-#### Caveats {/*componentdidmount-caveats*/}
+#### Caveats 
 
 - When [Strict Mode](/reference/react/StrictMode) is on, in development React will call `componentDidMount`, then immediately call [`componentWillUnmount`,](#componentwillunmount) and then call `componentDidMount` again. This helps you notice if you forgot to implement `componentWillUnmount` or if its logic doesn't fully "mirror" what `componentDidMount` does.
 
@@ -306,7 +306,7 @@ For many use cases, defining `componentDidMount`, `componentDidUpdate`, and `com
 
 ---
 
-### `componentDidUpdate(prevProps, prevState, snapshot?)` {/*componentdidupdate*/}
+### `componentDidUpdate(prevProps, prevState, snapshot?)` 
 
 If you define the `componentDidUpdate` method, React will call it immediately after your component has been re-rendered with updated props or state.  This method is not called for the initial render.
 
@@ -343,7 +343,7 @@ class ChatRoom extends Component {
 [See more examples.](#adding-lifecycle-methods-to-a-class-component)
 
 
-#### Parameters {/*componentdidupdate-parameters*/}
+#### Parameters 
 
 * `prevProps`: Props before the update. Compare `prevProps` to [`this.props`](#props) to determine what changed.
 
@@ -351,11 +351,11 @@ class ChatRoom extends Component {
 
 * `snapshot`: If you implemented [`getSnapshotBeforeUpdate`](#getsnapshotbeforeupdate), `snapshot` will contain the value you returned from that method. Otherwise, it will be `undefined`.
 
-#### Returns {/*componentdidupdate-returns*/}
+#### Returns 
 
 `componentDidUpdate` should not return anything.
 
-#### Caveats {/*componentdidupdate-caveats*/}
+#### Caveats 
 
 - `componentDidUpdate` will not get called if [`shouldComponentUpdate`](#shouldcomponentupdate) is defined and returns `false`.
 
@@ -372,7 +372,7 @@ For many use cases, defining `componentDidMount`, `componentDidUpdate`, and `com
 </Note>
 ---
 
-### `componentWillMount()` {/*componentwillmount*/}
+### `componentWillMount()` 
 
 <Deprecated>
 
@@ -384,7 +384,7 @@ Run the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-co
 
 ---
 
-### `componentWillReceiveProps(nextProps)` {/*componentwillreceiveprops*/}
+### `componentWillReceiveProps(nextProps)` 
 
 <Deprecated>
 
@@ -396,7 +396,7 @@ Run the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-co
 
 ---
 
-### `componentWillUpdate(nextProps, nextState)` {/*componentwillupdate*/}
+### `componentWillUpdate(nextProps, nextState)` 
 
 <Deprecated>
 
@@ -408,7 +408,7 @@ Run the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-co
 
 ---
 
-### `componentWillUnmount()` {/*componentwillunmount*/}
+### `componentWillUnmount()` 
 
 If you define the `componentWillUnmount` method, React will call it before your component is removed *(unmounted)* from the screen. This is a common place to cancel data fetching or remove subscriptions.
 
@@ -444,15 +444,15 @@ class ChatRoom extends Component {
 
 [See more examples.](#adding-lifecycle-methods-to-a-class-component)
 
-#### Parameters {/*componentwillunmount-parameters*/}
+#### Parameters 
 
 `componentWillUnmount` does not take any parameters.
 
-#### Returns {/*componentwillunmount-returns*/}
+#### Returns 
 
 `componentWillUnmount` should not return anything.
 
-#### Caveats {/*componentwillunmount-caveats*/}
+#### Caveats 
 
 - When [Strict Mode](/reference/react/StrictMode) is on, in development React will call [`componentDidMount`,](#componentdidmount) then immediately call `componentWillUnmount`, and then call `componentDidMount` again. This helps you notice if you forgot to implement `componentWillUnmount` or if its logic doesn't fully "mirror" what `componentDidMount` does.
 
@@ -466,7 +466,7 @@ For many use cases, defining `componentDidMount`, `componentDidUpdate`, and `com
 
 ---
 
-### `forceUpdate(callback?)` {/*forceupdate*/}
+### `forceUpdate(callback?)` 
 
 Forces a component to re-render.
 
@@ -474,15 +474,15 @@ Usually, this is not necessary. If your component's [`render`](#render) method o
 
 Try to avoid all uses of `forceUpdate` and only read from `this.props` and `this.state` in `render`.
 
-#### Parameters {/*forceupdate-parameters*/}
+#### Parameters 
 
 * **optional** `callback` If specified, React will call the `callback` you've provided after the update is committed.
 
-#### Returns {/*forceupdate-returns*/}
+#### Returns 
 
 `forceUpdate` does not return anything.
 
-#### Caveats {/*forceupdate-caveats*/}
+#### Caveats 
 
 - If you call `forceUpdate`, React will re-render without calling [`shouldComponentUpdate`.](#shouldcomponentupdate)
 
@@ -494,7 +494,7 @@ Reading an external data source and forcing class components to re-render in res
 
 ---
 
-### `getChildContext()` {/*getchildcontext*/}
+### `getChildContext()` 
 
 <Deprecated>
 
@@ -506,7 +506,7 @@ Lets you specify the values for the [legacy context](https://reactjs.org/docs/le
 
 ---
 
-### `getSnapshotBeforeUpdate(prevProps, prevState)` {/*getsnapshotbeforeupdate*/}
+### `getSnapshotBeforeUpdate(prevProps, prevState)` 
 
 If you implement `getSnapshotBeforeUpdate`, React will call it immediately before React updates the DOM. It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed. Any value returned by this lifecycle method will be passed as a parameter to [`componentDidUpdate`.](#componentdidupdate)
 
@@ -541,7 +541,7 @@ class ScrollingList extends React.Component {
 
   render() {
     return (
-      <div ref={this.listRef}>{/* ...contents... */}</div>
+      <div ref={this.listRef}></div>
     );
   }
 }
@@ -549,17 +549,17 @@ class ScrollingList extends React.Component {
 
 In the above example, it is important to read the `scrollHeight` property directly in `getSnapshotBeforeUpdate`. It is not safe to read it in [`render`](#render), [`UNSAFE_componentWillReceiveProps`](#unsafe_componentwillreceiveprops), or [`UNSAFE_componentWillUpdate`](#unsafe_componentwillupdate) because there is a potential time gap between these methods getting called and React updating the DOM.
 
-#### Parameters {/*getsnapshotbeforeupdate-parameters*/}
+#### Parameters 
 
 * `prevProps`: Props before the update. Compare `prevProps` to [`this.props`](#props) to determine what changed.
 
 * `prevState`: State before the update. Compare `prevState` to [`this.state`](#state) to determine what changed.
 
-#### Returns {/*getsnapshotbeforeupdate-returns*/}
+#### Returns 
 
 You should return a snapshot value of any type that you'd like, or `null`. The value you returned will be passed as the third argument to [`componentDidUpdate`.](#componentdidupdate)
 
-#### Caveats {/*getsnapshotbeforeupdate-caveats*/}
+#### Caveats 
 
 - `getSnapshotBeforeUpdate` will not get called if [`shouldComponentUpdate`](#shouldcomponentupdate) is defined and returns `false`.
 
@@ -571,7 +571,7 @@ At the moment, there is no equivalent to `getSnapshotBeforeUpdate` for function 
 
 ---
 
-### `render()` {/*render*/}
+### `render()` 
 
 The `render` method is the only required method in a class component.
 
@@ -591,15 +591,15 @@ React may call `render` at any moment, so you shouldn't assume that it runs at a
 
 You should write the `render` method as a pure function, meaning that it should return the same result if props, state, and context are the same. It also shouldn't contain side effects (like setting up subscriptions) or interact with the browser APIs. Side effects should happen either in event handlers or methods like [`componentDidMount`.](#componentdidmount)
 
-#### Parameters {/*render-parameters*/}
+#### Parameters 
 
 `render` does not take any parameters.
 
-#### Returns {/*render-returns*/}
+#### Returns 
 
 `render` can return any valid React node. This includes React elements such as `<div />`, strings, numbers, [portals](/reference/react-dom/createPortal), empty nodes (`null`, `undefined`, `true`, and `false`), and arrays of React nodes.
 
-#### Caveats {/*render-caveats*/}
+#### Caveats 
 
 - `render` should be written as a pure function of props, state, and context. It should not have side effects.
 
@@ -611,7 +611,7 @@ You should write the `render` method as a pure function, meaning that it should 
 
 ---
 
-### `setState(nextState, callback?)` {/*setstate*/}
+### `setState(nextState, callback?)` 
 
 Call `setState` to update the state of your React component.
 
@@ -673,7 +673,7 @@ You can also pass a function to `setState`. It lets you update state based on th
 
 You don't have to do this, but it's handy if you want to update state multiple times during the same event.
 
-#### Parameters {/*setstate-parameters*/}
+#### Parameters 
 
 * `nextState`: Either an object or a function.
   * If you pass an object as `nextState`, it will be shallowly merged into `this.state`.
@@ -681,11 +681,11 @@ You don't have to do this, but it's handy if you want to update state multiple t
 
 * **optional** `callback`: If specified, React will call the `callback` you've provided after the update is committed.
 
-#### Returns {/*setstate-returns*/}
+#### Returns 
 
 `setState` does not return anything.
 
-#### Caveats {/*setstate-caveats*/}
+#### Caveats 
 
 - Think of `setState` as a *request* rather than an immediate command to update the component. When multiple components update their state in response to an event, React will batch their updates and re-render them together in a single pass at the end of the event. In the rare case that you need to force a particular state update to be applied synchronously, you may wrap it in [`flushSync`,](/reference/react-dom/flushSync) but this may hurt performance.
 
@@ -701,7 +701,7 @@ Calling `setState` in class components is similar to calling a [`set` function](
 
 ---
 
-### `shouldComponentUpdate(nextProps, nextState, nextContext)` {/*shouldcomponentupdate*/}
+### `shouldComponentUpdate(nextProps, nextState, nextContext)` 
 
 If you define `shouldComponentUpdate`, React will call it to determine whether a re-render can be skipped.
 
@@ -734,19 +734,19 @@ class Rectangle extends Component {
 
 React calls `shouldComponentUpdate` before rendering when new props or state are being received. Defaults to `true`. This method is not called for the initial render or when [`forceUpdate`](#forceupdate) is used.
 
-#### Parameters {/*shouldcomponentupdate-parameters*/}
+#### Parameters 
 
 - `nextProps`: The next props that the component is about to render with. Compare `nextProps` to [`this.props`](#props) to determine what changed.
 - `nextState`: The next state that the component is about to render with. Compare `nextState` to [`this.state`](#props) to determine what changed.
 - `nextContext`: The next context that the component is about to render with. Compare `nextContext` to [`this.context`](#context) to determine what changed. Only available if you specify [`static contextType`](#static-contexttype) (modern) or [`static contextTypes`](#static-contexttypes) (legacy).
 
-#### Returns {/*shouldcomponentupdate-returns*/}
+#### Returns 
 
 Return `true` if you want the component to re-render. That's the default behavior.
 
 Return `false` to tell React that re-rendering can be skipped.
 
-#### Caveats {/*shouldcomponentupdate-caveats*/}
+#### Caveats 
 
 - This method *only* exists as a performance optimization. If your component breaks without it, fix that first. 
 
@@ -766,7 +766,7 @@ Optimizing class components with `shouldComponentUpdate` is similar to optimizin
 
 ---
 
-### `UNSAFE_componentWillMount()` {/*unsafe_componentwillmount*/}
+### `UNSAFE_componentWillMount()` 
 
 If you define `UNSAFE_componentWillMount`, React will call it immediately after the [`constructor`.](#constructor) It only exists for historical reasons and should not be used in any new code. Instead, use one of the alternatives:
 
@@ -775,15 +775,15 @@ If you define `UNSAFE_componentWillMount`, React will call it immediately after 
 
 [See examples of migrating away from unsafe lifecycles.](https://legacy.reactjs.org/blog/2018/03/27/update-on-async-rendering.html#examples)
 
-#### Parameters {/*unsafe_componentwillmount-parameters*/}
+#### Parameters 
 
 `UNSAFE_componentWillMount` does not take any parameters.
 
-#### Returns {/*unsafe_componentwillmount-returns*/}
+#### Returns 
 
 `UNSAFE_componentWillMount` should not return anything.
 
-#### Caveats {/*unsafe_componentwillmount-caveats*/}
+#### Caveats 
 
 - `UNSAFE_componentWillMount` will not get called if the component implements [`static getDerivedStateFromProps`](#static-getderivedstatefromprops) or [`getSnapshotBeforeUpdate`.](#getsnapshotbeforeupdate)
 
@@ -799,7 +799,7 @@ Calling [`setState`](#setstate) inside `UNSAFE_componentWillMount` in a class co
 
 ---
 
-### `UNSAFE_componentWillReceiveProps(nextProps, nextContext)` {/*unsafe_componentwillreceiveprops*/}
+### `UNSAFE_componentWillReceiveProps(nextProps, nextContext)` 
 
 If you define `UNSAFE_componentWillReceiveProps`, React will call it when the component receives new props. It only exists for historical reasons and should not be used in any new code. Instead, use one of the alternatives:
 
@@ -810,16 +810,16 @@ If you define `UNSAFE_componentWillReceiveProps`, React will call it when the co
 
 [See examples of migrating away from unsafe lifecycles.](https://legacy.reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props)
 
-#### Parameters {/*unsafe_componentwillreceiveprops-parameters*/}
+#### Parameters 
 
 - `nextProps`: The next props that the component is about to receive from its parent component. Compare `nextProps` to [`this.props`](#props) to determine what changed.
 - `nextContext`: The next context that the component is about to receive from the closest provider. Compare `nextContext` to [`this.context`](#context) to determine what changed. Only available if you specify [`static contextType`](#static-contexttype) (modern) or [`static contextTypes`](#static-contexttypes) (legacy).
 
-#### Returns {/*unsafe_componentwillreceiveprops-returns*/}
+#### Returns 
 
 `UNSAFE_componentWillReceiveProps` should not return anything.
 
-#### Caveats {/*unsafe_componentwillreceiveprops-caveats*/}
+#### Caveats 
 
 - `UNSAFE_componentWillReceiveProps` will not get called if the component implements [`static getDerivedStateFromProps`](#static-getderivedstatefromprops) or [`getSnapshotBeforeUpdate`.](#getsnapshotbeforeupdate)
 
@@ -837,7 +837,7 @@ Calling [`setState`](#setstate) inside `UNSAFE_componentWillReceiveProps` in a c
 
 ---
 
-### `UNSAFE_componentWillUpdate(nextProps, nextState)` {/*unsafe_componentwillupdate*/}
+### `UNSAFE_componentWillUpdate(nextProps, nextState)` 
 
 
 If you define `UNSAFE_componentWillUpdate`, React will call it before rendering with the new props or state. It only exists for historical reasons and should not be used in any new code. Instead, use one of the alternatives:
@@ -847,16 +847,16 @@ If you define `UNSAFE_componentWillUpdate`, React will call it before rendering 
 
 [See examples of migrating away from unsafe lifecycles.](https://legacy.reactjs.org/blog/2018/03/27/update-on-async-rendering.html#examples)
 
-#### Parameters {/*unsafe_componentwillupdate-parameters*/}
+#### Parameters 
 
 - `nextProps`: The next props that the component is about to render with. Compare `nextProps` to [`this.props`](#props) to determine what changed.
 - `nextState`: The next state that the component is about to render with. Compare `nextState` to [`this.state`](#state) to determine what changed.
 
-#### Returns {/*unsafe_componentwillupdate-returns*/}
+#### Returns 
 
 `UNSAFE_componentWillUpdate` should not return anything.
 
-#### Caveats {/*unsafe_componentwillupdate-caveats*/}
+#### Caveats 
 
 - `UNSAFE_componentWillUpdate` will not get called if [`shouldComponentUpdate`](#shouldcomponentupdate) is defined and returns `false`.
 
@@ -878,7 +878,7 @@ There is no direct equivalent to `UNSAFE_componentWillUpdate` in function compon
 
 ---
 
-### `static childContextTypes` {/*static-childcontexttypes*/}
+### `static childContextTypes` 
 
 <Deprecated>
 
@@ -890,7 +890,7 @@ Lets you specify which [legacy context](https://reactjs.org/docs/legacy-context.
 
 ---
 
-### `static contextTypes` {/*static-contexttypes*/}
+### `static contextTypes` 
 
 <Deprecated>
 
@@ -902,7 +902,7 @@ Lets you specify which [legacy context](https://reactjs.org/docs/legacy-context.
 
 ---
 
-### `static contextType` {/*static-contexttype*/}
+### `static contextType` 
 
 If you want to read [`this.context`](#context-instance-field) from your class component, you must specify which context it needs to read. The context you specify as the `static contextType` must be a value previously created by [`createContext`.](/reference/react/createContext)
 
@@ -932,7 +932,7 @@ Reading `this.context` in class components is equivalent to [`useContext`](/refe
 
 ---
 
-### `static defaultProps` {/*static-defaultprops*/}
+### `static defaultProps` 
 
 You can define `static defaultProps` to set the default props for the class. They will be used for `undefined` and missing props, but not for `null` props.
 
@@ -954,16 +954,16 @@ If the `color` prop is not provided or is `undefined`, it will be set by default
 
 ```js
 <>
-  {/* this.props.color is "blue" */}
+  
   <Button />
 
-  {/* this.props.color is "blue" */}
+  
   <Button color={undefined} />
 
-  {/* this.props.color is null */}
+  
   <Button color={null} />
 
-  {/* this.props.color is "red" */}
+  
   <Button color="red" />
 </>
 ```
@@ -976,7 +976,7 @@ Defining `defaultProps` in class components is similar to using [default values]
 
 ---
 
-### `static propTypes` {/*static-proptypes*/}
+### `static propTypes` 
 
 You can define `static propTypes` together with the [`prop-types`](https://www.npmjs.com/package/prop-types) library to declare the types of the props accepted by your component. These types will be checked during rendering and in development only.
 
@@ -1004,7 +1004,7 @@ We recommend using [TypeScript](https://www.typescriptlang.org/) instead of chec
 
 ---
 
-### `static getDerivedStateFromError(error)` {/*static-getderivedstatefromerror*/}
+### `static getDerivedStateFromError(error)` 
 
 If you define `static getDerivedStateFromError`, React will call it when a child component (including distant children) throws an error during rendering. This lets you display an error message instead of clearing the UI.
 
@@ -1012,15 +1012,15 @@ Typically, it is used together with [`componentDidCatch`](#componentdidcatch) wh
 
 [See an example.](#catching-rendering-errors-with-an-error-boundary)
 
-#### Parameters {/*static-getderivedstatefromerror-parameters*/}
+#### Parameters 
 
 * `error`: The error that was thrown. In practice, it will usually be an instance of [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) but this is not guaranteed because JavaScript allows to [`throw`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw) any value, including strings or even `null`.
 
-#### Returns {/*static-getderivedstatefromerror-returns*/}
+#### Returns 
 
 `static getDerivedStateFromError` should return the state telling the component to display the error message.
 
-#### Caveats {/*static-getderivedstatefromerror-caveats*/}
+#### Caveats 
 
 * `static getDerivedStateFromError` should be a pure function. If you want to perform a side effect (for example, to call an analytics service), you need to also implement [`componentDidCatch`.](#componentdidcatch)
 
@@ -1032,7 +1032,7 @@ There is no direct equivalent for `static getDerivedStateFromError` in function 
 
 ---
 
-### `static getDerivedStateFromProps(props, state)` {/*static-getderivedstatefromprops*/}
+### `static getDerivedStateFromProps(props, state)` 
 
 If you define `static getDerivedStateFromProps`, React will call it right before calling [`render`,](#render) both on the initial mount and on subsequent updates. It should return an object to update the state, or `null` to update nothing.
 
@@ -1074,16 +1074,16 @@ Deriving state leads to verbose code and makes your components difficult to thin
 
 </Pitfall>
 
-#### Parameters {/*static-getderivedstatefromprops-parameters*/}
+#### Parameters 
 
 - `props`: The next props that the component is about to render with.
 - `state`: The next state that the component is about to render with.
 
-#### Returns {/*static-getderivedstatefromprops-returns*/}
+#### Returns 
 
 `static getDerivedStateFromProps` return an object to update the state, or `null` to update nothing.
 
-#### Caveats {/*static-getderivedstatefromprops-caveats*/}
+#### Caveats 
 
 - This method is fired on *every* render, regardless of the cause. This is different from [`UNSAFE_componentWillReceiveProps`](#unsafe_cmoponentwillreceiveprops), which only fires when the parent causes a re-render and not as a result of a local `setState`.
 
@@ -1097,9 +1097,9 @@ Implementing `static getDerivedStateFromProps` in a class component is equivalen
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Defining a class component {/*defining-a-class-component*/}
+### Defining a class component 
 
 To define a React component as a class, extend the built-in `Component` class and define a [`render` method:](#render)
 
@@ -1151,7 +1151,7 @@ We recommend defining components as functions instead of classes. [See how to mi
 
 ---
 
-### Adding state to a class component {/*adding-state-to-a-class-component*/}
+### Adding state to a class component 
 
 To add [state](/learn/state-a-components-memory) to a class, assign an object to a property called [`state`](#state). To update state, call [`this.setState`](#setstate).
 
@@ -1209,7 +1209,7 @@ We recommend defining components as functions instead of classes. [See how to mi
 
 ---
 
-### Adding lifecycle methods to a class component {/*adding-lifecycle-methods-to-a-class-component*/}
+### Adding lifecycle methods to a class component 
 
 There are a few special methods you can define on your class.
 
@@ -1343,7 +1343,7 @@ We recommend defining components as functions instead of classes. [See how to mi
 
 ---
 
-### Catching rendering errors with an error boundary {/*catching-rendering-errors-with-an-error-boundary*/}
+### Catching rendering errors with an error boundary 
 
 By default, if your application throws an error during rendering, React will remove its UI from the screen. To prevent this, you can wrap a part of your UI into an *error boundary*. An error boundary is a special component that lets you display some fallback UI instead of the part that crashed--for example, an error message.
 
@@ -1401,9 +1401,9 @@ There is currently no way to write an error boundary as a function component. Ho
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives 
 
-### Migrating a simple component from a class to a function {/*migrating-a-simple-component-from-a-class-to-a-function*/}
+### Migrating a simple component from a class to a function 
 
 Typically, you will [define components as functions](/learn/your-first-component#defining-a-component) instead.
 
@@ -1473,7 +1473,7 @@ export default function App() {
 
 ---
 
-### Migrating a component with state from a class to a function {/*migrating-a-component-with-state-from-a-class-to-a-function*/}
+### Migrating a component with state from a class to a function 
 
 Suppose you're converting this `Counter` class component to a function:
 
@@ -1595,7 +1595,7 @@ button { display: block; margin-top: 10px; }
 
 ---
 
-### Migrating a component with lifecycle methods from a class to a function {/*migrating-a-component-with-lifecycle-methods-from-a-class-to-a-function*/}
+### Migrating a component with lifecycle methods from a class to a function 
 
 Suppose you're converting this `ChatRoom` class component with lifecycle methods to a function:
 
@@ -1830,7 +1830,7 @@ If your component does not synchronize with any external systems, [you might not
 
 ---
 
-### Migrating a component with context from a class to a function {/*migrating-a-component-with-context-from-a-class-to-a-function*/}
+### Migrating a component with context from a class to a function 
 
 In this example, the `Panel` and `Button` class components read [context](/learn/passing-data-deeply-with-context) from [`this.context`:](#context)
 

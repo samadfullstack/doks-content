@@ -26,9 +26,9 @@ class Greeting extends PureComponent {
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `PureComponent` {/*purecomponent*/}
+### `PureComponent` 
 
 To skip re-rendering a class component for same props and state, extend `PureComponent` instead of [`Component`:](/reference/react/Component)
 
@@ -49,9 +49,9 @@ class Greeting extends PureComponent {
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Skipping unnecessary re-renders for class components {/*skipping-unnecessary-re-renders-for-class-components*/}
+### Skipping unnecessary re-renders for class components 
 
 React normally re-renders a component whenever its parent re-renders. As an optimization, you can create a component that React will not re-render when its parent re-renders so long as its new props and state are the same as the old props and state. [Class components](/reference/react/Component) can opt into this behavior by extending `PureComponent`:
 
@@ -115,9 +115,9 @@ We recommend defining components as functions instead of classes. [See how to mi
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives 
 
-### Migrating from a `PureComponent` class component to a function {/*migrating-from-a-purecomponent-class-component-to-a-function*/}
+### Migrating from a `PureComponent` class component to a function 
 
 We recommend using function components instead of [class components](/reference/react/Component) in new code. If you have some existing class components using `PureComponent`, here is how you can convert them. This is the original code:
 

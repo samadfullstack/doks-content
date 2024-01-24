@@ -22,9 +22,9 @@ const stream = renderToNodeStream(reactNode)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `renderToNodeStream(reactNode)` {/*rendertonodestream*/}
+### `renderToNodeStream(reactNode)` 
 
 On the server, call `renderToNodeStream` to get a [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams) which you can pipe into the response.
 
@@ -39,15 +39,15 @@ On the client, call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to 
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `reactNode`: A React node you want to render to HTML. For example, a JSX element like `<App />`.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 A [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams) that outputs an HTML string.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * This method will wait for all [Suspense boundaries](/reference/react/Suspense) to complete before returning any output.
 
@@ -57,9 +57,9 @@ A [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams)
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Rendering a React tree as HTML to a Node.js Readable Stream {/*rendering-a-react-tree-as-html-to-a-nodejs-readable-stream*/}
+### Rendering a React tree as HTML to a Node.js Readable Stream 
 
 Call `renderToNodeStream` to get a [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams) which you can pipe to your server response:
 

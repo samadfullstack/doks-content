@@ -22,9 +22,9 @@ const domNode = findDOMNode(componentInstance)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `findDOMNode(componentInstance)` {/*finddomnode*/}
+### `findDOMNode(componentInstance)` 
 
 Call `findDOMNode` to find the browser DOM node for a given React [class component](/reference/react/Component) instance.
 
@@ -36,16 +36,16 @@ const domNode = findDOMNode(componentInstance);
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `componentInstance`: An instance of the [`Component`](/reference/react/Component) subclass. For example, `this` inside a class component.
 
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `findDOMNode` returns the first closest browser DOM node within the given `componentInstance`. When a component renders to `null`, or renders `false`, `findDOMNode` returns `null`. When a component renders to a string, `findDOMNode` returns a text DOM node containing that value.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * A component may return an array or a [Fragment](/reference/react/Fragment) with multiple children. In that case `findDOMNode`, will return the DOM node corresponding to the first non-empty child.
 
@@ -57,9 +57,9 @@ const domNode = findDOMNode(componentInstance);
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Finding the root DOM node of a class component {/*finding-the-root-dom-node-of-a-class-component*/}
+### Finding the root DOM node of a class component 
 
 Call `findDOMNode` with a [class component](/reference/react/Component) instance (usually, `this`) to find the DOM node it has rendered.
 
@@ -120,9 +120,9 @@ export default AutoselectingInput;
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives 
 
-### Reading component's own DOM node from a ref {/*reading-components-own-dom-node-from-a-ref*/}
+### Reading component's own DOM node from a ref 
 
 Code using `findDOMNode` is fragile because the connection between the JSX node and the code manipulating the corresponding DOM node is not explicit. For example, try wrapping this `<input />` into a `<div>`:
 
@@ -255,7 +255,7 @@ export default function AutoselectingInput() {
 
 ---
 
-### Reading a child component's DOM node from a forwarded ref {/*reading-a-child-components-dom-node-from-a-forwarded-ref*/}
+### Reading a child component's DOM node from a forwarded ref 
 
 In this example, `findDOMNode(this)` finds a DOM node that belongs to another component. The `AutoselectingInput` renders `MyInput`, which is your own component that renders a browser `<input>`.
 
@@ -420,7 +420,7 @@ export default MyInput;
 
 ---
 
-### Adding a wrapper `<div>` element {/*adding-a-wrapper-div-element*/}
+### Adding a wrapper `<div>` element 
 
 Sometimes a component needs to know the position and size of its children. This makes it tempting to find the children with `findDOMNode(this)`, and then use DOM methods like [`getBoundingClientRect`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect) for measurements.
 

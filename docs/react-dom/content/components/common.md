@@ -12,9 +12,9 @@ All built-in browser components, such as [`<div>`](https://developer.mozilla.org
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### Common components (e.g. `<div>`) {/*common*/}
+### Common components (e.g. `<div>`) 
 
 ```js
 <div className="wrapper">Some content</div>
@@ -22,7 +22,7 @@ All built-in browser components, such as [`<div>`](https://developer.mozilla.org
 
 [See more examples below.](#usage)
 
-#### Props {/*common-props*/}
+#### Props 
 
 These special React props are supported for all built-in components:
 
@@ -234,14 +234,14 @@ These events fire for resources like [`<audio>`](https://developer.mozilla.org/e
 * [`onWaiting`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/waiting_event): An [`Event` handler](#event-handler) function. Fires when the playback stopped due to temporary lack of data.
 * `onWaitingCapture`: A version of `onWaiting` that fires in the [capture phase.](/learn/responding-to-events#capture-phase-events)
 
-#### Caveats {/*common-caveats*/}
+#### Caveats 
 
 - You cannot pass both `children` and `dangerouslySetInnerHTML` at the same time.
 - Some events (like `onAbort` and `onLoad`) don't bubble in the browser, but bubble in React.
 
 ---
 
-### `ref` callback function {/*ref-callback*/}
+### `ref` callback function 
 
 Instead of a ref object (like the one returned by [`useRef`](/reference/react/useRef#manipulating-the-dom-with-a-ref)), you may pass a function to the `ref` attribute.
 
@@ -255,17 +255,17 @@ When the `<div>` DOM node is added to the screen, React will call your `ref` cal
 
 React will also call your `ref` callback whenever you pass a *different* `ref` callback. In the above example, `(node) => { ... }` is a different function on every render. When your component re-renders, the *previous* function will be called with `null` as the argument, and the *next* function will be called with the DOM node.
 
-#### Parameters {/*ref-callback-parameters*/}
+#### Parameters 
 
 * `node`: A DOM node or `null`. React will pass you the DOM node when the ref gets attached, and `null` when the ref gets detached. Unless you pass the same function reference for the `ref` callback on every render, the callback will get temporarily detached and re-attached during every re-render of the component.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 Do not return anything from the `ref` callback.
 
 ---
 
-### React event object {/*react-event-object*/}
+### React event object 
 
 Your event handlers will receive a *React event object.* It is also sometimes known as a "synthetic event".
 
@@ -279,7 +279,7 @@ It conforms to the same standard as the underlying DOM events, but fixes some br
 
 Some React events do not map directly to the browser's native events. For example in `onMouseLeave`, `e.nativeEvent` will point to a `mouseout` event. The specific mapping is not part of the public API and may change in the future. If you need the underlying browser event for some reason, read it from `e.nativeEvent`.
 
-#### Properties {/*react-event-object-properties*/}
+#### Properties 
 
 React event objects implement some of the standard [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event) properties:
 
@@ -296,7 +296,7 @@ Additionally, React event objects provide these properties:
 
 * `nativeEvent`: A DOM [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). The original browser event object.
 
-#### Methods {/*react-event-object-methods*/}
+#### Methods 
 
 React event objects implement some of the standard [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event) methods:
 
@@ -310,13 +310,13 @@ Additionally, React event objects provide these methods:
 * `persist()`: Not used with React DOM. With React Native, call this to read event's properties after the event.
 * `isPersistent()`: Not used with React DOM. With React Native, returns whether `persist` has been called.
 
-#### Caveats {/*react-event-object-caveats*/}
+#### Caveats 
 
 * The values of `currentTarget`, `eventPhase`, `target`, and `type` reflect the values your React code expects. Under the hood, React attaches event handlers at the root, but this is not reflected in React event objects. For example, `e.currentTarget` may not be the same as the underlying `e.nativeEvent.currentTarget`. For polyfilled events, `e.type` (React event type) may differ from `e.nativeEvent.type` (underlying type).
 
 ---
 
-### `AnimationEvent` handler function {/*animationevent-handler*/}
+### `AnimationEvent` handler function 
 
 An event handler type for the [CSS animation](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations) events.
 
@@ -328,7 +328,7 @@ An event handler type for the [CSS animation](https://developer.mozilla.org/en-U
 />
 ```
 
-#### Parameters {/*animationevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`AnimationEvent`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent) properties:
   * [`animationName`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/animationName)
@@ -337,7 +337,7 @@ An event handler type for the [CSS animation](https://developer.mozilla.org/en-U
 
 ---
 
-### `ClipboardEvent` handler function {/*clipboadevent-handler*/}
+### `ClipboardEvent` handler function 
 
 An event handler type for the [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) events.
 
@@ -349,7 +349,7 @@ An event handler type for the [Clipboard API](https://developer.mozilla.org/en-U
 />
 ```
 
-#### Parameters {/*clipboadevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`ClipboardEvent`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent) properties:
 
@@ -357,7 +357,7 @@ An event handler type for the [Clipboard API](https://developer.mozilla.org/en-U
 
 ---
 
-### `CompositionEvent` handler function {/*compositionevent-handler*/}
+### `CompositionEvent` handler function 
 
 An event handler type for the [input method editor (IME)](https://developer.mozilla.org/en-US/docs/Glossary/Input_method_editor) events.
 
@@ -369,14 +369,14 @@ An event handler type for the [input method editor (IME)](https://developer.mozi
 />
 ```
 
-#### Parameters {/*compositionevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`CompositionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent) properties:
   * [`data`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/data)
 
 ---
 
-### `DragEvent` handler function {/*dragevent-handler*/}
+### `DragEvent` handler function 
 
 An event handler type for the [HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) events.
 
@@ -401,7 +401,7 @@ An event handler type for the [HTML Drag and Drop API](https://developer.mozilla
 </>
 ```
 
-#### Parameters {/*dragevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`DragEvent`](https://developer.mozilla.org/en-US/docs/Web/API/DragEvent) properties:
   * [`dataTransfer`](https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer)
@@ -432,7 +432,7 @@ An event handler type for the [HTML Drag and Drop API](https://developer.mozilla
 
 ---
 
-### `FocusEvent` handler function {/*focusevent-handler*/}
+### `FocusEvent` handler function 
 
 An event handler type for the focus events.
 
@@ -445,7 +445,7 @@ An event handler type for the focus events.
 
 [See an example.](#handling-focus-events)
 
-#### Parameters {/*focusevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`FocusEvent`](https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent) properties:
   * [`relatedTarget`](https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent/relatedTarget)
@@ -457,17 +457,17 @@ An event handler type for the focus events.
 
 ---
 
-### `Event` handler function {/*event-handler*/}
+### `Event` handler function 
 
 An event handler type for generic events.
 
-#### Parameters {/*event-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with no additional properties.
 
 ---
 
-### `InputEvent` handler function {/*inputevent-handler*/}
+### `InputEvent` handler function 
 
 An event handler type for the `onBeforeInput` event.
 
@@ -475,14 +475,14 @@ An event handler type for the `onBeforeInput` event.
 <input onBeforeInput={e => console.log('onBeforeInput')} />
 ```
 
-#### Parameters {/*inputevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent) properties:
   * [`data`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/data)
 
 ---
 
-### `KeyboardEvent` handler function {/*keyboardevent-handler*/}
+### `KeyboardEvent` handler function 
 
 An event handler type for keyboard events.
 
@@ -495,7 +495,7 @@ An event handler type for keyboard events.
 
 [See an example.](#handling-keyboard-events)
 
-#### Parameters {/*keyboardevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`KeyboardEvent`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent) properties:
   * [`altKey`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/altKey)
@@ -519,7 +519,7 @@ An event handler type for keyboard events.
 
 ---
 
-### `MouseEvent` handler function {/*mouseevent-handler*/}
+### `MouseEvent` handler function 
 
 An event handler type for mouse events.
 
@@ -536,7 +536,7 @@ An event handler type for mouse events.
 
 [See an example.](#handling-mouse-events)
 
-#### Parameters {/*mouseevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`MouseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent) properties:
   * [`altKey`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/altKey)
@@ -563,7 +563,7 @@ An event handler type for mouse events.
 
 ---
 
-### `PointerEvent` handler function {/*pointerevent-handler*/}
+### `PointerEvent` handler function 
 
 An event handler type for [pointer events.](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events)
 
@@ -579,7 +579,7 @@ An event handler type for [pointer events.](https://developer.mozilla.org/en-US/
 
 [See an example.](#handling-pointer-events)
 
-#### Parameters {/*pointerevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`PointerEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent) properties:
   * [`height`](https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/height)
@@ -619,7 +619,7 @@ An event handler type for [pointer events.](https://developer.mozilla.org/en-US/
 
 ---
 
-### `TouchEvent` handler function {/*touchevent-handler*/}
+### `TouchEvent` handler function 
 
 An event handler type for [touch events.](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
 
@@ -632,7 +632,7 @@ An event handler type for [touch events.](https://developer.mozilla.org/en-US/do
 />
 ```
 
-#### Parameters {/*touchevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`TouchEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent) properties:
   * [`altKey`](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/altKey)
@@ -651,7 +651,7 @@ An event handler type for [touch events.](https://developer.mozilla.org/en-US/do
 
 ---
 
-### `TransitionEvent` handler function {/*transitionevent-handler*/}
+### `TransitionEvent` handler function 
 
 An event handler type for the CSS transition events.
 
@@ -661,7 +661,7 @@ An event handler type for the CSS transition events.
 />
 ```
 
-#### Parameters {/*transitionevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`TransitionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent) properties:
   * [`elapsedTime`](https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent/elapsedTime)
@@ -670,7 +670,7 @@ An event handler type for the CSS transition events.
 
 ---
 
-### `UIEvent` handler function {/*uievent-handler*/}
+### `UIEvent` handler function 
 
 An event handler type for generic UI events.
 
@@ -680,7 +680,7 @@ An event handler type for generic UI events.
 />
 ```
 
-#### Parameters {/*uievent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) properties:
   * [`detail`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail)
@@ -688,7 +688,7 @@ An event handler type for generic UI events.
 
 ---
 
-### `WheelEvent` handler function {/*wheelevent-handler*/}
+### `WheelEvent` handler function 
 
 An event handler type for the `onWheel` event.
 
@@ -698,7 +698,7 @@ An event handler type for the `onWheel` event.
 />
 ```
 
-#### Parameters {/*wheelevent-handler-parameters*/}
+#### Parameters 
 
 * `e`: A [React event object](#react-event-object) with these extra [`WheelEvent`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent) properties:
   * [`deltaMode`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaMode)
@@ -733,9 +733,9 @@ An event handler type for the `onWheel` event.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Applying CSS styles {/*applying-css-styles*/}
+### Applying CSS styles 
 
 In React, you specify a CSS class with [`className`.](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) It works like the `class` attribute in HTML:
 
@@ -811,7 +811,7 @@ export default function Avatar({ user }) {
 
 <DeepDive>
 
-#### How to apply multiple CSS classes conditionally? {/*how-to-apply-multiple-css-classes-conditionally*/}
+#### How to apply multiple CSS classes conditionally? 
 
 To apply CSS classes conditionally, you need to produce the `className` string yourself using JavaScript.
 
@@ -853,7 +853,7 @@ function Row({ isSelected, size }) {
 
 ---
 
-### Manipulating a DOM node with a ref {/*manipulating-a-dom-node-with-a-ref*/}
+### Manipulating a DOM node with a ref 
 
 Sometimes, you'll need to get the browser DOM node associated with a tag in JSX. For example, if you want to focus an `<input>` when a button is clicked, you need to call [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus) on the browser `<input>` DOM node.
 
@@ -903,7 +903,7 @@ For more advanced use cases, the `ref` attribute also accepts a [callback functi
 
 ---
 
-### Dangerously setting the inner HTML {/*dangerously-setting-the-inner-html*/}
+### Dangerously setting the inner HTML 
 
 You can pass a raw HTML string to an element like so:
 
@@ -1001,7 +1001,7 @@ The code embedded in the HTML will run. A hacker could use this security hole to
 
 ---
 
-### Handling mouse events {/*handling-mouse-events*/}
+### Handling mouse events 
 
 This example shows some common [mouse events](#mouseevent-handler) and when they fire.
 
@@ -1048,7 +1048,7 @@ input { margin-left: 10px; }
 
 ---
 
-### Handling pointer events {/*handling-pointer-events*/}
+### Handling pointer events 
 
 This example shows some common [pointer events](#pointerevent-handler) and when they fire.
 
@@ -1096,7 +1096,7 @@ input { margin-left: 10px; }
 
 ---
 
-### Handling focus events {/*handling-focus-events*/}
+### Handling focus events 
 
 In React, [focus events](#focusevent-handler) bubble. You can use the `currentTarget` and `relatedTarget` to differentiate if the focusing or blurring events originated from outside of the parent element. The example shows how to detect focusing a child, focusing the parent element, and how to detect focus entering or leaving the whole subtree.
 
@@ -1152,7 +1152,7 @@ input { margin-left: 10px; }
 
 ---
 
-### Handling keyboard events {/*handling-keyboard-events*/}
+### Handling keyboard events 
 
 This example shows some common [keyboard events](#keyboardevent-handler) and when they fire.
 

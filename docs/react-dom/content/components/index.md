@@ -10,7 +10,7 @@ React supports all of the browser built-in [HTML](https://developer.mozilla.org/
 
 ---
 
-## Common components {/*common-components*/}
+## Common components 
 
 All of the built-in browser components support some props and events.
 
@@ -20,7 +20,7 @@ This includes React-specific props like `ref` and `dangerouslySetInnerHTML`.
 
 ---
 
-## Form components {/*form-components*/}
+## Form components 
 
 These built-in browser components accept user input:
 
@@ -32,7 +32,7 @@ They are special in React because passing the `value` prop to them makes them *[
 
 ---
 
-## All HTML components {/*all-html-components*/}
+## All HTML components 
 
 React supports all built-in browser HTML components. This includes:
 
@@ -146,7 +146,7 @@ Similar to the [DOM standard,](https://developer.mozilla.org/en-US/docs/Web/API/
 
 ---
 
-### Custom HTML elements {/*custom-html-elements*/}
+### Custom HTML elements 
 
 If you render a tag with a dash, like `<my-element>`, React will assume you want to render a [custom HTML element.](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) In React, rendering custom elements works differently from rendering built-in browser tags:
 
@@ -169,7 +169,7 @@ Experimental versions of React may contain bugs. Don't use them in production.
 </Note>
 ---
 
-## All SVG components {/*all-svg-components*/}
+## All SVG components 
 
 React supports all built-in browser SVG components. This includes:
 

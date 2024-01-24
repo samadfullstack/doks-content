@@ -16,9 +16,9 @@ const stream = renderToStaticNodeStream(reactNode)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `renderToStaticNodeStream(reactNode)` {/*rendertostaticnodestream*/}
+### `renderToStaticNodeStream(reactNode)` 
 
 On the server, call `renderToStaticNodeStream` to get a [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams).
 
@@ -33,15 +33,15 @@ stream.pipe(response);
 
 The stream will produce non-interactive HTML output of your React components.
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `reactNode`: A React node you want to render to HTML. For example, a JSX element like `<Page />`.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 A [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams) that outputs an HTML string. The resulting HTML can't be hydrated on the client.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * `renderToStaticNodeStream` output cannot be hydrated.
 
@@ -53,9 +53,9 @@ A [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams)
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Rendering a React tree as static HTML to a Node.js Readable Stream {/*rendering-a-react-tree-as-static-html-to-a-nodejs-readable-stream*/}
+### Rendering a React tree as static HTML to a Node.js Readable Stream 
 
 Call `renderToStaticNodeStream` to get a [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams) which you can pipe to your server response:
 

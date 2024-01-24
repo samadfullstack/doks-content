@@ -23,11 +23,11 @@ const [state, formAction] = useFormState(fn, initialState);
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `useFormState(action, initialState)` {/*useformstate*/}
+### `useFormState(action, initialState)` 
 
-{/* TODO T164397693: link to actions documentation once it exists */}
+
 
 Call `useFormState` at the top level of your component to create component state that is updated [when a form action is invoked](/reference/react-dom/components/form). You pass `useFormState` an existing form action function as well as an initial state, and it returns a new action that you use in your form, along with the latest form state. The latest form state is also passed to the function that you provided.
 
@@ -55,30 +55,30 @@ If used with a server action, `useFormState` allows the server's response from s
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `fn`: The function to be called when the form is submitted or button pressed. When the function is called, it will receive the previous state of the form (initially the `initialState` that you pass, subsequently its previous return value) as its initial argument, followed by the arguments that a form action normally receives.
 * `initialState`: The value you want the state to be initially. It can be any serializable value. This argument is ignored after the action is first invoked.
 
-{/* TODO T164397693: link to serializable values docs once it exists */}
 
-#### Returns {/*returns*/}
+
+#### Returns 
 
 `useFormState` returns an array with exactly two values:
 
 1. The current state. During the first render, it will match the `initialState` you have passed. After the action is invoked, it will match the value returned by the action.
 2. A new action that you can pass as the `action` prop to your `form` component or `formAction` prop to any `button` component within the form.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * When used with a framework that supports React Server Components, `useFormState` lets you make forms interactive before JavaScript has executed on the client. When used without Server Components, it is equivalent to component local state.
 * The function passed to `useFormState` receives an extra argument, the previous or initial state, as its first argument. This makes its signature different than if it were used directly as a form action without using `useFormState`.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Using information returned by a form action {/*using-information-returned-by-a-form-action*/}
+### Using information returned by a form action 
 
 Call `useFormState` at the top level of your component to access the return value of an action from the last time a form was submitted.
 
@@ -91,7 +91,7 @@ function MyComponent() {
   // ...
   return (
     <form action={formAction}>
-      {/* ... */}
+      
     </form>
   );
 }
@@ -115,7 +115,7 @@ function action(currentState, formData) {
 
 <Recipes titleText="Display information after submitting a form" titleId="display-information-after-submitting-a-form">
 
-#### Display form errors {/*display-form-errors*/}
+#### Display form errors 
 
 To display messages such as an error message or toast that's returned by a server action, wrap the action in a call to `useFormState`.
 
@@ -188,7 +188,7 @@ form button {
 
 <Solution />
 
-#### Display structured information after submitting a form {/*display-structured-information-after-submitting-a-form*/}
+#### Display structured information after submitting a form 
 
 The return value from a server action can be any serializable value. For example, it could be an object that includes a boolean indicating whether the action was successful, an error message, or updated information.
 
@@ -278,9 +278,9 @@ form button {
 
 </Recipes>
 
-## Troubleshooting {/*troubleshooting*/}
+## Troubleshooting 
 
-### My action can no longer read the submitted form data {/*my-action-can-no-longer-read-the-submitted-form-data*/}
+### My action can no longer read the submitted form data 
 
 When you wrap an action with `useFormState`, it gets an extra argument *as its first argument*. The submitted form data is therefore its *second* argument instead of its first as it would usually be. The new first argument that gets added is the current state of the form.
 

@@ -22,9 +22,9 @@ useLayoutEffect(setup, dependencies?)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `useLayoutEffect(setup, dependencies?)` {/*useinsertioneffect*/}
+### `useLayoutEffect(setup, dependencies?)` 
 
 Call `useLayoutEffect` to perform the layout measurements before the browser repaints the screen:
 
@@ -45,17 +45,17 @@ function Tooltip() {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `setup`: The function with your Effect's logic. Your setup function may also optionally return a *cleanup* function. Before your component is added to the DOM, React will run your setup function. After every re-render with changed dependencies, React will first run the cleanup function (if you provided it) with the old values, and then run your setup function with the new values. Before your component is removed from the DOM, React will run your cleanup function.
  
 * **optional** `dependencies`: The list of all reactive values referenced inside of the `setup` code. Reactive values include props, state, and all the variables and functions declared directly inside your component body. If your linter is [configured for React](/learn/editor-setup#linting), it will verify that every reactive value is correctly specified as a dependency. The list of dependencies must have a constant number of items and be written inline like `[dep1, dep2, dep3]`. React will compare each dependency with its previous value using the [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison. If you omit this argument, your Effect will re-run after every re-render of the component.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `useLayoutEffect` returns `undefined`.
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 * `useLayoutEffect` is a Hook, so you can only call it **at the top level of your component** or your own Hooks. You can't call it inside loops or conditions. If you need that, extract a component and move the Effect there.
 
@@ -69,9 +69,9 @@ function Tooltip() {
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Measuring layout before the browser repaints the screen {/*measuring-layout-before-the-browser-repaints-the-screen*/}
+### Measuring layout before the browser repaints the screen 
 
 Most components don't need to know their position and size on the screen to decide what to render. They only return some JSX. Then the browser calculates their *layout* (position and size) and repaints the screen.
 
@@ -255,7 +255,7 @@ Notice that even though the `Tooltip` component has to render in two passes (fir
 
 <Recipes titleText="useLayoutEffect vs useEffect" titleId="examples">
 
-#### `useLayoutEffect` blocks the browser from repainting {/*uselayouteffect-blocks-the-browser-from-repainting*/}
+#### `useLayoutEffect` blocks the browser from repainting 
 
 React guarantees that the code inside `useLayoutEffect` and any state updates scheduled inside it will be processed **before the browser repaints the screen.** This lets you render the tooltip, measure it, and re-render the tooltip again without the user noticing the first extra render. In other words, `useLayoutEffect` blocks the browser from painting.
 
@@ -402,7 +402,7 @@ export default function TooltipContainer({ children, x, y, contentRef }) {
 
 <Solution />
 
-#### `useEffect` does not block the browser {/*useeffect-does-not-block-the-browser*/}
+#### `useEffect` does not block the browser 
 
 Here is the same example, but with [`useEffect`](/reference/react/useEffect) instead of `useLayoutEffect`. If you're on a slower device, you might notice that sometimes the tooltip "flickers" and you briefly see its initial position before the corrected position.
 
@@ -710,9 +710,9 @@ Rendering in two passes and blocking the browser hurts performance. Try to avoid
 
 ---
 
-## Troubleshooting {/*troubleshooting*/}
+## Troubleshooting 
 
-### I'm getting an error: "`useLayoutEffect` does nothing on the server" {/*im-getting-an-error-uselayouteffect-does-nothing-on-the-server*/}
+### I'm getting an error: "`useLayoutEffect` does nothing on the server" 
 
 The purpose of `useLayoutEffect` is to let your component [use layout information for rendering:](#measuring-layout-before-the-browser-repaints-the-screen)
 

@@ -22,9 +22,9 @@ This API depends on [Web Streams.](https://developer.mozilla.org/en-US/docs/Web/
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `renderToReadableStream(reactNode, options?)` {/*rendertoreadablestream*/}
+### `renderToReadableStream(reactNode, options?)` 
 
 Call `renderToReadableStream` to render your React tree as HTML into a [Readable Web Stream.](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
 
@@ -45,7 +45,7 @@ On the client, call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to 
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `reactNode`: A React node you want to render to HTML. For example, a JSX element like `<App />`. It is expected to represent the entire document, so the `App` component should render the `<html>` tag.
 
@@ -61,7 +61,7 @@ On the client, call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to 
   * **optional** `signal`: An [abort signal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) that lets you [abort server rendering](#aborting-server-rendering) and render the rest on the client.
 
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `renderToReadableStream` returns a Promise:
 
@@ -74,9 +74,9 @@ The returned stream has an additional property:
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Rendering a React tree as HTML to a Readable Web Stream {/*rendering-a-react-tree-as-html-to-a-readable-web-stream*/}
+### Rendering a React tree as HTML to a Readable Web Stream 
 
 Call `renderToReadableStream` to render your React tree as HTML into a [Readable Web Stream:](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
 
@@ -138,7 +138,7 @@ This will attach event listeners to the server-generated HTML and make it intera
 
 <DeepDive>
 
-#### Reading CSS and JS asset paths from the build output {/*reading-css-and-js-asset-paths-from-the-build-output*/}
+#### Reading CSS and JS asset paths from the build output 
 
 The final asset URLs (like JavaScript and CSS files) are often hashed after the build. For example, instead of `styles.css` you might end up with `styles.123456.css`. Hashing static asset filenames guarantees that every distinct build of the same asset will have a different filename. This is useful because it lets you safely enable long-term caching for static assets: a file with a certain name would never change content.
 
@@ -213,7 +213,7 @@ Both client and server render `App` with the same `assetMap` prop, so there are 
 
 ---
 
-### Streaming more content as it loads {/*streaming-more-content-as-it-loads*/}
+### Streaming more content as it loads 
 
 Streaming allows the user to start seeing the content even before all the data has loaded on the server. For example, consider a profile page that shows a cover, a sidebar with friends and photos, and a list of posts:
 
@@ -299,7 +299,7 @@ Suspense-enabled data fetching without the use of an opinionated framework is no
 
 ---
 
-### Specifying what goes into the shell {/*specifying-what-goes-into-the-shell*/}
+### Specifying what goes into the shell 
 
 The part of your app outside of any `<Suspense>` boundaries is called *the shell:*
 
@@ -350,7 +350,7 @@ By the time the `stream` is returned, components in nested `<Suspense>` boundari
 
 ---
 
-### Logging crashes on the server {/*logging-crashes-on-the-server*/}
+### Logging crashes on the server 
 
 By default, all errors on the server are logged to console. You can override this behavior to log crash reports:
 
@@ -373,7 +373,7 @@ If you provide a custom `onError` implementation, don't forget to also log error
 
 ---
 
-### Recovering from errors inside the shell {/*recovering-from-errors-inside-the-shell*/}
+### Recovering from errors inside the shell 
 
 In this example, the shell contains `ProfileLayout`, `ProfileCover`, and `PostsGlimmer`:
 
@@ -418,7 +418,7 @@ If there is an error while generating the shell, both `onError` and your `catch`
 
 ---
 
-### Recovering from errors outside the shell {/*recovering-from-errors-outside-the-shell*/}
+### Recovering from errors outside the shell 
 
 In this example, the `<Posts />` component is wrapped in `<Suspense>` so it is *not* a part of the shell:
 
@@ -447,7 +447,7 @@ If retrying rendering `Posts` on the client succeeds, the loading fallback from 
 
 ---
 
-### Setting the status code {/*setting-the-status-code*/}
+### Setting the status code 
 
 Streaming introduces a tradeoff. You want to start streaming the page as early as possible so that the user can see the content sooner. However, once you start streaming, you can no longer set the response status code.
 
@@ -509,7 +509,7 @@ This will only catch errors outside the shell that happened while generating the
 
 ---
 
-### Handling different errors in different ways {/*handling-different-errors-in-different-ways*/}
+### Handling different errors in different ways 
 
 You can [create your own `Error` subclasses](https://javascript.info/custom-errors) and use the [`instanceof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof) operator to check which error is thrown. For example, you can define a custom `NotFoundError` and throw it from your component. Then you can save the error in `onError` and do something different before returning the response depending on the error type:
 
@@ -557,7 +557,7 @@ Keep in mind that once you emit the shell and start streaming, you can't change 
 
 ---
 
-### Waiting for all content to load for crawlers and static generation {/*waiting-for-all-content-to-load-for-crawlers-and-static-generation*/}
+### Waiting for all content to load for crawlers and static generation 
 
 Streaming offers a better user experience because the user can see the content as it becomes available.
 
@@ -598,7 +598,7 @@ A regular visitor will get a stream of progressively loaded content. A crawler w
 
 ---
 
-### Aborting server rendering {/*aborting-server-rendering*/}
+### Aborting server rendering 
 
 You can force the server rendering to "give up" after a timeout:
 

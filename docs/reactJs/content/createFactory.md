@@ -22,9 +22,9 @@ const factory = createFactory(type)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `createFactory(type)` {/*createfactory*/}
+### `createFactory(type)` 
 
 Call `createFactory(type)` to create a factory function which produces React elements of a given `type`.
 
@@ -48,19 +48,19 @@ export default function App() {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `type`: The `type` argument must be a valid React component type. For example, it could be a tag name string (such as `'div'` or `'span'`), or a React component (a function, a class, or a special component like [`Fragment`](/reference/react/Fragment)).
 
-#### Returns {/*returns*/}
+#### Returns 
 
 Returns a factory function. That factory function receives a `props` object as the first argument, followed by a list of `...children` arguments, and returns a React element with the given `type`, `props` and `children`.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Creating React elements with a factory {/*creating-react-elements-with-a-factory*/}
+### Creating React elements with a factory 
 
 Although most React projects use [JSX](/learn/writing-markup-with-jsx) to describe the user interface, JSX is not required. In the past, `createFactory` used to be one of the ways you could describe the user interface without JSX.
 
@@ -96,9 +96,9 @@ This is how `createFactory` was used as an alternative to JSX. However, `createF
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives 
 
-### Copying `createFactory` into your project {/*copying-createfactory-into-your-project*/}
+### Copying `createFactory` into your project 
 
 If your project has many `createFactory` calls, copy this `createFactory.js` implementation into your project:
 
@@ -132,7 +132,7 @@ This lets you keep all of your code unchanged except the imports.
 
 ---
 
-### Replacing `createFactory` with `createElement` {/*replacing-createfactory-with-createelement*/}
+### Replacing `createFactory` with `createElement` 
 
 If you have a few `createFactory` calls that you don't mind porting manually, and you don't want to use JSX, you can replace every call a factory function with a [`createElement`](/reference/react/createElement) call. For example, you can replace this code:
 
@@ -185,7 +185,7 @@ export default function App() {
 
 ---
 
-### Replacing `createFactory` with JSX {/*replacing-createfactory-with-jsx*/}
+### Replacing `createFactory` with JSX 
 
 Finally, you can use JSX instead of `createFactory`. This is the most common way to use React:
 

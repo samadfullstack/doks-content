@@ -16,9 +16,9 @@ useImperativeHandle(ref, createHandle, dependencies?)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `useImperativeHandle(ref, createHandle, dependencies?)` {/*useimperativehandle*/}
+### `useImperativeHandle(ref, createHandle, dependencies?)` 
 
 Call `useImperativeHandle` at the top level of your component to customize the ref handle it exposes:
 
@@ -36,7 +36,7 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `ref`: The `ref` you received as the second argument from the [`forwardRef` render function.](/reference/react/forwardRef#render-function)
 
@@ -44,15 +44,15 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 
 * **optional** `dependencies`: The list of all reactive values referenced inside of the `createHandle` code. Reactive values include props, state, and all the variables and functions declared directly inside your component body. If your linter is [configured for React](/learn/editor-setup#linting), it will verify that every reactive value is correctly specified as a dependency. The list of dependencies must have a constant number of items and be written inline like `[dep1, dep2, dep3]`. React will compare each dependency with its previous value using the [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison. If a re-render resulted in a change to some dependency, or if you omitted this argument, your `createHandle` function will re-execute, and the newly created handle will be assigned to the ref.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 `useImperativeHandle` returns `undefined`.
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Exposing a custom ref handle to the parent component {/*exposing-a-custom-ref-handle-to-the-parent-component*/}
+### Exposing a custom ref handle to the parent component 
 
 By default, components don't expose their DOM nodes to parent components. For example, if you want the parent component of `MyInput` to [have access](/learn/manipulating-the-dom-with-refs) to the `<input>` DOM node, you have to opt in with [`forwardRef`:](/reference/react/forwardRef)
 
@@ -166,7 +166,7 @@ input {
 
 ---
 
-### Exposing your own imperative methods {/*exposing-your-own-imperative-methods*/}
+### Exposing your own imperative methods 
 
 The methods you expose via an imperative handle don't have to match the DOM methods exactly. For example, this `Post` component exposes a `scrollAndFocusAddComment` method via an imperative handle. This lets the parent `Page` scroll the list of comments *and* focus the input field when you click the button:
 

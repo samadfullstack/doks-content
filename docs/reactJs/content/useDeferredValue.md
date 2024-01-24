@@ -16,9 +16,9 @@ const deferredValue = useDeferredValue(value)
 
 ---
 
-## Reference {/*reference*/}
+## Reference 
 
-### `useDeferredValue(value)` {/*usedeferredvalue*/}
+### `useDeferredValue(value)` 
 
 Call `useDeferredValue` at the top level of your component to get a deferred version of that value.
 
@@ -34,15 +34,15 @@ function SearchPage() {
 
 [See more examples below.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Parameters 
 
 * `value`: The value you want to defer. It can have any type.
 
-#### Returns {/*returns*/}
+#### Returns 
 
 During the initial render, the returned deferred value will be the same as the value you provided. During updates, React will first attempt a re-render with the old value (so it will return the old value), and then try another re-render in background with the new value (so it will return the updated value). 
 
-#### Caveats {/*caveats*/}
+#### Caveats 
 
 - The values you pass to `useDeferredValue` should either be primitive values (like strings and numbers) or objects created outside of rendering. If you create a new object during rendering and immediately pass it to `useDeferredValue`, it will be different on every render, causing unnecessary background re-renders.
 
@@ -58,9 +58,9 @@ During the initial render, the returned deferred value will be the same as the v
 
 ---
 
-## Usage {/*usage*/}
+## Usage 
 
-### Showing stale content while fresh content is loading {/*showing-stale-content-while-fresh-content-is-loading*/}
+### Showing stale content while fresh content is loading 
 
 Call `useDeferredValue` at the top level of your component to defer updating some part of your UI.
 
@@ -502,7 +502,7 @@ input { margin: 10px; }
 
 <DeepDive>
 
-#### How does deferring a value work under the hood? {/*how-does-deferring-a-value-work-under-the-hood*/}
+#### How does deferring a value work under the hood? 
 
 You can think of it as happening in two steps:
 
@@ -518,7 +518,7 @@ Note that there is still a network request per each keystroke. What's being defe
 
 ---
 
-### Indicating that the content is stale {/*indicating-that-the-content-is-stale*/}
+### Indicating that the content is stale 
 
 In the example above, there is no indication that the result list for the latest query is still loading. This can be confusing to the user if the new results take a while to load. To make it more obvious to the user that the result list does not match the latest query, you can add a visual indication when the stale result list is displayed:
 
@@ -731,7 +731,7 @@ input { margin: 10px; }
 
 ---
 
-### Deferring re-rendering for a part of the UI {/*deferring-re-rendering-for-a-part-of-the-ui*/}
+### Deferring re-rendering for a part of the UI 
 
 You can also apply `useDeferredValue` as a performance optimization. It is useful when a part of your UI is slow to re-render, there's no easy way to optimize it, and you want to prevent it from blocking the rest of the UI.
 
@@ -778,7 +778,7 @@ This does not make re-rendering of the `SlowList` faster. However, it tells Reac
 
 <Recipes titleText="The difference between useDeferredValue and unoptimized re-rendering" titleId="examples">
 
-#### Deferred re-rendering of the list {/*deferred-re-rendering-of-the-list*/}
+#### Deferred re-rendering of the list 
 
 In this example, each item in the `SlowList` component is **artificially slowed down** so that you can see how `useDeferredValue` lets you keep the input responsive. Type into the input and notice that typing feels snappy while the list "lags behind" it.
 
@@ -854,7 +854,7 @@ export default SlowList;
 
 <Solution />
 
-#### Unoptimized re-rendering of the list {/*unoptimized-re-rendering-of-the-list*/}
+#### Unoptimized re-rendering of the list 
 
 In this example, each item in the `SlowList` component is **artificially slowed down**, but there is no `useDeferredValue`.
 
@@ -941,7 +941,7 @@ This optimization requires `SlowList` to be wrapped in [`memo`.](/reference/reac
 
 <DeepDive>
 
-#### How is deferring a value different from debouncing and throttling? {/*how-is-deferring-a-value-different-from-debouncing-and-throttling*/}
+#### How is deferring a value different from debouncing and throttling? 
 
 There are two common optimization techniques you might have used before in this scenario:
 
