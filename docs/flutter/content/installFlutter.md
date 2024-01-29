@@ -1,0 +1,1 @@
+- to Install flutter visist this page : [install_flutter](https://docs.flutter.dev/get-started/install)
