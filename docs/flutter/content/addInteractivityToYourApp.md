@@ -1,5 +1,5 @@
-1.  [UI](https://docs.flutter.dev/ui)
-2.  [Interactivity](https://docs.flutter.dev/ui/interactivity)
+1. [UI](https://docs.flutter.dev/ui)
+2. [Interactivity](https://docs.flutter.dev/ui/interactivity)
 
 How do you modify your app to make it react to user input? In this tutorial, you’ll add interactivity to an app that contains only non-interactive widgets. Specifically, you’ll modify an icon to make it tappable by creating a custom stateful widget that manages two stateless widgets.
 
@@ -29,8 +29,8 @@ In this section, you’ll create a custom stateful widget. You’ll replace two 
 
 Implementing a custom stateful widget requires creating two classes:
 
--   A subclass of `StatefulWidget` that defines the widget.
--   A subclass of `State` that contains the state for that widget and defines the widget’s `build()` method.
+- A subclass of `StatefulWidget` that defines the widget.
+- A subclass of `State` that contains the state for that widget and defines the widget’s `build()` method.
 
 This section shows you how to build a stateful widget, called `FavoriteWidget`, for the lakes app. After setting up, your first step is choosing how state is managed for `FavoriteWidget`.
 
@@ -38,11 +38,11 @@ This section shows you how to build a stateful widget, called `FavoriteWidget`, 
 
 If you’ve already built the app in the [building layouts tutorial](https://docs.flutter.dev/ui/layout/tutorial), skip to the next section.
 
-1.  Make sure you’ve [set up](https://docs.flutter.dev/get-started/install) your environment.
-2.  [Create a new Flutter app](https://docs.flutter.dev/get-started/test-drive).
-3.  Replace the `lib/main.dart` file with [`main.dart`](https://github.com/flutter/website/tree/main/examples/layout/lakes/step6/lib/main.dart).
-4.  Replace the `pubspec.yaml` file with [`pubspec.yaml`](https://github.com/flutter/website/tree/main/examples/layout/lakes/step6/pubspec.yaml).
-5.  Create an `images` directory in your project, and add [`lake.jpg`](https://github.com/flutter/website/tree/main/examples/layout/lakes/step6/images/lake.jpg).
+1. Make sure you’ve [set up](https://docs.flutter.dev/get-started/install) your environment.
+2. [Create a new Flutter app](https://docs.flutter.dev/get-started/test-drive).
+3. Replace the `lib/main.dart` file with [`main.dart`](https://github.com/flutter/website/tree/main/examples/layout/lakes/step6/lib/main.dart).
+4. Replace the `pubspec.yaml` file with [`pubspec.yaml`](https://github.com/flutter/website/tree/main/examples/layout/lakes/step6/pubspec.yaml).
+5. Create an `images` directory in your project, and add [`lake.jpg`](https://github.com/flutter/website/tree/main/examples/layout/lakes/step6/images/lake.jpg).
 
 Once you have a connected and enabled device, or you’ve launched the [iOS simulator](https://docs.flutter.dev/get-started/install/macos/mobile-ios#configure-your-target-ios-device) (part of the Flutter install) or the [Android emulator](https://docs.flutter.dev/get-started/install/windows/mobile?tab=virtual#configure-your-target-android-device) (part of the Android Studio install), you are good to go!
 
@@ -61,7 +61,7 @@ The `FavoriteWidget` class manages its own state, so it overrides `createState()
   </span><span>const</span><span> </span><span>FavoriteWidget</span><span>({</span><span>super</span><span>.</span><span>key</span><span>});</span><span>
 
   @override
-  </span><span>State</span><span>&lt;</span><span>FavoriteWidget</span><span>&gt;</span><span> createState</span><span>()</span><span> </span><span>=&gt;</span><span> _FavoriteWidgetState</span><span>();</span><span>
+  </span><span>State</span><span><</span><span>FavoriteWidget</span><span>></span><span> createState</span><span>()</span><span> </span><span>=></span><span> _FavoriteWidgetState</span><span>();</span><span>
 </span><span>}</span>
 ```
 
@@ -70,7 +70,7 @@ The `FavoriteWidget` class manages its own state, so it overrides `createState()
 The `_FavoriteWidgetState` class stores the mutable data that can change over the lifetime of the widget. When the app first launches, the UI displays a solid red star, indicating that the lake has “favorite” status, along with 41 likes. These values are stored in the `_isFavorited` and `_favoriteCount` fields:
 
 ```
-<span>class</span><span> _FavoriteWidgetState </span><span>extends</span><span> </span><span>State</span><span>&lt;</span><span>FavoriteWidget</span><span>&gt;</span><span> </span><span>{</span><span>
+<span>class</span><span> _FavoriteWidgetState </span><span>extends</span><span> </span><span>State</span><span><</span><span>FavoriteWidget</span><span>></span><span> </span><span>{</span><span>
   </span><span><span>bool</span><span> _isFavorited </span><span>=</span><span> </span><span>true</span><span>;</span></span><span>
   </span><span><span>int</span><span> _favoriteCount </span><span>=</span><span> </span><span>41</span><span>;</span></span><span>
 
@@ -81,7 +81,7 @@ The `_FavoriteWidgetState` class stores the mutable data that can change over th
 The class also defines a `build()` method, which creates a row containing a red `IconButton`, and `Text`. You use [`IconButton`](https://api.flutter.dev/flutter/material/IconButton-class.html) (instead of `Icon`) because it has an `onPressed` property that defines the callback function (`_toggleFavorite`) for handling a tap. You’ll define the callback function next.
 
 ```
-<span>class</span><span> _FavoriteWidgetState </span><span>extends</span><span> </span><span>State</span><span>&lt;</span><span>FavoriteWidget</span><span>&gt;</span><span> </span><span>{</span><span>
+<span>class</span><span> _FavoriteWidgetState </span><span>extends</span><span> </span><span>State</span><span><</span><span>FavoriteWidget</span><span>></span><span> </span><span>{</span><span>
   </span><span>// ···</span><span>
   @override
   </span><span>Widget</span><span> </span><span><span>build</span></span><span>(</span><span>BuildContext</span><span> context</span><span>)</span><span> </span><span>{</span><span>
@@ -114,8 +114,8 @@ The class also defines a `build()` method, which creates a row containing a red 
 
 The `_toggleFavorite()` method, which is called when the `IconButton` is pressed, calls `setState()`. Calling `setState()` is critical, because this tells the framework that the widget’s state has changed and that the widget should be redrawn. The function argument to `setState()` toggles the UI between these two states:
 
--   A `star` icon and the number 41
--   A `star_border` icon and the number 40
+- A `star` icon and the number 41
+- A `star_border` icon and the number 40
 
 ```
 <span>void</span><span> _toggleFavorite</span><span>()</span><span> </span><span>{</span><span>
@@ -135,7 +135,7 @@ The `_toggleFavorite()` method, which is called when the `IconButton` is pressed
 
 Add your custom stateful widget to the widget tree in the app’s `build()` method. First, locate the code that creates the `Icon` and `Text`, and delete it. In the same location, create the stateful widget:
 
-<table><tbody><tr><td></td><td><p>@@ -83,11 +83,7 @@</p></td></tr><tr><td><p>83</p><p>83</p></td><td><p><span>&nbsp;</span> <span>],</span></p></td></tr><tr><td><p>84</p><p>84</p></td><td><p><span>&nbsp;</span> <span>),</span></p></td></tr><tr><td><p>85</p><p>85</p></td><td><p><span>&nbsp;</span> <span>),</span></p></td></tr><tr><td><p>86</p></td><td><p><span>-</span> <span><del>Icon</del>(</span></p></td></tr><tr><td><p>87</p></td><td><p><span>-</span> <span>Icons.star,</span></p></td></tr><tr><td><p>88</p></td><td><p><span>-</span> <span>color: Colors.red[<span>500</span>],</span></p></td></tr><tr><td><p>89</p></td><td><p><span>-</span> <span>),</span></p></td></tr><tr><td><p>90</p></td><td><p><span>-</span> <span><span>const</span> Text(<span>'41'</span>),</span></p></td></tr><tr><td><p>86</p></td><td><p><span>+</span> <span><ins><span>const</span> FavoriteWidget</ins>(<ins>),</ins></span></p></td></tr><tr><td><p>91</p><p>87</p></td><td><p><span>&nbsp;</span> <span>],</span></p></td></tr><tr><td><p>92</p><p>88</p></td><td><p><span>&nbsp;</span> <span>),</span></p></td></tr><tr><td><p>93</p><p>89</p></td><td><p><span>&nbsp;</span> <span>);</span></p></td></tr></tbody></table>
+<table><tbody><tr><td></td><td><p>@@ -83,11 +83,7 @@</p></td></tr><tr><td><p>83</p><p>83</p></td><td><p><span> </span> <span>],</span></p></td></tr><tr><td><p>84</p><p>84</p></td><td><p><span> </span> <span>),</span></p></td></tr><tr><td><p>85</p><p>85</p></td><td><p><span> </span> <span>),</span></p></td></tr><tr><td><p>86</p></td><td><p><span>-</span> <span><del>Icon</del>(</span></p></td></tr><tr><td><p>87</p></td><td><p><span>-</span> <span>Icons.star,</span></p></td></tr><tr><td><p>88</p></td><td><p><span>-</span> <span>color: Colors.red[<span>500</span>],</span></p></td></tr><tr><td><p>89</p></td><td><p><span>-</span> <span>),</span></p></td></tr><tr><td><p>90</p></td><td><p><span>-</span> <span><span>const</span> Text(<span>'41'</span>),</span></p></td></tr><tr><td><p>86</p></td><td><p><span>+</span> <span><ins><span>const</span> FavoriteWidget</ins>(<ins>),</ins></span></p></td></tr><tr><td><p>91</p><p>87</p></td><td><p><span> </span> <span>],</span></p></td></tr><tr><td><p>92</p><p>88</p></td><td><p><span> </span> <span>),</span></p></td></tr><tr><td><p>93</p><p>89</p></td><td><p><span> </span> <span>);</span></p></td></tr></tbody></table>
 
 That’s it! When you hot reload the app, the star icon should now respond to taps.
 
@@ -143,13 +143,13 @@ That’s it! When you hot reload the app, the star icon should now respond to ta
 
 If you can’t get your code to run, look in your IDE for possible errors. [Debugging Flutter apps](https://docs.flutter.dev/testing/debugging) might help. If you still can’t find the problem, check your code against the interactive lakes example on GitHub.
 
--   [`lib/main.dart`](https://github.com/flutter/website/tree/main/examples/layout/lakes/interactive/lib/main.dart)
--   [`pubspec.yaml`](https://github.com/flutter/website/tree/main/examples/layout/lakes/interactive/pubspec.yaml)
--   [`lakes.jpg`](https://github.com/flutter/website/tree/main/examples/layout/lakes/interactive/images/lake.jpg)
+- [`lib/main.dart`](https://github.com/flutter/website/tree/main/examples/layout/lakes/interactive/lib/main.dart)
+- [`pubspec.yaml`](https://github.com/flutter/website/tree/main/examples/layout/lakes/interactive/pubspec.yaml)
+- [`lakes.jpg`](https://github.com/flutter/website/tree/main/examples/layout/lakes/interactive/images/lake.jpg)
 
 If you still have questions, refer to any one of the developer [community](https://flutter.dev/community) channels.
 
-___
+---
 
 The rest of this page covers several ways a widget’s state can be managed, and lists other available interactive widgets.
 
@@ -157,16 +157,14 @@ The rest of this page covers several ways a widget’s state can be managed, and
 
 Who manages the stateful widget’s state? The widget itself? The parent widget? Both? Another object? The answer is… it depends. There are several valid ways to make your widget interactive. You, as the widget designer, make the decision based on how you expect your widget to be used. Here are the most common ways to manage state:
 
--   [The widget manages its own state](https://docs.flutter.dev/ui/interactivity#self-managed)
--   [The parent manages the widget’s state](https://docs.flutter.dev/ui/interactivity#parent-managed)
--   [A mix-and-match approach](https://docs.flutter.dev/ui/interactivity#mix-and-match)
+- [The widget manages its own state](https://docs.flutter.dev/ui/interactivity#self-managed)
+- [The parent manages the widget’s state](https://docs.flutter.dev/ui/interactivity#parent-managed)
+- [A mix-and-match approach](https://docs.flutter.dev/ui/interactivity#mix-and-match)
 
 How do you decide which approach to use? The following principles should help you decide:
 
--   If the state in question is user data, for example the checked or unchecked mode of a checkbox, or the position of a slider, then the state is best managed by the parent widget.
-    
--   If the state in question is aesthetic, for example an animation, then the state is best managed by the widget itself.
-    
+- If the state in question is user data, for example the checked or unchecked mode of a checkbox, or the position of a slider, then the state is best managed by the parent widget.
+- If the state in question is aesthetic, for example an animation, then the state is best managed by the widget itself.
 
 If in doubt, start by managing state in the parent widget.
 
@@ -182,10 +180,10 @@ Sometimes it makes the most sense for the widget to manage its state internally.
 
 The `_TapboxAState` class:
 
--   Manages state for `TapboxA`.
--   Defines the `_active` boolean which determines the box’s current color.
--   Defines the `_handleTap()` function, which updates `_active` when the box is tapped and calls the `setState()` function to update the UI.
--   Implements all interactive behavior for the widget.
+- Manages state for `TapboxA`.
+- Defines the `_active` boolean which determines the box’s current color.
+- Defines the `_handleTap()` function, which updates `_active` when the box is tapped and calls the `setState()` function to update the UI.
+- Implements all interactive behavior for the widget.
 
 ```
 <span>import</span><span> </span><span>'package:flutter/material.dart'</span><span>;</span><span>
@@ -198,10 +196,10 @@ The `_TapboxAState` class:
   </span><span>const</span><span> </span><span>TapboxA</span><span>({</span><span>super</span><span>.</span><span>key</span><span>});</span><span>
 
   @override
-  </span><span>State</span><span>&lt;</span><span>TapboxA</span><span>&gt;</span><span> createState</span><span>()</span><span> </span><span>=&gt;</span><span> _TapboxAState</span><span>();</span><span>
+  </span><span>State</span><span><</span><span>TapboxA</span><span>></span><span> createState</span><span>()</span><span> </span><span>=></span><span> _TapboxAState</span><span>();</span><span>
 </span><span>}</span><span>
 
-</span><span>class</span><span> _TapboxAState </span><span>extends</span><span> </span><span>State</span><span>&lt;</span><span>TapboxA</span><span>&gt;</span><span> </span><span>{</span><span>
+</span><span>class</span><span> _TapboxAState </span><span>extends</span><span> </span><span>State</span><span><</span><span>TapboxA</span><span>></span><span> </span><span>{</span><span>
   </span><span>bool</span><span> _active </span><span>=</span><span> </span><span>false</span><span>;</span><span>
 
   </span><span>void</span><span> _handleTap</span><span>()</span><span> </span><span>{</span><span>
@@ -253,7 +251,7 @@ The `_TapboxAState` class:
 </span><span>}</span>
 ```
 
-___
+---
 
 ### The parent widget manages the widget’s state
 
@@ -263,14 +261,14 @@ In the following example, TapboxB exports its state to its parent through a call
 
 The ParentWidgetState class:
 
--   Manages the `_active` state for TapboxB.
--   Implements `_handleTapboxChanged()`, the method called when the box is tapped.
--   When the state changes, calls `setState()` to update the UI.
+- Manages the `_active` state for TapboxB.
+- Implements `_handleTapboxChanged()`, the method called when the box is tapped.
+- When the state changes, calls `setState()` to update the UI.
 
 The TapboxB class:
 
--   Extends StatelessWidget because all state is handled by its parent.
--   When a tap is detected, it notifies the parent.
+- Extends StatelessWidget because all state is handled by its parent.
+- When a tap is detected, it notifies the parent.
 
 ```
 <span>import</span><span> </span><span>'package:flutter/material.dart'</span><span>;</span><span>
@@ -283,10 +281,10 @@ The TapboxB class:
   </span><span>const</span><span> </span><span>ParentWidget</span><span>({</span><span>super</span><span>.</span><span>key</span><span>});</span><span>
 
   @override
-  </span><span>State</span><span>&lt;</span><span>ParentWidget</span><span>&gt;</span><span> createState</span><span>()</span><span> </span><span>=&gt;</span><span> _ParentWidgetState</span><span>();</span><span>
+  </span><span>State</span><span><</span><span>ParentWidget</span><span>></span><span> createState</span><span>()</span><span> </span><span>=></span><span> _ParentWidgetState</span><span>();</span><span>
 </span><span>}</span><span>
 
-</span><span>class</span><span> _ParentWidgetState </span><span>extends</span><span> </span><span>State</span><span>&lt;</span><span>ParentWidget</span><span>&gt;</span><span> </span><span>{</span><span>
+</span><span>class</span><span> _ParentWidgetState </span><span>extends</span><span> </span><span>State</span><span><</span><span>ParentWidget</span><span>></span><span> </span><span>{</span><span>
   </span><span>bool</span><span> _active </span><span>=</span><span> </span><span>false</span><span>;</span><span>
 
   </span><span>void</span><span> _handleTapboxChanged</span><span>(</span><span>bool</span><span> newValue</span><span>)</span><span> </span><span>{</span><span>
@@ -316,7 +314,7 @@ The TapboxB class:
   </span><span>});</span><span>
 
   </span><span>final</span><span> </span><span>bool</span><span> active</span><span>;</span><span>
-  </span><span>final</span><span> </span><span>ValueChanged</span><span>&lt;</span><span>bool</span><span>&gt;</span><span> onChanged</span><span>;</span><span>
+  </span><span>final</span><span> </span><span>ValueChanged</span><span><</span><span>bool</span><span>></span><span> onChanged</span><span>;</span><span>
 
   </span><span>void</span><span> _handleTap</span><span>()</span><span> </span><span>{</span><span>
     onChanged</span><span>(!</span><span>active</span><span>);</span><span>
@@ -344,7 +342,7 @@ The TapboxB class:
 </span><span>}</span>
 ```
 
-___
+---
 
 ### A mix-and-match approach
 
@@ -354,16 +352,16 @@ In the `TapboxC` example, on tap down, a dark green border appears around the bo
 
 The `_ParentWidgetState` object:
 
--   Manages the `_active` state.
--   Implements `_handleTapboxChanged()`, the method called when the box is tapped.
--   Calls `setState()` to update the UI when a tap occurs and the `_active` state changes.
+- Manages the `_active` state.
+- Implements `_handleTapboxChanged()`, the method called when the box is tapped.
+- Calls `setState()` to update the UI when a tap occurs and the `_active` state changes.
 
 The `_TapboxCState` object:
 
--   Manages the `_highlight` state.
--   The `GestureDetector` listens to all tap events. As the user taps down, it adds the highlight (implemented as a dark green border). As the user releases the tap, it removes the highlight.
--   Calls `setState()` to update the UI on tap down, tap up, or tap cancel, and the `_highlight` state changes.
--   On a tap event, passes that state change to the parent widget to take appropriate action using the [`widget`](https://api.flutter.dev/flutter/widgets/State/widget.html) property.
+- Manages the `_highlight` state.
+- The `GestureDetector` listens to all tap events. As the user taps down, it adds the highlight (implemented as a dark green border). As the user releases the tap, it removes the highlight.
+- Calls `setState()` to update the UI on tap down, tap up, or tap cancel, and the `_highlight` state changes.
+- On a tap event, passes that state change to the parent widget to take appropriate action using the [`widget`](https://api.flutter.dev/flutter/widgets/State/widget.html) property.
 
 ```
 <span>import</span><span> </span><span>'package:flutter/material.dart'</span><span>;</span><span>
@@ -374,10 +372,10 @@ The `_TapboxCState` object:
   </span><span>const</span><span> </span><span>ParentWidget</span><span>({</span><span>super</span><span>.</span><span>key</span><span>});</span><span>
 
   @override
-  </span><span>State</span><span>&lt;</span><span>ParentWidget</span><span>&gt;</span><span> createState</span><span>()</span><span> </span><span>=&gt;</span><span> _ParentWidgetState</span><span>();</span><span>
+  </span><span>State</span><span><</span><span>ParentWidget</span><span>></span><span> createState</span><span>()</span><span> </span><span>=></span><span> _ParentWidgetState</span><span>();</span><span>
 </span><span>}</span><span>
 
-</span><span>class</span><span> _ParentWidgetState </span><span>extends</span><span> </span><span>State</span><span>&lt;</span><span>ParentWidget</span><span>&gt;</span><span> </span><span>{</span><span>
+</span><span>class</span><span> _ParentWidgetState </span><span>extends</span><span> </span><span>State</span><span><</span><span>ParentWidget</span><span>></span><span> </span><span>{</span><span>
   </span><span>bool</span><span> _active </span><span>=</span><span> </span><span>false</span><span>;</span><span>
 
   </span><span>void</span><span> _handleTapboxChanged</span><span>(</span><span>bool</span><span> newValue</span><span>)</span><span> </span><span>{</span><span>
@@ -407,13 +405,13 @@ The `_TapboxCState` object:
   </span><span>});</span><span>
 
   </span><span>final</span><span> </span><span>bool</span><span> active</span><span>;</span><span>
-  </span><span>final</span><span> </span><span>ValueChanged</span><span>&lt;</span><span>bool</span><span>&gt;</span><span> onChanged</span><span>;</span><span>
+  </span><span>final</span><span> </span><span>ValueChanged</span><span><</span><span>bool</span><span>></span><span> onChanged</span><span>;</span><span>
 
   @override
-  </span><span>State</span><span>&lt;</span><span>TapboxC</span><span>&gt;</span><span> createState</span><span>()</span><span> </span><span>=&gt;</span><span> _TapboxCState</span><span>();</span><span>
+  </span><span>State</span><span><</span><span>TapboxC</span><span>></span><span> createState</span><span>()</span><span> </span><span>=></span><span> _TapboxCState</span><span>();</span><span>
 </span><span>}</span><span>
 
-</span><span>class</span><span> _TapboxCState </span><span>extends</span><span> </span><span>State</span><span>&lt;</span><span>TapboxC</span><span>&gt;</span><span> </span><span>{</span><span>
+</span><span>class</span><span> _TapboxCState </span><span>extends</span><span> </span><span>State</span><span><</span><span>TapboxC</span><span>></span><span> </span><span>{</span><span>
   </span><span>bool</span><span> _highlight </span><span>=</span><span> </span><span>false</span><span>;</span><span>
 
   </span><span>void</span><span> _handleTapDown</span><span>(</span><span>TapDownDetails</span><span> details</span><span>)</span><span> </span><span>{</span><span>
@@ -471,7 +469,7 @@ The `_TapboxCState` object:
 
 An alternate implementation might have exported the highlight state to the parent while keeping the active state internal, but if you asked someone to use that tap box, they’d probably complain that it doesn’t make much sense. The developer cares whether the box is active. The developer probably doesn’t care how the highlighting is managed, and prefers that the tap box handles those details.
 
-___
+---
 
 Flutter offers a variety of buttons and similar interactive widgets. Most of these widgets implement the [Material Design guidelines](https://m3.material.io/styles), which define a set of components with an opinionated UI.
 
@@ -481,21 +479,21 @@ When you need interactivity, it’s easiest to use one of the prefabricated widg
 
 ### Standard widgets
 
--   [`Form`](https://api.flutter.dev/flutter/widgets/Form-class.html)
--   [`FormField`](https://api.flutter.dev/flutter/widgets/FormField-class.html)
+- [`Form`](https://api.flutter.dev/flutter/widgets/Form-class.html)
+- [`FormField`](https://api.flutter.dev/flutter/widgets/FormField-class.html)
 
 ### Material Components
 
--   [`Checkbox`](https://api.flutter.dev/flutter/material/Checkbox-class.html)
--   [`DropdownButton`](https://api.flutter.dev/flutter/material/DropdownButton-class.html)
--   [`TextButton`](https://api.flutter.dev/flutter/material/TextButton-class.html)
--   [`FloatingActionButton`](https://api.flutter.dev/flutter/material/FloatingActionButton-class.html)
--   [`IconButton`](https://api.flutter.dev/flutter/material/IconButton-class.html)
--   [`Radio`](https://api.flutter.dev/flutter/material/Radio-class.html)
--   [`ElevatedButton`](https://api.flutter.dev/flutter/material/ElevatedButton-class.html)
--   [`Slider`](https://api.flutter.dev/flutter/material/Slider-class.html)
--   [`Switch`](https://api.flutter.dev/flutter/material/Switch-class.html)
--   [`TextField`](https://api.flutter.dev/flutter/material/TextField-class.html)
+- [`Checkbox`](https://api.flutter.dev/flutter/material/Checkbox-class.html)
+- [`DropdownButton`](https://api.flutter.dev/flutter/material/DropdownButton-class.html)
+- [`TextButton`](https://api.flutter.dev/flutter/material/TextButton-class.html)
+- [`FloatingActionButton`](https://api.flutter.dev/flutter/material/FloatingActionButton-class.html)
+- [`IconButton`](https://api.flutter.dev/flutter/material/IconButton-class.html)
+- [`Radio`](https://api.flutter.dev/flutter/material/Radio-class.html)
+- [`ElevatedButton`](https://api.flutter.dev/flutter/material/ElevatedButton-class.html)
+- [`Slider`](https://api.flutter.dev/flutter/material/Slider-class.html)
+- [`Switch`](https://api.flutter.dev/flutter/material/Switch-class.html)
+- [`TextField`](https://api.flutter.dev/flutter/material/TextField-class.html)
 
 ## Resources
 
